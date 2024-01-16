@@ -3,6 +3,8 @@ title: Python For Quantum Mechanics
 layout: home
 ---
 
+# Python For Quantum Mechanics
+
 ## Description
 Welcome to Python for Quantum Mechanics. This course was designed to give you a solid foundation in the Python programming language for your studies in quantum technology. The course is six sessions long in total, and builds from the ground up a working knowledge of Python, with emphasis on the NumPy, Matplotlib and SciPy libraries. The first three sessions entail the building of a foundation, where you will learn how to manipulate basic data types in the first session, all the way to object-oriented programming in the third session. The final three sessions involve a deep dive into the afore-mentioned libraries.
 
