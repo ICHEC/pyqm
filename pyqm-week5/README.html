@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 5 Contents &#8212; Lecture Notes from ICHEC</title>
+    <title>Week 5: Matplotlib &#8212; Lecture Notes from ICHEC</title>
   
   
   
@@ -63,11 +63,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week5/README';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 6 Contents" href="../pyqm-week6/README.html" />
-    <link rel="prev" title="Week 4 Contents" href="../pyqm-week4/README.html" />
+    <link rel="next" title="Week 6: SciPy" href="../pyqm-week6/README.html" />
+    <link rel="prev" title="Week 4: Numpy" href="../pyqm-week4/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,9 +183,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week1/README.html">Week 1: Variables, data structures, and operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week2/README.html">Week 2: Flow control, comprehensions and file operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week3/README.html">Week 3: Functions and Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyqm-week4/README.html">Week 4 Contents</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 5 Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyqm-week6/README.html">Week 6 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqm-week4/README.html">Week 4: Numpy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 5: Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqm-week6/README.html">Week 6: SciPy</a></li>
 </ul>
 
     </div>
@@ -322,7 +324,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 5 Contents</h1>
+    <h1>Week 5: Matplotlib</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,6 +337,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots-notebook-video">5.1 - Line Plots - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-and-alternative-plots-notebook-video">5.2 - Multiple and Alternative Plots - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots-and-animations-notebook-video">5.3 - 3D Plots and Animations - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">5.4 <span class="xref myst">Cheatsheet</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">5.5 <span class="xref myst">Tutorial</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.6 <span class="xref myst">Exercises</span></a></li>
 </ul>
             </nav>
         </div>
@@ -346,25 +351,69 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-5-contents">
-<h1>Week 5 Contents<a class="headerlink" href="#week-5-contents" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-5-matplotlib">
+<h1>Week 5: Matplotlib<a class="headerlink" href="#week-5-matplotlib" title="Permalink to this heading">#</a></h1>
 <section id="line-plots-notebook-video">
 <h2>5.1 - Line Plots - <a class="reference internal" href="notebooks/pyqm-5.1-line-plots.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://www.youtube.com/watch?v=D50f3tPYUiM">[Video]</a><a class="headerlink" href="#line-plots-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Using plt.plot</p></li>
-<li><p>Plot Aesthetics</p></li>
-<li><p>Axis Formatting</p></li>
-<li><p>Labels</p></li>
+<li><p>Using plt.plot</p>
+<ul>
+<li><p>Plotting a line between two points</p></li>
+<li><p>Plotting line between multiple points</p></li>
+<li><p>Plotting a function</p></li>
+<li><p>Plotting two lines in the same figure</p></li>
+</ul>
+</li>
+<li><p>Plot Aesthetics</p>
+<ul>
+<li><p>Changing line colour</p></li>
+<li><p>Changing line width</p></li>
+<li><p>Changing line style</p></li>
+<li><p>Changing marker style</p></li>
+</ul>
+</li>
+<li><p>Axis Formatting</p>
+<ul>
+<li><p>Setting limits</p></li>
+<li><p>Changing ticks</p></li>
+<li><p>Adding grids</p></li>
+</ul>
+</li>
+<li><p>Labels</p>
+<ul>
+<li><p>Adding a title</p></li>
+<li><p>Labeling axes</p></li>
+</ul>
+</li>
 <li><p>Error Bars</p></li>
 <li><p>Asymptotes and Annotations</p></li>
-<li><p>Log Plots</p></li>
-<li><p>Figure Object</p></li>
+<li><p>Log Plots</p>
+<ul>
+<li><p>Making log-log plots</p></li>
+<li><p>Making semi-log plots</p></li>
+</ul>
+</li>
+<li><p>Figure Object</p>
+<ul>
+<li><p>Creating a figure</p></li>
+<li><p>Adding axes to figure</p></li>
+<li><p>Adjusted functions</p></li>
+<li><p>Saving an image</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="multiple-and-alternative-plots-notebook-video">
 <h2>5.2 - Multiple and Alternative Plots - <a class="reference internal" href="notebooks/pyqm-5.2-multiple-and-alternative-plots.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://www.youtube.com/watch?v=842vyBG-apQ">[Video]</a><a class="headerlink" href="#multiple-and-alternative-plots-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Subplots</p></li>
+<li><p>Subplots</p>
+<ul>
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code></p></li>
+<li><p>Plots in Plots</p></li>
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code></p></li>
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code></p></li>
+</ul>
+</li>
 <li><p>Histograms</p></li>
 <li><p>Scatter Plot</p></li>
 <li><p>Bar Chart</p></li>
@@ -378,8 +427,38 @@ document.write(`
 <li><p>Heatmap</p></li>
 <li><p>Surface Plot</p></li>
 <li><p>Interactive Backend</p></li>
-<li><p>Animation</p></li>
+<li><p>Animation</p>
+<ul>
+<li><p>Making an initialisation function</p></li>
+<li><p>Making an animation function</p></li>
+<li><p>Animating a plot</p></li>
+<li><p>Saving an animation</p></li>
 </ul>
+</li>
+</ul>
+</section>
+<section id="cheatsheet">
+<h2>5.4 <a class="reference internal" href="notebooks/pyqm-5.4-cheatsheet.html"><span class="doc std std-doc">Cheatsheet</span></a><a class="headerlink" href="#cheatsheet" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="tutorial">
+<h2>5.5 <span class="xref myst">Tutorial</span><a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Noise in qubits</p></li>
+<li><p>Particle in a Box</p></li>
+<li><p>Normal Distribution</p></li>
+<li><p>Monte Carlo <span class="math notranslate nohighlight">\(\pi\)</span> Estimation</p></li>
+<li><p>Ball Animation</p></li>
+</ol>
+</section>
+<section id="exercises">
+<h2>5.6 <span class="xref myst">Exercises</span><a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Settlers of Histogram</p></li>
+<li><p>Normal Distribution</p></li>
+<li><p>Particle in a Box</p></li>
+<li><p>Plotting a Sphere</p></li>
+<li><p>Snake Animation</p></li>
+</ol>
 </section>
 </section>
 
@@ -419,7 +498,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 4 Contents</p>
+        <p class="prev-next-title">Week 4: Numpy</p>
       </div>
     </a>
     <a class="right-next"
@@ -427,7 +506,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 6 Contents</p>
+        <p class="prev-next-title">Week 6: SciPy</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -450,6 +529,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-plots-notebook-video">5.1 - Line Plots - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-and-alternative-plots-notebook-video">5.2 - Multiple and Alternative Plots - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots-and-animations-notebook-video">5.3 - 3D Plots and Animations - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">5.4 <span class="xref myst">Cheatsheet</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">5.5 <span class="xref myst">Tutorial</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">5.6 <span class="xref myst">Exercises</span></a></li>
 </ul>
   </nav></div>
 

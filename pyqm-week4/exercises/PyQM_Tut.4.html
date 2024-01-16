@@ -181,9 +181,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1: Variables, data structures, and operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2: Flow control, comprehensions and file operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3: Functions and Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 4 Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 4: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5: Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6: SciPy</a></li>
 </ul>
 
     </div>
@@ -457,18 +457,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.953+0.j    -0.   -0.j    -0.   +0.j    -0.   -0.j    -0.   +0.j
-  -0.   -0.j   ]
- [-0.   +0.j    -0.665+0.j     0.   +0.j     0.   -0.j     0.   +0.j
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.998-0.j     0.   -0.j    -0.   +0.j    -0.   -0.j    -0.   +0.j
+  -0.   +0.j   ]
+ [ 0.   +0.j     0.815+0.j    -0.   +0.j    -0.   -0.j    -0.   -0.j
    0.   -0.j   ]
- [-0.   -0.j    -0.   -0.j    -0.131+0.512j -0.   +0.j     0.   +0.j
+ [ 0.   +0.j    -0.   -0.j     0.093+0.579j  0.   +0.j    -0.   -0.j
    0.   +0.j   ]
- [-0.   +0.j    -0.   +0.j    -0.   -0.j    -0.131-0.512j  0.   -0.j
+ [ 0.   +0.j     0.   +0.j    -0.   -0.j     0.093-0.579j -0.   +0.j
    0.   -0.j   ]
- [ 0.   -0.j     0.   -0.j    -0.   -0.j     0.   -0.j     0.29 +0.237j
-  -0.   -0.j   ]
- [ 0.   +0.j     0.   +0.j    -0.   +0.j    -0.   +0.j    -0.   +0.j
-   0.29 -0.237j]]
+ [-0.   -0.j    -0.   -0.j     0.   +0.j     0.   -0.j    -0.581-0.j
+  -0.   +0.j   ]
+ [-0.   -0.j     0.   -0.j    -0.   -0.j    -0.   +0.j     0.   +0.j
+  -0.199+0.j   ]]
 </pre></div>
 </div>
 </div>
@@ -494,11 +494,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 89.52302037 107.10530654  92.48666678 ...  93.31419104  95.32151423
-  96.06577706]
-100.15770178837037
-10.009830463423983
-100.19670590649078
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[121.97418098  99.57106201  91.12996681 ...  95.07097671  84.7125746
+  96.40654763]
+100.1141188568369
+9.963493117044143
+99.271195093386
 </pre></div>
 </div>
 </div>
@@ -531,9 +531,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100.05434473826512
-9.835657542358707
-96.7401592905577
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.9083901825759
+10.234813947659255
+104.7514165432004
 </pre></div>
 </div>
 </div>
@@ -569,7 +569,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.  3.5 4.3 4.9 5.9 6.4 7.4 8.  8.4 9.1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.3 0.8 2.2 2.6 3.4 4.6 4.7 7.7 8.  9.8]
 </pre></div>
 </div>
 </div>
@@ -609,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.99846922 1.94272764]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2.99817571 1.96845968]
 </pre></div>
 </div>
 </div>
@@ -628,7 +628,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.140448
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.138756
 </pre></div>
 </div>
 </div>
@@ -668,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1b638d1b6406be330489fed93410aa78f86ebf3124de680389b1c2fe68668ca3.png" src="../../_images/1b638d1b6406be330489fed93410aa78f86ebf3124de680389b1c2fe68668ca3.png" />
+<img alt="../../_images/54bebb1630600c0ea1e11a0b20854dd2de129be60940b5c368f7bdc7766c8b91.png" src="../../_images/54bebb1630600c0ea1e11a0b20854dd2de129be60940b5c368f7bdc7766c8b91.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -687,7 +687,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f8378aa811b7049aa14fcb1506c552e534312b28b9f34cae0cd902eae869c9f2.png" src="../../_images/f8378aa811b7049aa14fcb1506c552e534312b28b9f34cae0cd902eae869c9f2.png" />
+<img alt="../../_images/656421089f00c0d5035e2eefc1c0b55f90133f532a0bcd70dfe751154358de4f.png" src="../../_images/656421089f00c0d5035e2eefc1c0b55f90133f532a0bcd70dfe751154358de4f.png" />
 </div>
 </div>
 <center>

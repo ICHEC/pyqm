@@ -1,4 +1,4 @@
-# Week 4 Contents
+# Week 4: Numpy
 
 ## 4.1 - Numpy Basics - [[Notebook]](./notebooks/pyqm-4.1-numpy-basics.ipynb) - [[Video]](https://www.youtube.com/watch?v=508EUmhzjPs)
 
@@ -32,3 +32,10 @@
 - Polynomials
 - Data Analysis
 - I/O
+
+## 4.5 [Cheatsheet](./notebooks/pyqm-4.5-cheatsheet.ipynb)
+
+## 4.6 [Tutorial](PyQM_Tut.4_sol.ipynb) 
+
+## 4.7 [Exercises ](PyQM_Ex.4_sol.ipynb)
+

@@ -1,4 +1,4 @@
-# Week 6 Contents
+# Week 6: SciPy
 
 ## 6.1 - Scipy Linear Algebra - [[Notebook]](./notebooks/pyqm-6.1-scipy-linear-algebra.ipynb) - [[Video]](https://youtu.be/EQWi8rliCqY)
 
@@ -37,3 +37,9 @@
 - ODE
 - Finite Difference Method
 - PDE
+
+## 6.5 [Cheatsheet](./notebooks/pyqm-6.6-cheatsheet.ipynb)
+
+## 6.6 [Tutorial](PyQM_Tut.6_sol.ipynb)
+
+## 6.7 [Exercises](PyQM_Ex.6_sol.ipynb)

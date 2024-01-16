@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 4 Contents &#8212; Lecture Notes from ICHEC</title>
+    <title>Week 4: Numpy &#8212; Lecture Notes from ICHEC</title>
   
   
   
@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week4/README';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Week 5 Contents" href="../pyqm-week5/README.html" />
+    <link rel="next" title="Week 5: Matplotlib" href="../pyqm-week5/README.html" />
     <link rel="prev" title="Week 3: Functions and Classes" href="../pyqm-week3/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,9 +181,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week1/README.html">Week 1: Variables, data structures, and operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week2/README.html">Week 2: Flow control, comprehensions and file operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week3/README.html">Week 3: Functions and Classes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 4 Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyqm-week5/README.html">Week 5 Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../pyqm-week6/README.html">Week 6 Contents</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 4: Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqm-week5/README.html">Week 5: Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqm-week6/README.html">Week 6: SciPy</a></li>
 </ul>
 
     </div>
@@ -322,7 +322,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 4 Contents</h1>
+    <h1>Week 4: Numpy</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -336,6 +336,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-creation-manipulation-notebook-video">4.2 - Numpy Array Creation &amp; Manipulation - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-linear-algebra-notebook-video">4.3 - Numpy Linear Algebra - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-tools-notebook-video">4.4 - Numpy Tools - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">4.5 <span class="xref myst">Cheatsheet</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">4.6 <span class="xref myst">Tutorial</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.7 <span class="xref myst">Exercises </span></a></li>
 </ul>
             </nav>
         </div>
@@ -347,8 +350,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-4-contents">
-<h1>Week 4 Contents<a class="headerlink" href="#week-4-contents" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-4-numpy">
+<h1>Week 4: Numpy<a class="headerlink" href="#week-4-numpy" title="Permalink to this heading">#</a></h1>
 <section id="numpy-basics-notebook-video">
 <h2>4.1 - Numpy Basics - <a class="reference internal" href="notebooks/pyqm-4.1-numpy-basics.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://www.youtube.com/watch?v=508EUmhzjPs">[Video]</a><a class="headerlink" href="#numpy-basics-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -389,6 +392,15 @@ document.write(`
 <li><p>Data Analysis</p></li>
 <li><p>I/O</p></li>
 </ul>
+</section>
+<section id="cheatsheet">
+<h2>4.5 <a class="reference internal" href="notebooks/pyqm-4.5-cheatsheet.html"><span class="doc std std-doc">Cheatsheet</span></a><a class="headerlink" href="#cheatsheet" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="tutorial">
+<h2>4.6 <span class="xref myst">Tutorial</span><a class="headerlink" href="#tutorial" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="exercises">
+<h2>4.7 <span class="xref myst">Exercises </span><a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -436,7 +448,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Week 5 Contents</p>
+        <p class="prev-next-title">Week 5: Matplotlib</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -460,6 +472,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array-creation-manipulation-notebook-video">4.2 - Numpy Array Creation &amp; Manipulation - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-linear-algebra-notebook-video">4.3 - Numpy Linear Algebra - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-tools-notebook-video">4.4 - Numpy Tools - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">4.5 <span class="xref myst">Cheatsheet</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial">4.6 <span class="xref myst">Tutorial</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">4.7 <span class="xref myst">Exercises </span></a></li>
 </ul>
   </nav></div>
 
