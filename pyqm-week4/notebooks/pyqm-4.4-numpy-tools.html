@@ -180,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1: Variables, data structures, and operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2: Flow control, comprehensions and file operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3: Functions and Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../README.html">Week 4 Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6 Contents</a></li>
@@ -401,13 +401,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.27114795 0.53108868]
- [0.88323398 0.65963889]
- [0.39883719 0.44036459]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.12893214 0.21288021]
+ [0.89815109 0.07335584]
+ [0.31355822 0.33296547]] 
 
-[[27.11479455 53.10886754]
- [88.32339822 65.96388925]
- [39.88371914 44.03645908]] 
+[[12.89321422 21.2880208 ]
+ [89.81510935  7.33558396]
+ [31.35582237 33.29654699]] 
 </pre></div>
 </div>
 </div>
@@ -425,8 +425,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[105.64429139 103.86009    100.83562941 108.57101859 104.29082061
-  95.61642544 109.77416374 115.72413409 102.95454867 107.79350733] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 98.6816586  111.56924383 114.19877142  99.58753419 107.08875084
+ 107.8999551   96.99296198 100.01533194  93.9672734   97.96387857] 
 </pre></div>
 </div>
 </div>
@@ -448,9 +448,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9] 
 
-[7 2 5 4 3 8 4 0 7 7 7 5 2 2 6 8 5 7 4 7 5 9 7 6 6 7 8 4 8 3 4 1 7 6 0 7 0
- 5 7 7 2 4 5 2 7 9 2 2 8 3 2 4 1 4 3 6 2 4 5 4 8 4 2 1 8 6 4 6 2 2 6 5 0 7
- 1 3 3 5 4 6 9 9 8 0 2 8 1 1 6 6 2 7 4 3 2 9 6 9 2 4]
+[5 3 3 6 6 4 8 7 5 0 6 1 9 2 4 9 5 0 5 8 3 5 5 1 3 9 6 2 0 4 9 7 7 5 0 9 4
+ 1 3 1 6 8 4 0 9 1 5 7 4 5 9 5 3 6 6 8 4 9 4 5 9 3 7 2 2 2 8 2 2 8 0 7 0 0
+ 8 8 0 2 1 0 5 3 1 3 9 9 3 4 9 5 6 6 4 7 7 6 0 5 6 7]
 </pre></div>
 </div>
 </div>
@@ -635,11 +635,11 @@ $<span class="math notranslate nohighlight">\( x^2+4x-2\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [ 7.38137980e-03 -9.60355155e-02  8.06343088e+00] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [0.07917942 0.09633993 2.74117048] 
 
-c[0] =  0.007381379804638375
-c[1] =  -0.09603551554781611
-c[2] =  8.06343088125133
+c[0] =  0.07917942426628385
+c[1] =  0.09633992508161147
+c[2] =  2.7411704803053696
 </pre></div>
 </div>
 </div>
@@ -656,13 +656,13 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[78.68271481 21.26424498]
- [94.12523188 67.45121903]
- [68.68843001 80.31049936]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[88.10306568  3.53086333]
+ [39.85624476  5.89598668]
+ [28.6452004  19.77533823]
  ...
- [ 9.69865155  1.24930277]
- [82.79396552 18.92966661]
- [58.63137014 46.26003281]]
+ [20.37783969 34.93848392]
+ [83.24816845  1.42194904]
+ [74.01253224 62.37163353]]
 </pre></div>
 </div>
 </div>
@@ -676,7 +676,7 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.83037691327781
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.46157126058635
 </pre></div>
 </div>
 </div>
@@ -690,7 +690,7 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.36460911811047
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29.00778848033499
 </pre></div>
 </div>
 </div>
@@ -704,7 +704,7 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>804.5510504231955
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>841.4517925198554
 </pre></div>
 </div>
 </div>
@@ -718,7 +718,7 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.08592492500816284
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.12440702276453885
 </pre></div>
 </div>
 </div>
@@ -732,7 +732,7 @@ c[2] =  8.06343088125133
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.96281611998282
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.94816107188319
 </pre></div>
 </div>
 </div>
