@@ -1,4 +1,4 @@
-# Week 1: Overview
+# Week 1: Variables, data structures, and operations
 
 ## 1.1 - Variables - [Notebook](./notebooks/pyqm-1.1-variables.ipynb) - [Video](https://youtu.be/dU8NKvAxcnE)
 

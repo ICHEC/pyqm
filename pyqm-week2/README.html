@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Week 2 Contents &#8212; Lecture Notes from ICHEC</title>
+    <title>Week 2: Flow control, comprehensions and file operations &#8212; Lecture Notes from ICHEC</title>
   
   
   
@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Week 3 Contents" href="../pyqm-week3/README.html" />
-    <link rel="prev" title="Week 1: Overview" href="../pyqm-week1/README.html" />
+    <link rel="prev" title="Week 1: Variables, data structures, and operations" href="../pyqm-week1/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../pyqm-week1/README.html">Week 1: Overview</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pyqm-week1/README.html">Week 1: Variables, data structures, and operations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Week 2: Flow control, comprehensions and file operations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week3/README.html">Week 3 Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week4/README.html">Week 4 Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pyqm-week5/README.html">Week 5 Contents</a></li>
@@ -322,7 +322,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Week 2 Contents</h1>
+    <h1>Week 2: Flow control, comprehensions and file operations</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -335,6 +335,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-notebook-video">2.1 - Flow Control - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compact-code-notebook-video">2.2 - Compact Code - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-data-notebook-video">2.3 - External Data - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">2.4 - Cheatsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-tutorial-2">2.5 Tutorial <span class="xref myst">Tutorial 2</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-exercises-2">2.6 Exercise <span class="xref myst">Exercises 2</span></a></li>
 </ul>
             </nav>
         </div>
@@ -346,13 +349,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="week-2-contents">
-<h1>Week 2 Contents<a class="headerlink" href="#week-2-contents" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-2-flow-control-comprehensions-and-file-operations">
+<h1>Week 2: Flow control, comprehensions and file operations<a class="headerlink" href="#week-2-flow-control-comprehensions-and-file-operations" title="Permalink to this heading">#</a></h1>
 <section id="flow-control-notebook-video">
 <h2>2.1 - Flow Control - <a class="reference internal" href="notebooks/pyqm-2.1-flow-control.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://youtu.be/6IUQ12mOb1A">[Video]</a><a class="headerlink" href="#flow-control-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Conditional Statements(if,elif,else)</p></li>
-<li><p>Testing Code(try,except)</p></li>
+<li><p>Conditional Statements(if, elif, else)</p></li>
+<li><p>Testing Code (try, except)</p></li>
 <li><p>While loops</p></li>
 <li><p>Range</p></li>
 <li><p>Zip</p></li>
@@ -363,21 +366,49 @@ document.write(`
 <section id="compact-code-notebook-video">
 <h2>2.2 - Compact Code - <a class="reference internal" href="notebooks/pyqm-2.2-compact-code.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://youtu.be/JBFc9V6BcNY">[Video]</a><a class="headerlink" href="#compact-code-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>List Comprehensions</p></li>
-<li><p>Set Comprehensions</p></li>
-<li><p>Dictionary Comprehensions</p></li>
-<li><p>Generator Comprehensions</p></li>
+<li><p>One-line if and else</p></li>
+<li><p>Comprehensions</p>
+<ul>
+<li><p>list, set, dictionary and more</p></li>
+</ul>
+</li>
+<li><p>Generators</p></li>
+<li><p>Maps</p></li>
 </ul>
 </section>
 <section id="external-data-notebook-video">
 <h2>2.3 - External Data - <a class="reference internal" href="notebooks/pyqm-2.3-external-data.html"><span class="doc std std-doc">[Notebook]</span></a> - <a class="reference external" href="https://youtu.be/Pjl23pFmk_w">[Video]</a><a class="headerlink" href="#external-data-notebook-video" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Inputting from the terminal/command line</p></li>
-<li><p>Copying files</p></li>
-<li><p>Reading files</p></li>
-<li><p>Writing files</p></li>
-<li><p>Creating files</p></li>
+<li><p>Basic user input</p></li>
+<li><p>Opening, closing and creating file</p></li>
+<li><p>Reading and writing files</p></li>
 </ul>
+</section>
+<section id="cheatsheet">
+<h2>2.4 - Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="tutorial-tutorial-2">
+<h2>2.5 Tutorial <span class="xref myst">Tutorial 2</span><a class="headerlink" href="#tutorial-tutorial-2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Convert Decimal To Ten Bit Binary String</p></li>
+<li><p>For Loops, Sequence Sum</p></li>
+<li><p>While Loops, Reverse A Number</p></li>
+<li><p>List Comprehensions</p></li>
+<li><p>DNA</p></li>
+<li><p>Collatz Conjecture</p></li>
+<li><p>Fizz Buzz</p></li>
+</ol>
+</section>
+<section id="exercise-exercises-2">
+<h2>2.6 Exercise <span class="xref myst">Exercises 2</span><a class="headerlink" href="#exercise-exercises-2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Decimal To/From Binary</p></li>
+<li><p>Balmer Lines</p></li>
+<li><p>Quantum Quibit Gates</p></li>
+<li><p>How many days left do you have to live?</p></li>
+<li><p>Rotating Vectors In 2-Dimensions</p></li>
+<li><p>Quantum Quibit State Normalisation</p></li>
+</ol>
 </section>
 </section>
 
@@ -417,7 +448,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Week 1: Overview</p>
+        <p class="prev-next-title">Week 1: Variables, data structures, and operations</p>
       </div>
     </a>
     <a class="right-next"
@@ -448,6 +479,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-control-notebook-video">2.1 - Flow Control - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compact-code-notebook-video">2.2 - Compact Code - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-data-notebook-video">2.3 - External Data - <span class="xref myst">[Notebook]</span> - [Video]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cheatsheet">2.4 - Cheatsheet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-tutorial-2">2.5 Tutorial <span class="xref myst">Tutorial 2</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-exercises-2">2.6 Exercise <span class="xref myst">Exercises 2</span></a></li>
 </ul>
   </nav></div>
 
