@@ -1,0 +1,1253 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python For Quantum Mechanics &#8212; Lecture Notes from ICHEC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week6/notebooks/pyqm-6.1-scipy-linear-algebra';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Lecture Notes from ICHEC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes from ICHEC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Description
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week4/README.html">Week 4 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 6 Contents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pyqm-week6/notebooks/pyqm-6.1-scipy-linear-algebra.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python For Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-linear-algebra">Week 6: Linear Algebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-functions">Matrix Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-decomposition">Spectral Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-matrices">Special Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-matrix">Sparse Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-exponential">Matrix Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-matrix">Unitary Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-product">Tensor Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-square-fit">Least Square Fit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition">Singular Value Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schur-decomposition">Schur Decomposition</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
+<h1>Python For Quantum Mechanics<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-6-linear-algebra">
+<h1>Week 6: Linear Algebra<a class="headerlink" href="#week-6-linear-algebra" title="Permalink to this heading">#</a></h1>
+</center><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;EQWi8rliCqY&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="700"
+            height="400"
+            src="https://www.youtube.com/embed/EQWi8rliCqY"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rnd</span>
+
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">scipy</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may be wondering why we are diving into another linear algebra library considering we have already studied <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code>. Simply put, <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> contains everything that <code class="docutils literal notranslate"><span class="pre">numpy.linalg</span></code> does but offers additional functionality. It is used in conjuction with numpy ndarrays.</p>
+<section id="linear-systems">
+<h2>Linear Systems<a class="headerlink" href="#linear-systems" title="Permalink to this heading">#</a></h2>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">scipy.linalg.solve()</span></code> to solve, for <span class="math notranslate nohighlight">\(\bf{x}\)</span>, linear systems of the form
+$<span class="math notranslate nohighlight">\( A x = b \)</span><span class="math notranslate nohighlight">\(
+where \)</span>A<span class="math notranslate nohighlight">\( is a matrix, \)</span>x<span class="math notranslate nohighlight">\( and \)</span>b$ are vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">6</span><span class="p">],[</span><span class="mi">12</span><span class="p">],[</span><span class="mi">18</span><span class="p">]])</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[1 0 2]
+ [0 1 2]
+ [2 1 0]] 
+
+b =  [[ 6]
+ [12]
+ [18]] 
+
+x =  [[ 4.]
+ [10.]
+ [ 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can can also solve systems of the form</p>
+<div class="math notranslate nohighlight">
+\[ A X = B \]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(X\)</span>, and <span class="math notranslate nohighlight">\(B\)</span> are all matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">6</span><span class="p">],[</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">],[</span><span class="mi">18</span><span class="p">,</span><span class="mi">36</span><span class="p">,</span><span class="o">-</span><span class="mi">18</span><span class="p">]]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b = &#39;</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;seismic&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[1 0 2]
+ [0 1 2]
+ [2 1 0]] 
+
+b =  [[6, 3, -6], [12, 6, -12], [18, 36, -18]] 
+
+x =  [[  4.  11.  -4.]
+ [ 10.  14. -10.]
+ [  1.  -4.  -1.]]
+</pre></div>
+</div>
+<img alt="../../_images/a994e83cbe7e80bb10396f213d5fba01bb6f49a0bf4fd4b99b5f7279cc226d0b.png" src="../../_images/a994e83cbe7e80bb10396f213d5fba01bb6f49a0bf4fd4b99b5f7279cc226d0b.png" />
+</div>
+</div>
+</section>
+<section id="matrix-functions">
+<h2>Matrix Functions<a class="headerlink" href="#matrix-functions" title="Permalink to this heading">#</a></h2>
+<p>The function <code class="docutils literal notranslate"><span class="pre">scipy.linalg.inv(A)</span></code> computes the inverse of a matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A^-1 = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.90793703 0.02559281 0.5592616 ]
+ [0.87148729 0.78115408 0.52119322]
+ [0.96424101 0.62373748 0.30683951]] 
+
+A^-1 =  [[ 0.45241273 -1.80638908  2.24371588]
+ [-1.24573705  1.38094825 -0.07511405]
+ [ 1.11060663  2.8693999  -3.63913836]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">scipy.linalg.det(A)</span></code> computes the determinant of a matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;det(A) = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  -0.18876306479783114
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another function, <code class="docutils literal notranslate"><span class="pre">scipy.linalg.norm(A,</span> <span class="pre">ord=2)</span></code> computes the modulus of order <code class="docutils literal notranslate"><span class="pre">ord</span></code>. If <code class="docutils literal notranslate"><span class="pre">ord</span></code> <span class="math notranslate nohighlight">\(=\)</span> <code class="docutils literal notranslate"><span class="pre">np.inf</span></code>, then the maximum value in <span class="math notranslate nohighlight">\(A\)</span> is given. If <code class="docutils literal notranslate"><span class="pre">ord</span></code> <span class="math notranslate nohighlight">\(=\)</span> <code class="docutils literal notranslate"><span class="pre">-np.inf</span></code>, then the minimum value in <code class="docutils literal notranslate"><span class="pre">A</span></code> is given.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;norm(A,ord=1) = 4 + 3 + 1 + 2 + 2 + 1 + 1 = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;norm(A,ord=2) = (4**2 + 3**2 + 1**2 + 2**2 + 2**2 + 1**2 + 1**2)**(1/2) = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;norm(A,ord=3) = (4**3 + 3**3 + 1**3 + 2**3 + 2**3 + 1**3 + 1**3)**(1/3) = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;norm(A,ord=-np.inf) = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;norm(A,ord=np.inf) = &#39;</span><span class="p">,</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="nb">ord</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>norm(A,ord=1) = 4 + 3 + 1 + 2 + 2 + 1 + 1 =  14.0
+norm(A,ord=2) = (4**2 + 3**2 + 1**2 + 2**2 + 2**2 + 1**2 + 1**2)**(1/2) =  6.0
+norm(A,ord=3) = (4**3 + 3**3 + 1**3 + 2**3 + 2**3 + 1**3 + 1**3)**(1/3) =  4.791419857062784
+norm(A,ord=-np.inf) =  1.0
+norm(A,ord=np.inf) =  4.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="spectral-decomposition">
+<h2>Spectral Decomposition<a class="headerlink" href="#spectral-decomposition" title="Permalink to this heading">#</a></h2>
+<p>We can represent a matrix in terms of it’s eigenvectors and eigenvalues, or in other words, perform a spectral decomposition; <code class="docutils literal notranslate"><span class="pre">scipy.linalg.eig(A)</span></code> can be used to achive this by computing the eigenvalues and eigenvectors of <code class="docutils literal notranslate"><span class="pre">A</span></code>, giving a tuple.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">eigval</span><span class="p">,</span> <span class="n">eigvec</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eigenvalues = &#39;</span><span class="p">,</span><span class="n">eigval</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eigenvector Matrix = &#39;</span><span class="p">,</span><span class="n">eigvec</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;First Eigenvector = &#39;</span><span class="p">,</span><span class="n">eigvec</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalues =  [ 1.35389788+0.j        -0.04622396+0.2803132j -0.04622396-0.2803132j] 
+
+Eigenvector Matrix =  [[ 0.68257443+0.j          0.75080429+0.j          0.75080429-0.j        ]
+ [ 0.71906777+0.j         -0.48821975-0.19373787j -0.48821975+0.19373787j]
+ [ 0.13051318+0.j         -0.0674027 +0.39478716j -0.0674027 -0.39478716j]] 
+
+First Eigenvector =  [0.68257443+0.j 0.71906777+0.j 0.13051318+0.j] 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="special-matrices">
+<h2>Special Matrices<a class="headerlink" href="#special-matrices" title="Permalink to this heading">#</a></h2>
+<p>Scipy supports the creation of special matrices that are commonly used. A full list can be found at <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html">https://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html</a>.</p>
+<p>For example, we can create a Hadamard matrix of order <code class="docutils literal notranslate"><span class="pre">n</span></code> using <code class="docutils literal notranslate"><span class="pre">scipy.linalg.hadamard(n)</span></code>. The integer <code class="docutils literal notranslate"><span class="pre">n</span></code> must be a power of <span class="math notranslate nohighlight">\(2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">hadamard</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  1]
+ [ 1 -1]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">hadamard</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;winter&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" src="../../_images/12f7a5618269af30e07aa0beebe995ec1e6a8a5859716003e24eea32cf9fa35c.png" />
+</div>
+</div>
+</section>
+<section id="sparse-matrix">
+<h2>Sparse Matrix<a class="headerlink" href="#sparse-matrix" title="Permalink to this heading">#</a></h2>
+<p>A sparse matrix (loosely defined) is a matrix with a many zero elements. When dealing with large sparse matrices it is extrememly useful to take advantage of their sparseness and the memory requirements, speeding-up our code. To convert from a memory dense matrix to a memory sparse matrix we use <code class="docutils literal notranslate"><span class="pre">scipy.sparse.csr_matrix(A)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">A</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 1]
+ [2 0 0]
+ [0 3 0]] 
+
+&lt;class &#39;scipy.sparse.csr.csr_matrix&#39;&gt; 
+
+  (0, 2)	1
+  (1, 0)	2
+  (2, 1)	3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that each tuple corrseonds to the element location. We can conceivably represent any matrix in this form, but clearly this would be less efficient for non-sparse matrices. We can perform the standard matrix operations with sparse matrices as shown below. To convert back to a dense matrix, we use the <code class="docutils literal notranslate"><span class="pre">A.todense()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="n">A</span><span class="o">+</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="n">A</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">A</span><span class="p">))</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">]])</span>
+
+<span class="nb">print</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="n">vec</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 1]
+ [2 0 0]
+ [0 3 0]] 
+
+[[0 0 2]
+ [4 0 0]
+ [0 6 0]] 
+
+[[0 3 0]
+ [0 0 2]
+ [6 0 0]] 
+
+[[0 3 0]
+ [0 0 2]
+ [6 0 0]] 
+
+  (0, 2)	1
+  (1, 0)	2
+  (2, 1)	3 
+
+[[3]
+ [2]
+ [6]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is also useful to initialise an empty sparse matrix and then populate it with non-zero elements with <code class="docutils literal notranslate"><span class="pre">scipy.sparse.lil_matrix((n,m))</span></code>. This saves us from creating a very large matrix with many zeros in the first place.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1">#Empty 3x3 sparse matrix</span>
+
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">A</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  (0, 0)	1.0
+  (0, 1)	2.0
+  (2, 0)	7.0
+  (2, 2)	1.0 
+
+[[1. 2. 0.]
+ [0. 0. 0.]
+ [7. 0. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="matrix-exponential">
+<h2>Matrix Exponential<a class="headerlink" href="#matrix-exponential" title="Permalink to this heading">#</a></h2>
+<p>The matrix exponential of a matrix <span class="math notranslate nohighlight">\(A\)</span> is written as</p>
+<div class="math notranslate nohighlight">
+\[ \exp (A) = e^{A} = \sum_{k=0}^{\infty} \frac{1}{k!}A^k . \]</div>
+<p>This seems like a monumental task but it can easily be achieved with <code class="docutils literal notranslate"><span class="pre">scipy.linalg.expm(A)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">*</span><span class="n">linalg</span><span class="o">.</span><span class="n">hadamard</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">expA</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">expA</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.5  0.5  0.5  0.5]
+ [ 0.5 -0.5  0.5 -0.5]
+ [ 0.5  0.5 -0.5 -0.5]
+ [ 0.5 -0.5 -0.5  0.5]] 
+
+[[ 2.13068123  0.5876006   0.5876006   0.5876006 ]
+ [ 0.5876006   0.95548004  0.5876006  -0.5876006 ]
+ [ 0.5876006   0.5876006   0.95548004 -0.5876006 ]
+ [ 0.5876006  -0.5876006  -0.5876006   2.13068123]] 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Also we can verify that
+$<span class="math notranslate nohighlight">\( \exp \left(A^T\right) = \exp \left(A\right)^T \)</span><span class="math notranslate nohighlight">\(
+and
+\)</span><span class="math notranslate nohighlight">\( \exp \left(A^\dagger \right) = \exp \left(A \right)^\dagger \)</span>$
+up to a computational error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="p">)))</span><span class="o">.</span><span class="n">H</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">H</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Q</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]] 
+
+[[ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]] 
+</pre></div>
+</div>
+</div>
+</div>
+<p>One key point with matrices is that if <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> do not commute,
+$<span class="math notranslate nohighlight">\(AB \neq BA \iff [A,B]= AB -BA \neq0.\)</span><span class="math notranslate nohighlight">\(
+then
+\)</span><span class="math notranslate nohighlight">\( e^A e^B \neq e^{A+B}.\)</span>$</p>
+<p>But if
+$<span class="math notranslate nohighlight">\([A,B]= AB -BA =0\)</span><span class="math notranslate nohighlight">\(
+then
+\)</span><span class="math notranslate nohighlight">\(e^Ae^B = e^{A+B}. \)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1"># These matrices commute</span>
+
+<span class="n">EA</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="nd">@linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">EA</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="c1"># These matrices do not commute</span>
+
+<span class="n">EA</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="nd">@linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">==</span> <span class="n">linalg</span><span class="o">.</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">EA</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ True  True]
+ [ True  True]] 
+
+[[False False]
+ [False False]] 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="unitary-matrix">
+<h2>Unitary Matrix<a class="headerlink" href="#unitary-matrix" title="Permalink to this heading">#</a></h2>
+<p>A Unitary Matrix is defined as a matrix that satisfies the following equation,
+$<span class="math notranslate nohighlight">\(AA^{\dagger} =  A^{\dagger}A = \mathbb{1}\)</span><span class="math notranslate nohighlight">\(
+where \)</span>\mathbb{1}<span class="math notranslate nohighlight">\( is the identity matrix. In other words the Hermitian conjugate of the matrix is it's multiplicative inverse,
+\)</span><span class="math notranslate nohighlight">\(A^{-1} = A^\dagger\)</span>$
+The Hadamard gate is unitary as we see below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="o">*</span><span class="n">linalg</span><span class="o">.</span><span class="n">hadamard</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">H</span><span class="o">==</span><span class="n">A</span><span class="o">.</span><span class="n">H</span><span class="o">*</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">H</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 0.5  0.5  0.5  0.5]
+ [ 0.5 -0.5  0.5 -0.5]
+ [ 0.5  0.5 -0.5 -0.5]
+ [ 0.5 -0.5 -0.5  0.5]] 
+
+[[ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]
+ [ True  True  True  True]] 
+
+[[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]] 
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also generate a random unitary matrix, of dimension <code class="docutils literal notranslate"><span class="pre">n</span></code>, using <code class="docutils literal notranslate"><span class="pre">scipy.stats.unitary_group.rvs(n)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">unitary_group</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="n">U</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">)),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">U</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">U</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">U</span><span class="o">.</span><span class="n">H</span><span class="o">*</span><span class="n">U</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.+0.j  0.-0.j  0.+0.j  0.+0.j]
+ [ 0.+0.j  1.+0.j -0.+0.j  0.-0.j]
+ [ 0.-0.j -0.-0.j  1.+0.j  0.+0.j]
+ [ 0.-0.j  0.+0.j  0.-0.j  1.+0.j]] 
+
+[[ 0.038+0.194j  0.672+0.188j -0.314+0.106j -0.338+0.501j]
+ [-0.653-0.313j  0.144+0.286j  0.472+0.305j  0.137+0.194j]
+ [ 0.154-0.329j -0.142+0.047j  0.207-0.683j  0.024+0.58j ]
+ [ 0.439-0.334j  0.564+0.265j  0.227-0.118j  0.257-0.42j ]] 
+
+[[ 1.+0.j  0.+0.j -0.+0.j -0.+0.j]
+ [ 0.-0.j  1.+0.j  0.+0.j  0.+0.j]
+ [-0.+0.j  0.-0.j  1.+0.j -0.+0.j]
+ [-0.-0.j  0.-0.j -0.-0.j  1.+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tensor-product">
+<h2>Tensor Product<a class="headerlink" href="#tensor-product" title="Permalink to this heading">#</a></h2>
+<p>In the function <code class="docutils literal notranslate"><span class="pre">scipy.sparse.kron(A,B)</span></code> the matrices/vectors <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">B</span></code> can be sparse or dense. The tensor product is computed as a sparse matrix. The tensor product of two <span class="math notranslate nohighlight">\(2\times2\)</span> matrices <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A = 
+\begin{pmatrix}
+a_{11} &amp; a_{12} \\ 
+a_{21} &amp; a_{22}
+\end{pmatrix}, 
+\ \ \ \ 
+B = 
+\begin{pmatrix}
+b_{11} &amp; b_{12} \\ 
+b_{21} &amp; b_{22}
+\end{pmatrix},\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} A \otimes B = 
+\begin{pmatrix}
+a_{11} B &amp; a_{12} B \\ 
+a_{21} B &amp; a_{22} B
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} \begin{pmatrix}
+b_{11} &amp; b_{12} \\ 
+b_{21} &amp; b_{22}
+\end{pmatrix} &amp; a_{12} \begin{pmatrix}
+b_{11} &amp; b_{12} \\ 
+b_{21} &amp; b_{22}
+\end{pmatrix} \\ 
+a_{21} \begin{pmatrix}
+b_{11} &amp; b_{12} \\ 
+b_{21} &amp; b_{22}
+\end{pmatrix} &amp; a_{22} \begin{pmatrix}
+b_{11} &amp; b_{12} \\ 
+b_{21} &amp; b_{22}
+\end{pmatrix}
+\end{pmatrix} = 
+\begin{pmatrix}
+a_{11} b_{11} &amp; a_{11} b_{12} &amp; a_{12} b_{11} &amp; a_{12} b_{12} \\ 
+a_{11} b_{21} &amp; a_{11} b_{22} &amp; a_{12} b_{21} &amp; a_{12} b_{22} \\ 
+a_{21} b_{11} &amp; a_{21} b_{12} &amp; a_{22} b_{11} &amp; a_{22} b_{12} \\ 
+a_{21} b_{21} &amp; a_{21} b_{22} &amp; a_{22} b_{21} &amp; a_{22} b_{22}
+\end{pmatrix}.\end{split}\]</div>
+<p>The sucture is similar for differently shaped matrices and vectors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="n">result_dense</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result dense = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">result_dense</span><span class="o">.</span><span class="n">todense</span><span class="p">(),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">csr_matrix</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+<span class="n">result_sparse</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">kron</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Result sparse = </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">result_sparse</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Result dense = 
+ [[ 1  2 -2 -4]
+ [ 3  4 -6 -8]
+ [-1 -2  2  4]
+ [-3 -4  6  8]] 
+
+Result sparse = 
+ [[ 1  2 -2 -4]
+ [ 3  4 -6 -8]
+ [-1 -2  2  4]
+ [-3 -4  6  8]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="least-square-fit">
+<h2>Least Square Fit<a class="headerlink" href="#least-square-fit" title="Permalink to this heading">#</a></h2>
+<p>The package <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> also supports least-square fitting, a method that fits data points to a curve. The relavent function is <code class="docutils literal notranslate"><span class="pre">scipy.linalg.lstsq(A,</span> <span class="pre">c)</span></code>. To demonstrate how this works, we are going to use this function to approximate the values of <span class="math notranslate nohighlight">\(c_1\)</span> and <span class="math notranslate nohighlight">\(c_2\)</span> in the following function
+$<span class="math notranslate nohighlight">\( y = c_1 x^2 + c_2 x.\)</span><span class="math notranslate nohighlight">\(
+We will generate data points by adding noise to this function for certain values of \)</span>c_1<span class="math notranslate nohighlight">\( and \)</span>c_2<span class="math notranslate nohighlight">\(. We will then then try to fit the noisy data with `scipy.linalg.lstsq(A, c)`, comparing our approximate values of \)</span>c_i$ to the actual values.</p>
+<p>Lets set
+$<span class="math notranslate nohighlight">\( c_1 = 0.5\)</span><span class="math notranslate nohighlight">\( and \)</span><span class="math notranslate nohighlight">\( c_2 = 2.0\)</span><span class="math notranslate nohighlight">\(
+\)</span>A<span class="math notranslate nohighlight">\( is a matrix of the set of functions, of \)</span>x<span class="math notranslate nohighlight">\(, describing \)</span>y<span class="math notranslate nohighlight">\(. So in this case
+\)</span><span class="math notranslate nohighlight">\( A = [x^2,x]\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.0</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">c1</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">noise</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+
+<span class="n">c</span><span class="p">,</span> <span class="n">resid</span><span class="p">,</span> <span class="n">rank</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">lstsq</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+
+<span class="n">y2</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">noise</span><span class="p">,</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f31d3e43a42bf691318620629ef823ed352a08b52cb162f87e54fa4289fa674b.png" src="../../_images/f31d3e43a42bf691318620629ef823ed352a08b52cb162f87e54fa4289fa674b.png" />
+</div>
+</div>
+</section>
+<section id="singular-value-decomposition">
+<h2>Singular Value Decomposition<a class="headerlink" href="#singular-value-decomposition" title="Permalink to this heading">#</a></h2>
+<p>Singular value decomposition is an extension of the eigenvalue, eigenvector problem to non-square matrices. The following matrices, and vector, are generated using <code class="docutils literal notranslate"><span class="pre">scipy.linalg.svd()</span></code>
+$<span class="math notranslate nohighlight">\( A = USv, \)</span><span class="math notranslate nohighlight">\(
+where \)</span>A<span class="math notranslate nohighlight">\( is a non-square matrix, \)</span>U<span class="math notranslate nohighlight">\( is a square matrix, \)</span>S<span class="math notranslate nohighlight">\( is a diagonal matrix, and \)</span>v$ is a vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">U</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;U = &#39;</span><span class="p">,</span><span class="n">U</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diagonal Elements = &#39;</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v = &#39;</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">lil_matrix</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">D</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S = &#39;</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">U</span><span class="o">*</span><span class="n">S</span><span class="o">*</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.27802483 0.07730829]
+ [0.40778902 0.28641229]
+ [0.37630991 0.45691064]] 
+
+U =  [[-0.32224029  0.7448934   0.5842046 ]
+ [-0.61281111  0.30623129 -0.72848125]
+ [-0.72154261 -0.59275308  0.35779889]] 
+
+Diagonal Elements =  [0.80891983 0.16620306] 
+
+v =  [[-0.75534318 -0.65532944]
+ [ 0.65532944 -0.75534318]] 
+
+S =  [[0.80891983 0.        ]
+ [0.         0.16620306]
+ [0.         0.        ]] 
+
+A =  [[0.27802483 0.07730829]
+ [0.40778902 0.28641229]
+ [0.37630991 0.45691064]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="schur-decomposition">
+<h2>Schur Decomposition<a class="headerlink" href="#schur-decomposition" title="Permalink to this heading">#</a></h2>
+<p>The Schur Decomposition of <span class="math notranslate nohighlight">\(n\times n\)</span> matrices gives said matices in the form
+$<span class="math notranslate nohighlight">\(A = Z T Z^\dagger \)</span>$</p>
+<p>Where <span class="math notranslate nohighlight">\(Z\)</span> is a unitary matrix, and <span class="math notranslate nohighlight">\(T\)</span> is an upper-triangular(or quasi-upper) matrix. We can request these matrices in a real or complex form using <code class="docutils literal notranslate"><span class="pre">scipy.linalg.schur(A)</span></code> and <code class="docutils literal notranslate"><span class="pre">scipy.linalg.schur(A,'complex')</span></code> or by using <code class="docutils literal notranslate"><span class="pre">scipy.linalg.rsf2csf(A)</span></code> for the complex form.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">rnd</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">T</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">schur</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">Tc</span><span class="p">,</span> <span class="n">Zc</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">schur</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span>
+
+<span class="n">T</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">Tc</span><span class="p">,</span> <span class="n">Zc</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">,(</span><span class="n">T</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span> <span class="n">Tc</span><span class="p">,</span> <span class="n">Zc</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">Z</span><span class="o">*</span><span class="n">T</span><span class="o">*</span><span class="n">Z</span><span class="o">.</span><span class="n">H</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A = &#39;</span><span class="p">,</span><span class="n">Zc</span><span class="o">*</span><span class="n">Tc</span><span class="o">*</span><span class="n">Zc</span><span class="o">.</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A =  [[0.55969869 0.98122334 0.22619461]
+ [0.24530843 0.08993176 0.0456872 ]
+ [0.56829763 0.60138912 0.74087103]] 
+
+A =  [[0.55969869 0.98122334 0.22619461]
+ [0.24530843 0.08993176 0.0456872 ]
+ [0.56829763 0.60138912 0.74087103]] 
+
+A =  [[0.55969869+0.j 0.98122334+0.j 0.22619461+0.j]
+ [0.24530843+0.j 0.08993176+0.j 0.0456872 +0.j]
+ [0.56829763+0.j 0.60138912+0.j 0.74087103+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;T = &#39;</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>T =  [[ 1.20294251  0.52355708 -0.74209033]
+ [ 0.          0.40923817 -0.37762384]
+ [ 0.          0.         -0.2216792 ]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Z = &#39;</span><span class="p">,</span><span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Z =  [[ 0.52346561  0.78998514  0.31922913]
+ [ 0.1498025   0.28349598 -0.94720074]
+ [ 0.83877468 -0.54364834 -0.03005865]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pyqm-week6/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-linear-algebra">Week 6: Linear Algebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-systems">Linear Systems</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-functions">Matrix Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spectral-decomposition">Spectral Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-matrices">Special Matrices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-matrix">Sparse Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrix-exponential">Matrix Exponential</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unitary-matrix">Unitary Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-product">Tensor Product</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#least-square-fit">Least Square Fit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#singular-value-decomposition">Singular Value Decomposition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schur-decomposition">Schur Decomposition</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ICHEC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2022
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

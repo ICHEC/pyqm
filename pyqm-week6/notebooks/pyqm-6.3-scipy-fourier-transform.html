@@ -1,0 +1,1010 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python For Quantum Mechanics &#8212; Lecture Notes from ICHEC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week6/notebooks/pyqm-6.3-scipy-fourier-transform';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Lecture Notes from ICHEC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes from ICHEC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Description
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week4/README.html">Week 4 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 6 Contents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pyqm-week6/notebooks/pyqm-6.3-scipy-fourier-transform.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python For Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-scipy-fourier-transform">Week 6: Scipy Fourier Transform</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fourier-transform">The Fourier Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet">Wave Packet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncertainty-principle">The Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-fourier-transform">Quantum Fourier Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-qubit">Single Qubit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-qubits">Multiple Qubits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bloch-sphere">The Bloch Sphere</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
+<h1>Python For Quantum Mechanics<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-6-scipy-fourier-transform">
+<h1>Week 6: Scipy Fourier Transform<a class="headerlink" href="#week-6-scipy-fourier-transform" title="Permalink to this heading">#</a></h1>
+</center><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;c5uvMbymfvQ&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="700"
+            height="400"
+            src="https://www.youtube.com/embed/c5uvMbymfvQ"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+<span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span><span class="p">,</span> <span class="n">fftshift</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">scipy</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">scipy.linalg</span> <span class="k">as</span> <span class="nn">linalg</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span><span class="p">,</span> <span class="n">fftshift</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="the-fourier-transform">
+<h2>The Fourier Transform<a class="headerlink" href="#the-fourier-transform" title="Permalink to this heading">#</a></h2>
+<p>The Fourier transform changes a singnal into the frequencies of the waves that it make up. To transform a signal <span class="math notranslate nohighlight">\(f(t)\)</span>, we use the formula
+$<span class="math notranslate nohighlight">\( \hat{f}(\omega) = \int_{-\infty}^{+\infty}f(t)e^{-2\pi i \omega t}dt.\)</span>$</p>
+<p>Scipy makes use of the discretised Fourier Transform:
+$<span class="math notranslate nohighlight">\(\hat{f}_\omega = \sum_{n=0}^{N-1}f_n e^{-2\pi i \omega \frac{n}{N} }\)</span><span class="math notranslate nohighlight">\(
+where \)</span>f_n<span class="math notranslate nohighlight">\( is the n-th element of an array of size \)</span>N<span class="math notranslate nohighlight">\(, and \)</span>\hat{f}_\omega<span class="math notranslate nohighlight">\( is a new resulting array, of the same size, with each element dependent on the value of \)</span>\omega$.</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">steps</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">15.0</span><span class="p">,</span><span class="mf">20.0</span><span class="p">]</span>
+
+<span class="n">signal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">wi</span> <span class="ow">in</span> <span class="n">w</span><span class="p">:</span>
+    <span class="n">signal</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">wi</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">noise</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/f2f9aac68692d9a5198820d893e49abefee06444695ea2dae33c85fe8bd6d13a.png" src="../../_images/f2f9aac68692d9a5198820d893e49abefee06444695ea2dae33c85fe8bd6d13a.png" />
+</div>
+</div>
+<p>The function <code class="docutils literal notranslate"><span class="pre">fft(signal)</span></code> returns the Fourier transform and <code class="docutils literal notranslate"><span class="pre">fftfreq(n,h)</span></code> gives the array of frequencies that correspond to a number of times equal to <code class="docutils literal notranslate"><span class="pre">n</span></code> with gaps of <code class="docutils literal notranslate"><span class="pre">h</span></code> between them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">Fourier</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">signal</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">),</span><span class="n">freq</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">],</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">],</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;fft&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+
+<span class="n">positive</span> <span class="o">=</span> <span class="n">freq</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="c1"># select only indices for elements that corresponds to positive frequencies</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">freq</span><span class="p">[</span><span class="n">positive</span><span class="p">]</span>
+<span class="n">Fourier</span> <span class="o">=</span> <span class="n">Fourier</span><span class="p">[</span><span class="n">positive</span><span class="p">]</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">),</span><span class="n">freq</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">],</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">],</span><span class="s1">&#39;ro&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;frequency&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;fft&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fourier Transform Peak Frequencies =&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d98349d2a3d2f5a375a686889ce20b4d162ad5905507ff5d68e46eb8d82e417d.png" src="../../_images/d98349d2a3d2f5a375a686889ce20b4d162ad5905507ff5d68e46eb8d82e417d.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fourier Transform Peak Frequencies = [ 0.999  4.995  9.99  14.985 19.98 ]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="wave-packet">
+<h2>Wave Packet<a class="headerlink" href="#wave-packet" title="Permalink to this heading">#</a></h2>
+<p>We can create a more confined wave, called a wavepacket with the following function
+$<span class="math notranslate nohighlight">\(\psi(x) = \frac{1}{(\pi \sigma^2)^{\frac{1}{4}}}e^{-\frac{(x-x_0)^2}{2\sigma^2}}e^{ifx} \)</span><span class="math notranslate nohighlight">\(
+Where \)</span>\sigma<span class="math notranslate nohighlight">\( is the width, \)</span>x_0<span class="math notranslate nohighlight">\( is it's position, and \)</span>f$ is it’s frequency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">steps</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Omega =&#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">packet</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">packet</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega = 8.0
+</pre></div>
+</div>
+<img alt="../../_images/e56a391710bb2e85e46096ba7d82602d2aa017505f7d52cf9e7061a2b6dd8412.png" src="../../_images/e56a391710bb2e85e46096ba7d82602d2aa017505f7d52cf9e7061a2b6dd8412.png" />
+</div>
+</div>
+<p>Now lets perform a Fourier transform.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fourier</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Omega = &#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+<span class="n">m</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fourier Transform Frequency Peak = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="n">m</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+Fourier Transform Frequency Peak =  [8.]
+</pre></div>
+</div>
+<img alt="../../_images/a99fa475a06cb9ac904293a1e8a8dcc2a7e05cba12d66481f28cf6a4de564309.png" src="../../_images/a99fa475a06cb9ac904293a1e8a8dcc2a7e05cba12d66481f28cf6a4de564309.png" />
+</div>
+</div>
+<p>Notice that we obtain a normal distribution around the frequency of the wavepacket.</p>
+</section>
+<section id="the-uncertainty-principle">
+<h2>The Uncertainty Principle<a class="headerlink" href="#the-uncertainty-principle" title="Permalink to this heading">#</a></h2>
+<p>You may be familiar with the Heisenburg Uncertainty Principle for a quantum objects position and momentum(or time and energy), which states that the more we know about a particles position in space, the less we know about its momentum and vice versa. This is encapsulated in the formula</p>
+<div class="math notranslate nohighlight">
+\[\Delta x \Delta p \geq \frac{\hbar}{2} \]</div>
+<p>This is a result of position and momentum, in the quantum sense, being related by a Fourier transform. That is, if we take the Fourier transform of some noise, the more definitive the distribution of that noise, the more broad the distributions of possible frequencies in the Fourier transform.</p>
+<p>Take the above wave packet and change the value of <span class="math notranslate nohighlight">\(\sigma\)</span>, the width of the wave, and observe the resulting Fourier transform. For low values of <span class="math notranslate nohighlight">\(\sigma\)</span>, the resulting frequency distribution is broad. For high values of <span class="math notranslate nohighlight">\(\sigma\)</span>, the resulting frequency distribution sharpens at one frequency.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">wavepacket</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="n">f</span><span class="p">):</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">steps</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Omega = &#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+
+
+    <span class="n">x0</span> <span class="o">=</span> <span class="mf">5.0</span>
+    <span class="n">packet</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">f</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">fig1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig1</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+    
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">packet</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="n">Fourier</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">packet</span><span class="p">)</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Omega = &#39;</span><span class="p">,</span> <span class="n">f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fourier Transform Frequency Peak = &#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">freq</span><span class="p">[</span><span class="n">m</span><span class="p">],</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig2</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.1</span><span class="p">,</span><span class="mf">.8</span><span class="p">,</span><span class="mf">.8</span><span class="p">])</span>
+    
+    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">Fourier</span><span class="p">))</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavepacket</span><span class="p">(</span><span class="n">sigma</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span><span class="n">f</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+</pre></div>
+</div>
+<img alt="../../_images/775067cd710295e52a7afb1675f8f2244fcae477327ea76f1ddd756be2eb3f36.png" src="../../_images/775067cd710295e52a7afb1675f8f2244fcae477327ea76f1ddd756be2eb3f36.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+Fourier Transform Frequency Peak =  [8.]
+</pre></div>
+</div>
+<img alt="../../_images/25445b303f6b899fc12887c88cf28ffda3a4f32dc69089e47ea4a7edbd171b78.png" src="../../_images/25445b303f6b899fc12887c88cf28ffda3a4f32dc69089e47ea4a7edbd171b78.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavepacket</span><span class="p">(</span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">f</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+</pre></div>
+</div>
+<img alt="../../_images/923229efa37614e5065fdcb6c3e2d5dc49bac4e0337c88361b8193f16ecf990f.png" src="../../_images/923229efa37614e5065fdcb6c3e2d5dc49bac4e0337c88361b8193f16ecf990f.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+Fourier Transform Frequency Peak =  [8.]
+</pre></div>
+</div>
+<img alt="../../_images/5db4abe386a141190613ddc1997cb86cda76c3919047ffcf9dca031a9a3b11c0.png" src="../../_images/5db4abe386a141190613ddc1997cb86cda76c3919047ffcf9dca031a9a3b11c0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavepacket</span><span class="p">(</span><span class="n">sigma</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span><span class="n">f</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+</pre></div>
+</div>
+<img alt="../../_images/e03521db3146eeec6fb925fd8d8c0ba7f688d6f10f71d5059e2a0fc340eca696.png" src="../../_images/e03521db3146eeec6fb925fd8d8c0ba7f688d6f10f71d5059e2a0fc340eca696.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega =  8.0
+Fourier Transform Frequency Peak =  [8.]
+</pre></div>
+</div>
+<img alt="../../_images/47007a041f95e1395478b1fb5cb533a4ef2c2a7843364af0626e66d079105933.png" src="../../_images/47007a041f95e1395478b1fb5cb533a4ef2c2a7843364af0626e66d079105933.png" />
+</div>
+</div>
+</section>
+<section id="quantum-fourier-transform">
+<h2>Quantum Fourier Transform<a class="headerlink" href="#quantum-fourier-transform" title="Permalink to this heading">#</a></h2>
+<section id="single-qubit">
+<h3>Single Qubit<a class="headerlink" href="#single-qubit" title="Permalink to this heading">#</a></h3>
+<p>Recall that a quantum object can be represented by a superposition of basis states, where each basis state has a corresponding amplitude. Squaring the amplitude gives the probability of measuring the quantum object in that state. For a quantum object with <span class="math notranslate nohighlight">\(N\)</span> basis states:</p>
+<div class="math notranslate nohighlight">
+\[ |x&gt; = x_0|0&gt; + x_1|1&gt; + x_2|2&gt; + ... + x_{N-1}|N-1&gt;\]</div>
+<p>or more compactly</p>
+<div class="math notranslate nohighlight">
+\[ |x&gt; = \sum_{j=0}^{N-1}x_j|j&gt; \]</div>
+<p>For example, a single qubit with equal probability of being in basis states <span class="math notranslate nohighlight">\(|0&gt;\)</span> or <span class="math notranslate nohighlight">\(|1&gt;\)</span> is represented by</p>
+<div class="math notranslate nohighlight">
+\[ |q&gt; = \frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt;\]</div>
+<p>We can therefore fully represent this state in an array with elements <span class="math notranslate nohighlight">\(x_j\)</span>. We can change to another basis of states using a discrete fourier transform(with normalisation constant <span class="math notranslate nohighlight">\(1/\sqrt{N}\)</span>), changing the amplitudes <span class="math notranslate nohighlight">\(x_j\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[y_k = \frac{1}{\sqrt{N}}\sum_{j=0}^{N-1}x_j e^{-2\pi i k \frac{j}{N} }\]</div>
+<p>Giving new amplitudes <span class="math notranslate nohighlight">\(y_k\)</span> in a different basis.</p>
+<div class="math notranslate nohighlight">
+\[ |y&gt; = \sum_{k=0}^{N-1}y_k|k&gt; \]</div>
+<p>But this is just the same as using the discrete fourier transform in the above sections.</p>
+<p>Lets do an example, applying a quantum fourier transform to the following qubit</p>
+<div class="math notranslate nohighlight">
+\[ |x&gt; = x_0|0&gt; + x_1|1&gt;\]</div>
+<div class="math notranslate nohighlight">
+\[y_0 = \frac{1}{\sqrt{2}}(x_0e^{-2\pi i \frac{0\times 0}{2}} + x_1e^{-2\pi i \frac{0\times 1}{2}}) = \frac{1}{\sqrt{2}}(x_0 + x_1) \]</div>
+<div class="math notranslate nohighlight">
+\[y_1 = \frac{1}{\sqrt{2}}(x_0e^{-2\pi i \frac{1\times 0}{2}} + x_1e^{-2\pi i \frac{1\times 1}{2}}) = \frac{1}{\sqrt{2}}(x_0 - x_1) \]</div>
+<p>Lets impliment this in scipy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|x&gt; = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;x|x&gt; = &#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|y&gt; = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;y|y&gt; = &#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|x&gt; =  [0 1]
+&lt;x|x&gt; =  [0 1] 
+
+|y&gt; =  [ 0.70710678+0.j -0.70710678-0.j]
+&lt;y|y&gt; =  [0.5 0.5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Representing <span class="math notranslate nohighlight">\(|x&gt;\)</span> as a vector, we can see that <span class="math notranslate nohighlight">\(|y&gt;\)</span> results from the multiplication of a Hadamard gate. So, Hadamard gates are closely related to the QFT.</p>
+<p><span class="math notranslate nohighlight">\(|x&gt; = \begin{bmatrix}x_0 \\ x_1 \end{bmatrix} \)</span></p>
+<p><span class="math notranslate nohighlight">\(|y&gt; = \begin{bmatrix}y_0 \\ y_1 \end{bmatrix} \)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}y_0 \\ y_1 \end{bmatrix} =\frac{1}{\sqrt{2}}\begin{bmatrix}1 &amp; 1 \\ 1 &amp; -1 \end{bmatrix}\begin{bmatrix}x_0 \\ x_1 \end{bmatrix} = H\begin{bmatrix}x_0 \\ x_1 \end{bmatrix} \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[|y&gt; = H|x&gt; \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">])</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">hadamard</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">H</span><span class="nd">@x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|x&gt; = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|y&gt; = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|x&gt; =  [0 1]
+|y&gt; =  [ 0.70710678 -0.70710678]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-qubits">
+<h3>Multiple Qubits<a class="headerlink" href="#multiple-qubits" title="Permalink to this heading">#</a></h3>
+<p>We can perform a Quantum Fourier Transform on multiple qubits, where each row in the array <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> represents a different qubit. For two qubits:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)]])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">fft</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|x&gt; = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;x|x&gt; = &#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;|y&gt; = &#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;y|y&gt; = &#39;</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|x&gt; =  [[0.         1.        ]
+ [0.70710678 0.70710678]] 
+
+&lt;x|x&gt; =  [[0.  1. ]
+ [0.5 0.5]] 
+
+|y&gt; =  [[0.70710678 0.70710678]
+ [1.         0.        ]] 
+
+&lt;y|y&gt; =  [[0.5 0.5]
+ [1.  0. ]] 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-bloch-sphere">
+<h2>The Bloch Sphere<a class="headerlink" href="#the-bloch-sphere" title="Permalink to this heading">#</a></h2>
+<p>We can represent the above transformations on the bloch sphere, using the parametrisation</p>
+<div class="math notranslate nohighlight">
+\[|\psi&gt; = cos(\frac{\theta}{2})|0&gt; + e^{i\phi}sin(\frac{\theta}{2})|1&gt; \]</div>
+<p>So for <span class="math notranslate nohighlight">\(\phi=0\)</span> and <span class="math notranslate nohighlight">\(\theta = \frac{\pi}{2}\)</span></p>
+<div class="math notranslate nohighlight">
+\[|\psi&gt; = \frac{1}{\sqrt{2}}|0&gt; + \frac{1}{\sqrt{2}}|1&gt; \]</div>
+<p>And for <span class="math notranslate nohighlight">\(\phi=0\)</span> and <span class="math notranslate nohighlight">\(\theta = \pi\)</span></p>
+<div class="math notranslate nohighlight">
+\[|\psi&gt; = 0|0&gt; + 1|1&gt; \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">blochplot</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
+    <span class="c1">#Defining the state</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mf">2.0</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)]</span>
+    
+    <span class="c1">#printing it&#39;s probability amplitudes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;psi = </span><span class="si">{}</span><span class="s1">|0&gt; + </span><span class="si">{}</span><span class="s1">|1&gt;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="mi">2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;psi prob = </span><span class="si">{}</span><span class="s1"> , </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+    <span class="c1">#Using spherical coordinates</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+
+    <span class="c1">#Plotting a sphere of radius 1, with a black point at it&#39;s centre</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span>
+    
+    <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span><span class="mi">200</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">xsphere</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">ysphere</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    <span class="n">zsphere</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xsphere</span><span class="p">,</span> <span class="n">ysphere</span><span class="p">,</span> <span class="n">zsphere</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    
+    <span class="c1">#Draw a new axis</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+    
+    <span class="c1">#Plotting Text Labels</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.3</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$|0\rangle$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$|1\rangle$&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+    
+    
+    <span class="c1">#ax.text(0, -1.5, -0.2, &quot;|+&gt;&quot;, color=&#39;black&#39;,size=15)</span>
+    <span class="c1">#ax.text(0, 1.4, 0.2, &quot;|-&gt;&quot;, color=&#39;black&#39;,size=15)</span>
+
+    <span class="c1">#Plotting a vector of the quantum state.</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">z</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="p">[</span><span class="n">z</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Suppose we are in the state <span class="math notranslate nohighlight">\(|0&gt;\)</span> with absolute certainty, then <span class="math notranslate nohighlight">\(\phi=0\)</span> and <span class="math notranslate nohighlight">\(\theta=0\)</span></p>
+<div class="math notranslate nohighlight">
+\[|\psi&gt; = 1|0&gt; + 0|1&gt; \]</div>
+<p>This is represented on the bloch sphere as</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">blochplot</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>psi = 1.0|0&gt; + 0.0|1&gt;
+psi prob = 1.0 , 0.0
+</pre></div>
+</div>
+<img alt="../../_images/72d79ff88f08e269961c922b773e2eefca76d9a3e95e9f4b6e7de216c906a542.png" src="../../_images/72d79ff88f08e269961c922b773e2eefca76d9a3e95e9f4b6e7de216c906a542.png" />
+</div>
+</div>
+<p>If we apply a QFT or Hadamard gate on <span class="math notranslate nohighlight">\(\psi\)</span>, the result will be the following state</p>
+<div class="math notranslate nohighlight">
+\[\psi_H = H\psi = \frac{1}{\sqrt{2}}(x_0 + x_1)|0&gt; + \frac{1}{\sqrt{2}}(x_0 - x_1)|1&gt; = \frac{1}{\sqrt{2}}(|0&gt;+|1&gt;) \]</div>
+<p>which has corresponding values <span class="math notranslate nohighlight">\(\phi=0\)</span> and <span class="math notranslate nohighlight">\(\theta =\frac{\pi}{2} \)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.0</span>
+
+<span class="n">blochplot</span><span class="p">(</span><span class="n">phi</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>psi = 0.71|0&gt; + 0.71|1&gt;
+psi prob = 0.5 , 0.5
+</pre></div>
+</div>
+<img alt="../../_images/8c03603d9d48286a6231e6d4e5460d9e088b7f35cef9817409c2145c804b7918.png" src="../../_images/8c03603d9d48286a6231e6d4e5460d9e088b7f35cef9817409c2145c804b7918.png" />
+</div>
+</div>
+<p>This can be seen as an entirely new basis state. We shall label it as</p>
+<div class="math notranslate nohighlight">
+\[|+&gt; =  \frac{1}{\sqrt{2}}(|0&gt;+|1&gt;) \]</div>
+<div class="math notranslate nohighlight">
+\[|-&gt; =  \frac{1}{\sqrt{2}}(|0&gt;-|1&gt;) \]</div>
+<p>Notice that when we have maximal certainty about our initial state <span class="math notranslate nohighlight">\(|\psi&gt; = 1|0&gt;+0|0&gt;\)</span>, we have minimal uncertainty about the state we quantum fourier transform into</p>
+<div class="math notranslate nohighlight">
+\[|+&gt; =  \frac{1}{\sqrt{2}}(|0&gt;+|1&gt;) \]</div>
+<p>The prior is definitely in the state <span class="math notranslate nohighlight">\(|0&gt;\)</span> but the latter has equal chance of being in state <span class="math notranslate nohighlight">\(|0&gt;\)</span> or <span class="math notranslate nohighlight">\(|1&gt;\)</span>. However, in the latter, we know with absolute certainty that it is in state <span class="math notranslate nohighlight">\(|+&gt;\)</span>, but</p>
+<div class="math notranslate nohighlight">
+\[|\psi&gt;= |0&gt; =  \frac{1}{\sqrt{2}}(|+&gt;+|-&gt;) \]</div>
+<p>so we have maximal uncertainty as to whether the initial <span class="math notranslate nohighlight">\(|\psi&gt;\)</span> is in state <span class="math notranslate nohighlight">\(|+&gt;\)</span> or <span class="math notranslate nohighlight">\(|-&gt;\)</span>.</p>
+<p>This is the uncertainty principle at work for qubit states. There is a trade off in knowledge about particular basis states, when we transform between them.</p>
+<p>So applying a Hadamrd gate, or QFT,  to our qubit rotates our qubit by <span class="math notranslate nohighlight">\(\frac{\pi}{/2}\)</span> around the bloch sphere.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pyqm-week6/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-6-scipy-fourier-transform">Week 6: Scipy Fourier Transform</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fourier-transform">The Fourier Transform</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wave-packet">Wave Packet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-uncertainty-principle">The Uncertainty Principle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantum-fourier-transform">Quantum Fourier Transform</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-qubit">Single Qubit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-qubits">Multiple Qubits</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-bloch-sphere">The Bloch Sphere</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ICHEC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2022
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

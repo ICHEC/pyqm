@@ -1,0 +1,1045 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python for Quantum Mechanics: &#8212; Lecture Notes from ICHEC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week2/exercises_solutions/PyQM_Ex.2_sol';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Lecture Notes from ICHEC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes from ICHEC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Description
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week4/README.html">Week 4 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6 Contents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pyqm-week2/exercises_solutions/PyQM_Ex.2_sol.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python for Quantum Mechanics:</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python for Quantum Mechanics:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-exercises">Week 2: Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-decimal-to-from-binary">Exercise 1: Decimal to/from Binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-balmer-lines">Exercise 2: Balmer Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-quantum-qubit-gates">Exercise 3: Quantum Qubit Gates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-how-many-days-left-do-you-have-to-live">Exercise 4: How many days left do you have to live?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-rotating-vectors-in-2-dimensions">Exercise 6: Rotating Vectors In 2-Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-quantum-qubit-state-normalisation">Exercise 7: Quantum Qubit State Normalisation</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
+<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-2-exercises">
+<h1>Week 2: Exercises<a class="headerlink" href="#week-2-exercises" title="Permalink to this heading">#</a></h1>
+</center><section id="exercise-1-decimal-to-from-binary">
+<h2>Exercise 1: Decimal to/from Binary<a class="headerlink" href="#exercise-1-decimal-to-from-binary" title="Permalink to this heading">#</a></h2>
+<p>Write a cell that converts a decimal integer to a binary string, using a while loop and not just recasting.</p>
+<a class="reference internal image-reference" href="../../_images/binary2.png"><img alt="two dice" src="../../_images/binary2.png" style="width: 400px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="mi">745</span>
+
+<span class="n">binary</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">temp_dec</span> <span class="o">=</span> <span class="n">decimal</span>
+<span class="n">temp_rem</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">temp_dec</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">temp_rem</span> <span class="o">=</span> <span class="n">temp_dec</span> <span class="o">%</span> <span class="mi">2</span>
+    <span class="n">temp_dec</span> <span class="o">=</span> <span class="n">temp_dec</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">temp_rem</span><span class="p">)</span> <span class="o">+</span> <span class="n">binary</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">binary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1011101001
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write a cell that converts binary string to a decimal integer, using a for loop and not just recasting. Make sure that you are reading the binary in the right direction… (<em>Hint: you can loop through the characters in a string but remeber to cast to an</em> <code class="docutils literal notranslate"><span class="pre">int</span></code> <em>to do do calculations but make sure that you are reading the binary in the right direction…</em>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binary</span> <span class="o">=</span> <span class="s1">&#39;10111001&#39;</span>
+
+<span class="n">yranib</span> <span class="o">=</span> <span class="n">binary</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">decimal</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">bit</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">yranib</span><span class="p">):</span>
+    <span class="n">decimal</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">n</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>185
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-balmer-lines">
+<h2>Exercise 2: Balmer Lines<a class="headerlink" href="#exercise-2-balmer-lines" title="Permalink to this heading">#</a></h2>
+<p>As seen in the last excercise the energy levels of a hydrogen atom are the following
+$<span class="math notranslate nohighlight">\( E_n = - \frac{e^2}{8 \pi \varepsilon_0 a_0 n^2} \approx \frac{-13.6\text{eV}}{n^2} .\)</span>$</p>
+<p>Make an empty list and append the values of the first ten energies using a for-loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_levels</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">E_levels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mf">13.6</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">E_levels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13.6, -3.4, -1.511111111111111, -0.85, -0.544, -0.37777777777777777, -0.27755102040816326, -0.2125, -0.16790123456790124, -0.136]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now do this with list comprehension.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_levels</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">13.6</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">E_levels</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-13.6, -3.4, -1.511111111111111, -0.85, -0.544, -0.37777777777777777, -0.27755102040816326, -0.2125, -0.16790123456790124, -0.136]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now make a list of the first eight Balmer lines</p>
+<div class="math notranslate nohighlight">
+\[ \lambda = \frac{1242}{\text{Energy of Photon in eV}} nm\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Balmer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1242</span><span class="o">/</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">E_levels</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">E</span> <span class="ow">in</span> <span class="n">E_levels</span> <span class="k">if</span> <span class="n">E</span> <span class="o">&gt;</span> <span class="n">E_levels</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Balmer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[657.5294117647059, 487.0588235294118, 434.87394957983196, 410.95588235294116, 397.764705882353, 389.6470588235294, 384.27043544690605, 380.514705882353]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-quantum-qubit-gates">
+<h2>Exercise 3: Quantum Qubit Gates<a class="headerlink" href="#exercise-3-quantum-qubit-gates" title="Permalink to this heading">#</a></h2>
+<p>It turns out we can contain lists within lists i.e. <span class="math notranslate nohighlight">\([4.0,[1,5]]\)</span>. Using nested lists for each row, represent the following single qubit gates X,Y, and Z and print them.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} X = \begin{pmatrix}
+0 &amp; 1 \\ 1&amp;0
+\end{pmatrix}, \ \ \ 
+Y = \begin{pmatrix}
+0 &amp; -i \\ i&amp;0
+\end{pmatrix}, \ \ \ 
+Z = \begin{pmatrix}
+1 &amp; 0 \\ 0&amp;-1
+\end{pmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span> <span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X = &quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y = &quot;</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z = &quot;</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X =  [[0, 1], [1, 0]]
+Y =  [[0, (-0-1j)], [1j, 0]]
+Z =  [[1, 0], [0, -1]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is also the Hadamard gate.
+$<span class="math notranslate nohighlight">\( H = \begin{pmatrix}
+1/\sqrt{2} &amp; 1/\sqrt{2} \\ 1/\sqrt{2} &amp; -1/\sqrt{2}
+\end{pmatrix}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">.5</span><span class="p">),</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">.5</span><span class="p">)],[</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">.5</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mf">.5</span><span class="p">)]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.7071067811865475, 0.7071067811865475], [0.7071067811865475, -0.7071067811865475]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is more useful if every element is a complex type so cast all matrices into complex matrices.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">Z</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X = &quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Y = &quot;</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Z = &quot;</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H = &quot;</span><span class="p">,</span> <span class="n">H</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X =  [[0j, (1+0j)], [(1+0j), 0j]]
+Y =  [[0j, (-0-1j)], [1j, 0j]]
+Z =  [[(1+0j), 0j], [0j, (-1+0j)]]
+H =  [[(0.7071067811865475+0j), (0.7071067811865475+0j)], [(0.7071067811865475+0j), (-0.7071067811865475+0j)]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Make a copy of the <span class="math notranslate nohighlight">\(Y\)</span> matrix. Start with a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix of all <span class="math notranslate nohighlight">\(0\)</span>s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_copy</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">Y_copy</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_copy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0j, (-0-1j)], [1j, 0j]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Create a smiliar cell that makes a transpose of <span class="math notranslate nohighlight">\(Y\)</span>, <span class="math notranslate nohighlight">\(Y^T\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_trans</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">Y_trans</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_trans</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0j, 1j], [(-0-1j), 0j]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now take a Hermitian adjoint and check if <span class="math notranslate nohighlight">\(Y\)</span> is Hermitian.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Y_dag</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="n">Y_dag</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Y_dag</span> <span class="o">==</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now multiply <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(H\)</span> to get <span class="math notranslate nohighlight">\(XH\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">XH</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">XH</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">H</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">XH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[(0.7071067811865475+0j), (-0.7071067811865475+0j)], [(0.7071067811865475+0j), (0.7071067811865475+0j)]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now multiply <span class="math notranslate nohighlight">\(XH\)</span> and <span class="math notranslate nohighlight">\(H\)</span> to get <span class="math notranslate nohighlight">\(HXH\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HXH</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="n">HXH</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">XH</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">HXH</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[(0.9999999999999998+0j), 0j], [0j, (-0.9999999999999998+0j)]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have verified the well known identity $<span class="math notranslate nohighlight">\(HXH = Z.\)</span>$</p>
+</section>
+<section id="exercise-4-how-many-days-left-do-you-have-to-live">
+<h2>Exercise 4: How many days left do you have to live?<a class="headerlink" href="#exercise-4-how-many-days-left-do-you-have-to-live" title="Permalink to this heading">#</a></h2>
+<p>By inputting the current date dd/mm/yyyy and your birthday dd/mm/yyyy. Calculate how many days you have lived.
+<a class="reference internal" href="../../_images/stopwatch1.jpg"><img alt="two dice" src="../../_images/stopwatch1.jpg" style="width: 300px;" /></a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the current date dd/mm/yyyy: &quot;</span> <span class="p">)</span>
+<span class="n">birth_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your birth date dd/mm/yyyy: &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">current_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the current date dd/mm/yyyy: &quot;</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">birth_date</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your birth date dd/mm/yyyy: &quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/ipykernel/kernelbase.py:1261,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1259</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1260</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1261</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1262</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1263</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1264</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1265</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1266</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1267</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lets extract the current day, month and year aswell as the birth day, month and year from these inputs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">current_date</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">current_month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">current_date</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">current_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">current_date</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>
+
+<span class="n">birth_day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_date</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">birth_month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_date</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">birth_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">birth_date</span><span class="p">[</span><span class="mi">6</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When counting the days lived, we need to take into account leap days and days in the months of the year. Lets make two list with the number of days in each month for a regular year, and then a leap year.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span>
+<span class="n">Leap_Months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">31</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate whether or not your birth year and the current year are leap years. Assign your answers in boolean form to the variables given below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_year_leap</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">birth_year_leap</span> <span class="o">=</span> <span class="kc">True</span>
+        
+<span class="n">Leap</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">birth_year</span><span class="p">,</span><span class="n">current_year</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="k">4</span>==0 and x%100!=0) or x%400==0]
+
+<span class="k">if</span> <span class="n">birth_year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Leap</span><span class="p">:</span>
+    <span class="n">birth_year_leap</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">current_year</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Leap</span><span class="p">:</span>
+    <span class="n">current_year_leap</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the month lists above, calculate how many days you lived in your birth year. Print the answer. This will depend on the boolean value found above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">birth_year_days</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Temp_Months</span> <span class="o">=</span> <span class="n">Months</span>
+<span class="k">if</span> <span class="n">birth_year_leap</span><span class="p">:</span>
+    <span class="n">Temp_Months</span> <span class="o">=</span> <span class="n">Leap_Months</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">birth_month</span><span class="p">,</span><span class="mi">12</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">==</span><span class="n">birth_month</span><span class="p">:</span>
+        <span class="n">birth_year_days</span> <span class="o">+=</span> <span class="n">Temp_Months</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">birth_day</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">birth_year_days</span> <span class="o">+=</span> <span class="n">Temp_Months</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;birth year days = &quot;</span><span class="p">,</span><span class="n">birth_year_days</span><span class="p">)</span>    
+
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>birth year days =  364
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the month lists above, calculate how many days you lived in the current year. Print the answer. This will depend on the boolean value found above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_year_days</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Temp_Months</span> <span class="o">=</span> <span class="n">Months</span>
+<span class="k">if</span> <span class="n">current_year_leap</span><span class="p">:</span>
+    <span class="n">Temp_Months</span> <span class="o">=</span> <span class="n">Leap_Months</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">current_month</span> <span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">==</span><span class="n">current_month</span><span class="p">:</span>
+        <span class="n">current_year_days</span> <span class="o">+=</span> <span class="n">current_day</span> 
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">current_year_days</span> <span class="o">+=</span> <span class="n">Temp_Months</span><span class="p">[</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;current year days = &quot;</span><span class="p">,</span><span class="n">current_year_days</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>current year days =  270
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, using a loop, calculate the number of days in the years between your birth year and the current year. Print the answer.</p>
+<p>(There are 366 days in a leap year, and 365 in a regular year.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_inbetween</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">birth_year</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">current_year</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">Leap</span><span class="p">:</span>
+        <span class="n">days_inbetween</span> <span class="o">+=</span> <span class="mi">366</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">days_inbetween</span> <span class="o">+=</span> <span class="mi">365</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Days inbetween = &quot;</span><span class="p">,</span><span class="n">days_inbetween</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Days inbetween =  10593
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now sum up your answers to find the total number of days you have lived. Print the answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_lived</span> <span class="o">=</span> <span class="n">birth_year_days</span> <span class="o">+</span> <span class="n">days_inbetween</span> <span class="o">+</span> <span class="n">current_year_days</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;days lived = &quot;</span><span class="p">,</span><span class="n">days_lived</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>days lived =  11227
+</pre></div>
+</div>
+</div>
+</div>
+<p>The average person in Ireland lives approximately 82 years. Approximate the number of days you have left to live.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_days</span> <span class="o">=</span> <span class="mi">82</span><span class="o">*</span><span class="mi">365</span>
+<span class="n">days_left</span> <span class="o">=</span> <span class="n">total_days</span> <span class="o">-</span> <span class="n">days_lived</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I have approximately </span><span class="si">{}</span><span class="s2"> days left to live&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">days_left</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I have approximately 18703 days left to live
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6-rotating-vectors-in-2-dimensions">
+<h2>Exercise 6: Rotating Vectors In 2-Dimensions<a class="headerlink" href="#exercise-6-rotating-vectors-in-2-dimensions" title="Permalink to this heading">#</a></h2>
+<p>We can define a vector in two-dimensions with two values “x” and “y”, where the vector points from the origin to the coordinates $<span class="math notranslate nohighlight">\((x,y)\)</span><span class="math notranslate nohighlight">\( and has magnitude given by \)</span><span class="math notranslate nohighlight">\( \sqrt{x^2 + y^2} \)</span>$</p>
+<p>The vector is written as a 2x1 matrix, as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{pmatrix}
+x \\
+y
+\end{pmatrix}\end{split}\]</div>
+<p>We can rotate the vector around the origin by multiplying it by a matrix, namely a rotational matrix, given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{pmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{pmatrix}\end{split}\]</div>
+<p>If we want to rotate by an angle <span class="math notranslate nohighlight">\( \theta = \pi/2 \)</span> then we obtain the rotation matrix:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{pmatrix}
+0 &amp; -1 \\
+1&amp; 0
+\end{pmatrix}\end{split}\]</div>
+<p>Find the resulting vector after rotating the vector, with <span class="math notranslate nohighlight">\(x=1\)</span> and <span class="math notranslate nohighlight">\(y=1\)</span>, by <span class="math notranslate nohighlight">\(\pi/2\)</span>. Print the answer.</p>
+<p>Also, calculate the magnitude of the initial vector and the resulting vector. Check if they are equal, print a boolean answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Rotation</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+<span class="n">Result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Rotation</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Rotation</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">vrows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">Vector</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">cols</span> <span class="o">!=</span> <span class="n">vrows</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cannot multiply&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">):</span>
+        <span class="n">Result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">Rotation</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">Vector</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1, 1]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate the magnitude of the initial vector and the resulting vector. Check if they are equal, print a boolean answer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mag1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Vector</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Vector</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="n">mag2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+
+<span class="n">Answer</span> <span class="o">=</span> <span class="n">mag1</span><span class="o">==</span><span class="n">mag2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Answer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7-quantum-qubit-state-normalisation">
+<h2>Exercise 7: Quantum Qubit State Normalisation<a class="headerlink" href="#exercise-7-quantum-qubit-state-normalisation" title="Permalink to this heading">#</a></h2>
+<p>Read in the file “qubits.txt”, each line represents the state of a different qubit in a two-dimesnional basis, so there are two space-seperated integers. For example,</p>
+<div class="math notranslate nohighlight">
+\[236 \text{ }\text{ } 3284 \]</div>
+<p>However, these states are not normalised. What is normalisation? In simple mathematical terms, it means the squared-sum of these integers is equal to one. In the above case, this is not true</p>
+<div class="math notranslate nohighlight">
+\[236^2 + 3284^2 = 10840352 \]</div>
+<p>To normalise, we divide each integer, <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, by
+$<span class="math notranslate nohighlight">\( \sqrt{a^2 + b^2} \)</span>$</p>
+<p>So in the above case, we change the space-seperated integers to</p>
+<div class="math notranslate nohighlight">
+\[\frac{236}{\sqrt{10840352}} \ \ \frac{3284}{\sqrt{10840352}} = 0.072 \ \ 0.997 \text{  (rounding to three decimal places)} \]</div>
+<p>Now their squared sum is</p>
+<div class="math notranslate nohighlight">
+\[\frac{236^2}{10840352} + \frac{3284^2}{10840352} = \frac{10840352}{10840352} = 1\]</div>
+<p>and we can say they are normalised.</p>
+<p>Read in the file, and line by line, normalise each qubit state, write the result to the file “normalised_qubits.txt” and print the answers on the screen. Round to five decimal places.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;qubits.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nomalised_qubits.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">nf</span><span class="p">:</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">((</span><span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">))[</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">/</span><span class="p">((</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">),</span>  <span class="n">b</span><span class="o">/</span><span class="p">((</span><span class="n">a</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+            <span class="n">string</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span><span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="n">nf</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.67706   0.73593
+0.01741   0.99985
+0.02699   0.99964
+0.06628   0.9978
+0.99986   0.01669
+0.03911   0.99923
+0.99996   0.0092
+0.54129   0.84084
+0.00794   0.99997
+0.60545   0.79588
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pyqm-week2/exercises_solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python for Quantum Mechanics:</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-2-exercises">Week 2: Exercises</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-decimal-to-from-binary">Exercise 1: Decimal to/from Binary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-balmer-lines">Exercise 2: Balmer Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-quantum-qubit-gates">Exercise 3: Quantum Qubit Gates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-how-many-days-left-do-you-have-to-live">Exercise 4: How many days left do you have to live?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-rotating-vectors-in-2-dimensions">Exercise 6: Rotating Vectors In 2-Dimensions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-7-quantum-qubit-state-normalisation">Exercise 7: Quantum Qubit State Normalisation</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ICHEC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2022
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

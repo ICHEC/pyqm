@@ -1,0 +1,854 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python For Quantum Mechanics &#8212; Lecture Notes from ICHEC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week5/notebooks/pyqm-5.4-cheatsheet';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Lecture Notes from ICHEC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes from ICHEC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Description
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week1/README.html">Week 1 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week4/README.html">Week 4 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 5 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6 Contents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pyqm-week5/notebooks/pyqm-5.4-cheatsheet.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><center>Python For Quantum Mechanics</center></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center>Python For Quantum Mechanics</center></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#center-cheatsheet-week-5-center"><center>Cheatsheet: Week 5</center></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-plot">Making a Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-object">Figure Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-plots">Other Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots">3D Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animations">5.7 Animations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-5"><span class="xref myst">Tutorial 5</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-5"><span class="xref myst">Exercises 5</span></a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="center-python-for-quantum-mechanics-center">
+<h1><center>Python For Quantum Mechanics</center><a class="headerlink" href="#center-python-for-quantum-mechanics-center" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="center-cheatsheet-week-5-center">
+<h1><center>Cheatsheet: Week 5</center><a class="headerlink" href="#center-cheatsheet-week-5-center" title="Permalink to this heading">#</a></h1>
+<section id="making-a-plot">
+<h2>Making a Plot<a class="headerlink" href="#making-a-plot" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Making a plot:</p>
+<ul>
+<li><p>Plotting a line between points with <span class="math notranslate nohighlight">\(x\)</span>-coordinates array_of_x_coords_1 and <span class="math notranslate nohighlight">\(y\)</span>-coordinates array_of_y_coords_1, and another line between points with <span class="math notranslate nohighlight">\(x\)</span>-coordinates array_of_x_coords_2 and <span class="math notranslate nohighlight">\(y\)</span>-coordinates array_of_y_coords_2, and another…</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.plot(array_of_x_coords_1,</span> <span class="pre">array_of_y_coords_1,</span> <span class="pre">array_of_x_coords_2,</span> <span class="pre">array_of_y_coords_2,</span> <span class="pre">...)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html</a></p></li>
+</ul>
+</li>
+<li><p>Displaying a plot:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="formatting">
+<h2>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Formatting a Line:</p>
+<ul>
+<li><p>Making a plot with</p>
+<ul>
+<li><p>line coloured <code class="docutils literal notranslate"><span class="pre">my_colour</span></code> (string),</p></li>
+<li><p>line width as <code class="docutils literal notranslate"><span class="pre">my_linewidth</span></code> (float),</p></li>
+<li><p>line style <code class="docutils literal notranslate"><span class="pre">my_linestyle</span></code> (string), and</p></li>
+<li><p>marker as <code class="docutils literal notranslate"><span class="pre">my_marker</span></code> (string).</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.plot(array_of_x_coords,</span> <span class="pre">array_of_y_coords,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle,</span> <span class="pre">marker=my_marker)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.plot.html</a></p></li>
+<li><p>Adding errorbars with</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(x\)</span> error bar of size <code class="docutils literal notranslate"><span class="pre">x_error</span></code>,</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> error bar of size <code class="docutils literal notranslate"><span class="pre">y_error</span></code>, and</p></li>
+<li><p>error bar cap of size <code class="docutils literal notranslate"><span class="pre">my_capsize</span></code>:</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.errorbar(array_of_x_coords,</span> <span class="pre">array_of_y_coords,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle,</span> <span class="pre">marker=my_marker,</span> <span class="pre">xerr=x_error,</span> <span class="pre">yerr=y_error)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html</a></p></li>
+</ul>
+</li>
+<li><p>Formatting Axes:</p>
+<ul>
+<li><p>Setting <span class="math notranslate nohighlight">\(x\)</span>-limits <code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code> and <span class="math notranslate nohighlight">\(y\)</span>-limits <code class="docutils literal notranslate"><span class="pre">bottom</span></code> and <code class="docutils literal notranslate"><span class="pre">top</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlim((left,right))</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlim.html</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylim((bottom,top))</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylim.html</a></p></li>
+</ul>
+</li>
+<li><p>Changing ticks to <code class="docutils literal notranslate"><span class="pre">my_xticks</span></code> and <code class="docutils literal notranslate"><span class="pre">my_yticks</span></code> with labels <code class="docutils literal notranslate"><span class="pre">my_xlabels</span></code> and <code class="docutils literal notranslate"><span class="pre">my_ylabels</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xticks(ticks=my_xticks,</span> <span class="pre">labels=my_xlabels)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.yticks(ticks=my_yticks,</span> <span class="pre">labels=my_ylabels)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html</a></p></li>
+</ul>
+</li>
+<li><p>Adding grid lines</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.grid.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Labels:</p>
+<ul>
+<li><p>Adding a title</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title('This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">Title')</span></code></p></li>
+</ul>
+</li>
+<li><p>Labeling axes</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel('This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">x</span> <span class="pre">axis')</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.ylabel('This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">y</span> <span class="pre">axis')</span></code></p></li>
+</ul>
+</li>
+<li><p>Introducing legends</p>
+<ul>
+<li><p>Give line a name using the <code class="docutils literal notranslate"><span class="pre">label</span></code> keyword when plotting and set equal to a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html</a></p></li>
+</ul>
+</li>
+<li><p>Annotations and adding lines</p>
+<ul>
+<li><p>Adding vertical line at <code class="docutils literal notranslate"><span class="pre">x_coord</span></code> from <code class="docutils literal notranslate"><span class="pre">bottom_lim</span></code> and <code class="docutils literal notranslate"><span class="pre">top_lim</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.vlines(x_coord,</span> <span class="pre">bottom_lim,</span> <span class="pre">top_lim,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.vlines.html">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.vlines.html</a></p></li>
+</ul>
+</li>
+<li><p>Adding horizontal line at <code class="docutils literal notranslate"><span class="pre">y_coord</span></code> from <code class="docutils literal notranslate"><span class="pre">left_lim</span></code> and <code class="docutils literal notranslate"><span class="pre">right_lim</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.hlines(y_coord,</span> <span class="pre">left_lim,</span> <span class="pre">right_lim,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hlines.html">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.hlines.html</a></p></li>
+</ul>
+</li>
+<li><p>Annotating a point (<code class="docutils literal notranslate"><span class="pre">x_pos</span></code>,<code class="docutils literal notranslate"><span class="pre">y_pos</span></code>) with text at position (<code class="docutils literal notranslate"><span class="pre">x_text</span></code>,<code class="docutils literal notranslate"><span class="pre">y_text</span></code>) with an arrow between with style <code class="docutils literal notranslate"><span class="pre">my_arrowstyle</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.annotate('annotating</span> <span class="pre">text</span> <span class="pre">here',</span> <span class="pre">(x_pos,y_pos),</span> <span class="pre">c=my_colour,</span> <span class="pre">xytext=(x_text,y_text),</span> <span class="pre">arrowprops={'arrowstyle':my_arrowstyle,</span> <span class="pre">'lw':my_linewidth,</span> <span class="pre">'ls':my_linestyle})</span></code></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.annotate.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Log Plots:</p>
+<ul>
+<li><p>Making log-log plots</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.loglog(array_of_x_coords,</span> <span class="pre">array_of_y_coords,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle,</span> <span class="pre">marker=my_marker)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.loglog.html">https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.loglog.html</a></p></li>
+</ul>
+</li>
+<li><p>Making semi-log plots</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.semilogy(array_of_x_coords,</span> <span class="pre">array_of_y_coords,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle,</span> <span class="pre">marker=my_marker)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogy.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogy.html</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.semilogx(array_of_x_coords,</span> <span class="pre">array_of_y_coords,</span> <span class="pre">c=my_colour,</span> <span class="pre">lw=my_linewidth,</span> <span class="pre">ls=my_linestyle,</span> <span class="pre">marker=my_marker)</span></code></p></li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogx.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.semilogx.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="figure-object">
+<h2>Figure Object<a class="headerlink" href="#figure-object" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>Creating a figure <code class="docutils literal notranslate"><span class="pre">fig</span></code> with <code class="docutils literal notranslate"><span class="pre">width</span></code> and <code class="docutils literal notranslate"><span class="pre">height</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fig</span> <span class="pre">=</span> <span class="pre">plt.figure(figsize=(width,height))</span></code></p></li>
+<li><p>Adding axes <code class="docutils literal notranslate"><span class="pre">ax</span></code> to figure with proportio of figure, position and size as <code class="docutils literal notranslate"><span class="pre">left</span></code>, <code class="docutils literal notranslate"><span class="pre">bottom</span></code>, <code class="docutils literal notranslate"><span class="pre">width</span></code>, and <code class="docutils literal notranslate"><span class="pre">height</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">=</span> <span class="pre">fig.add_axes([left,</span> <span class="pre">bottom,</span> <span class="pre">width,</span> <span class="pre">height])</span></code></p></li>
+</ul>
+</li>
+<li><p>Documnetation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html</a></p></li>
+</ul>
+</li>
+<li><p>Adjusted functions</p>
+<ul>
+<li><center>
+</li>
+</ul>
+</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><code class="docutils literal notranslate"><span class="pre">plt.</span></code></p></th>
+<th class="head text-center"><p><code class="docutils literal notranslate"><span class="pre">ax.</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">xlim</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_xlim</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">ylim</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_ylim</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">xticks</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_xticks</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">yticks</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_yticks</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_title</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">xlabel</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_xlabel</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">ylabel</span></code></p></td>
+<td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">set_ylabel</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</center>
+<ul class="simple">
+<li><p>Saving an image</p>
+<ul>
+<li><p>Save <code class="docutils literal notranslate"><span class="pre">fig</span></code> as first_image.png</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig.savefig('first_image.png')</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="multiple-plots">
+<h2>Multiple Plots<a class="headerlink" href="#multiple-plots" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code></p>
+<ul>
+<li><p>Quickly create subplots in a <code class="docutils literal notranslate"><span class="pre">rows</span></code><span class="math notranslate nohighlight">\(\times\)</span><code class="docutils literal notranslate"><span class="pre">columns</span></code> shape and enable the axis number <code class="docutils literal notranslate"><span class="pre">instance_num</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.subplot(rows,</span> <span class="pre">columns,</span> <span class="pre">instance_num)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.suptitle('This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">Overall</span> <span class="pre">Title')</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html</a></p></li>
+</ul>
+</li>
+<li><p>Plots in Plots</p>
+<ul>
+<li><p>Can call <code class="docutils literal notranslate"><span class="pre">fig.add_axes()</span></code> to add multiple sets of axes.</p></li>
+</ul>
+</li>
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig.</span></code> version of <code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig.add_subplot(rows,</span> <span class="pre">columns,</span> <span class="pre">instance_num)</span></code></p></li>
+<li><p>To give <code class="docutils literal notranslate"><span class="pre">hgap</span></code> and <code class="docutils literal notranslate"><span class="pre">vgap</span></code> of horizontal and verticle space between plots use</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig.subplots_adjust(hspace=hgap,</span> <span class="pre">wspace=vgap)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/3.3.4/api/_as_gen/matplotlib.figure.Figure.html">https://matplotlib.org/3.3.4/api/_as_gen/matplotlib.figure.Figure.html</a></p></li>
+</ul>
+</li>
+<li><p>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code></p>
+<ul>
+<li><p>Can create a figure and set axes that share/don’t share axes according to <code class="docutils literal notranslate"><span class="pre">bool_x</span></code> and <code class="docutils literal notranslate"><span class="pre">bool_y</span></code> using</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig,ax</span> <span class="pre">=</span> <span class="pre">plt.subplots(2,2,sharex=bool_x,sharey=bool_y)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="other-plots">
+<h2>Other Plots<a class="headerlink" href="#other-plots" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Histogram</p>
+<ul>
+<li><p>A histogram of <code class="docutils literal notranslate"><span class="pre">my_data</span></code>, <code class="docutils literal notranslate"><span class="pre">my_bins</span></code> number of bins (or an array giving the bin edges), and with count number or density deternmined by <code class="docutils literal notranslate"><span class="pre">den_bool</span></code> is created using</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.hist(my_data,</span> <span class="pre">density=den_bool,</span> <span class="pre">bins=my_bins,</span> <span class="pre">color=my_colour,</span> <span class="pre">orientation=my_orientation)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.hist.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Scatter Plot</p>
+<ul>
+<li><p>A scatter plot of points with coordinates (<code class="docutils literal notranslate"><span class="pre">my_data_x</span></code>, <code class="docutils literal notranslate"><span class="pre">my_data_y</span></code>)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.scatter(my_data_x,</span> <span class="pre">my_data_y,</span> <span class="pre">c=my_colour,</span> <span class="pre">marker=my_marker)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.scatter.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Bar Chart</p>
+<ul>
+<li><p>A bar chart with bar labels <code class="docutils literal notranslate"><span class="pre">my_labels</span></code>, heights <code class="docutils literal notranslate"><span class="pre">my_data</span></code>, widths <code class="docutils literal notranslate"><span class="pre">my_width</span></code>, and colours <code class="docutils literal notranslate"><span class="pre">my_colours</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.bar(my_labels,</span> <span class="pre">my_data,</span> <span class="pre">width=my_width,</span> <span class="pre">color=my_colours)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.bar.html</a></p></li>
+</ul>
+</li>
+<li><p>A horizontal bar chart with bar labels <code class="docutils literal notranslate"><span class="pre">my_labels</span></code>, widths <code class="docutils literal notranslate"><span class="pre">my_data</span></code>, heights <code class="docutils literal notranslate"><span class="pre">my_height</span></code>, and colours <code class="docutils literal notranslate"><span class="pre">my_colours</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.barh(my_labels,</span> <span class="pre">my_data,</span> <span class="pre">height=my_height,</span> <span class="pre">color=my_colours)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.barh.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Pie Chart</p>
+<ul>
+<li><p>A pie chart of <code class="docutils literal notranslate"><span class="pre">data</span></code>, labeled as <code class="docutils literal notranslate"><span class="pre">my_labels</span></code> with colours <code class="docutils literal notranslate"><span class="pre">my_colours</span></code>, exploded by <code class="docutils literal notranslate"><span class="pre">explode_array</span></code> with shadow determined by <code class="docutils literal notranslate"><span class="pre">shadow_bool</span></code>.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.pie(data,</span> <span class="pre">labels=my_labels,</span> <span class="pre">colors=my_colours,</span> <span class="pre">explode=explode_array,</span> <span class="pre">shadow</span> <span class="pre">=</span> <span class="pre">shadow_bool)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="d-plots">
+<h2>3D Plots<a class="headerlink" href="#d-plots" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Line the 3D space</p>
+<ul>
+<li><p>Adding the <code class="docutils literal notranslate"><span class="pre">projection='3d'</span></code> as a keyword designation in <code class="docutils literal notranslate"><span class="pre">fig.add_axes()</span></code> creates an <code class="docutils literal notranslate"><span class="pre">Axes3D</span></code> object.</p></li>
+<li><p>Plotting points 3D line through points (<code class="docutils literal notranslate"><span class="pre">x_array</span></code>, <code class="docutils literal notranslate"><span class="pre">y_array</span></code>, <code class="docutils literal notranslate"><span class="pre">z_array</span></code>)
+<code class="docutils literal notranslate"><span class="pre">ax.plot3D(x_array,</span> <span class="pre">y_array,</span> <span class="pre">z_array)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.mplot3d.axes3d.Axes3D.html">https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.mplot3d.axes3d.Axes3D.html</a></p></li>
+</ul>
+</li>
+<li><p>Heat maps</p>
+<ul>
+<li><p>Create an image <code class="docutils literal notranslate"><span class="pre">im</span></code> of a heatmap of <code class="docutils literal notranslate"><span class="pre">Z_mesh</span></code> on axis <code class="docutils literal notranslate"><span class="pre">my_ax</span></code> accoding to the colourmap <code class="docutils literal notranslate"><span class="pre">my_map</span></code> with</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">im</span> <span class="pre">=</span> <span class="pre">my_ax.imshow(Z_mesh,</span> <span class="pre">cmap=my_map)</span></code>.</p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</a></p></li>
+<li><p>Add a colourbar shrunk by <code class="docutils literal notranslate"><span class="pre">my_shrink</span></code> to the figure with</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fig.colorbar(im,</span> <span class="pre">ax=my_ax,</span> <span class="pre">shrink=my_shrink)</span></code>.</p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html</a></p></li>
+<li><p>Set a limit of <code class="docutils literal notranslate"><span class="pre">my_vmin</span></code> to <code class="docutils literal notranslate"><span class="pre">my_vmaxon</span></code> the colour values using</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">im.set_clim(vmin=my_vmin,</span> <span class="pre">vmax=my_vmax)</span></code>.</p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html</a></p></li>
+</ul>
+</li>
+<li><p>Surface plots</p>
+<ul>
+<li><p>Three different types of surfaceplots of (<code class="docutils literal notranslate"><span class="pre">X_mesh</span></code>, <code class="docutils literal notranslate"><span class="pre">Y_mesh</span></code>, <code class="docutils literal notranslate"><span class="pre">Z_mesh</span></code>) in 3D:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.plot_surface(X_mesh,</span> <span class="pre">Y_mesh,</span> <span class="pre">Z_mesh)</span></code>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.plot_wireframe(X_mesh,</span> <span class="pre">Y_mesh,</span> <span class="pre">Z_mesh)</span></code>, and</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.contour3D(X_mesh,</span> <span class="pre">Y_mesh,</span> <span class="pre">Z_mesh)</span></code></p></li>
+</ul>
+</li>
+<li><p>Change angle of view to angles <code class="docutils literal notranslate"><span class="pre">my_azim</span></code> and <code class="docutils literal notranslate"><span class="pre">my_elev</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ax.view_init(azim=my_azim,</span> <span class="pre">elev=my_elev)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.mplot3d.axes3d.Axes3D.html">https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.mplot3d.axes3d.Axes3D.html</a></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="animations">
+<h2>5.7 Animations<a class="headerlink" href="#animations" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Changing to an interactive backend</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> makes interactive plots</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> is default and makes noninteractive plots</p></li>
+</ul>
+</li>
+<li><p>Making an initialisation function</p>
+<ul>
+<li><p>An empty plot is first performend using <code class="docutils literal notranslate"><span class="pre">line,</span> <span class="pre">=</span> <span class="pre">ax.plot([],</span> <span class="pre">[])</span></code></p></li>
+<li><p>An function <code class="docutils literal notranslate"><span class="pre">init()</span></code> function which will change the data plotted to <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> using <code class="docutils literal notranslate"><span class="pre">line.set_data(x,y)</span></code> and will return <code class="docutils literal notranslate"><span class="pre">line,</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Making an animation function</p>
+<ul>
+<li><p>The animate function <code class="docutils literal notranslate"><span class="pre">animate(i)</span></code> will be called for each frame of the animation and will take in frame number <code class="docutils literal notranslate"><span class="pre">i</span></code>. This will update the plotted values using <code class="docutils literal notranslate"><span class="pre">line.set_data()</span></code> again, once again returning <code class="docutils literal notranslate"><span class="pre">line,</span></code>.</p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html</a></p></li>
+</ul>
+</li>
+<li><p>Animating a plot</p>
+<ul>
+<li><p>Animation requires us to import a function.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">matplotlib.animation</span> <span class="pre">import</span> <span class="pre">FuncAnimation</span></code></p></li>
+</ul>
+</li>
+<li><p>To animate <code class="docutils literal notranslate"><span class="pre">fig</span></code> with <code class="docutils literal notranslate"><span class="pre">my_frame_num</span></code> number of frames, a interval of <code class="docutils literal notranslate"><span class="pre">my_inter</span></code> milliseconds between frames, and a repeat delay of <code class="docutils literal notranslate"><span class="pre">my_delay</span></code> milliseconds.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anim</span> <span class="pre">=</span> <span class="pre">FuncAnimation(fig,</span> <span class="pre">animate,</span> <span class="pre">init_func=init,</span> <span class="pre">frames=my_frame_num,</span> <span class="pre">interval=my_inter,</span> <span class="pre">repeat_delay=my_delay,</span> <span class="pre">blit=True)</span></code></p></li>
+<li><p>Documentation: <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html">https://matplotlib.org/stable/api/_as_gen/matplotlib.animation.FuncAnimation.html</a></p></li>
+</ul>
+</li>
+<li><p>Saving an animation</p></li>
+</ul>
+</section>
+<section id="tutorial-5">
+<h2><span class="xref myst">Tutorial 5</span><a class="headerlink" href="#tutorial-5" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Noise in qubits</p></li>
+<li><p>Particle in a Box</p></li>
+<li><p>Normal Distribution</p></li>
+<li><p>Monte Carlo <span class="math notranslate nohighlight">\(\pi\)</span> Estimation</p></li>
+<li><p>Ball Animation</p></li>
+</ol>
+</section>
+<section id="exercises-5">
+<h2><span class="xref myst">Exercises 5</span><a class="headerlink" href="#exercises-5" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Settlers of Histogram</p></li>
+<li><p>Normal Distribution</p></li>
+<li><p>Particle in a Box</p></li>
+<li><p>Plotting a Sphere</p></li>
+<li><p>Snake Animation</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pyqm-week5/notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><center>Python For Quantum Mechanics</center></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#center-cheatsheet-week-5-center"><center>Cheatsheet: Week 5</center></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-a-plot">Making a Plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatting">Formatting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#figure-object">Figure Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-plots">Other Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-plots">3D Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animations">5.7 Animations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-5"><span class="xref myst">Tutorial 5</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-5"><span class="xref myst">Exercises 5</span></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ICHEC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2022
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

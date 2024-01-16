@@ -1,0 +1,847 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python For Quantum Mechanics &#8212; Lecture Notes from ICHEC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week1/exercises_solutions/PyQM_Tut.1_sol_alt';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Lecture Notes from ICHEC - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Lecture Notes from ICHEC - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Description
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Week 1 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week2/README.html">Week 2 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week3/README.html">Week 3 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week4/README.html">Week 4 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week5/README.html">Week 5 Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pyqm-week6/README.html">Week 6 Contents</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pyqm-week1/exercises_solutions/PyQM_Tut.1_sol_alt.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python For Quantum Mechanics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-tutorial">Week 1: Tutorial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-matrix-multiplication">Exercise 1: Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-matrix-addition-subtraction">Exercise 2: Matrix Addition/Subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-scalar-multiplication-of-matrix">Exercise 3: Scalar Multiplication Of Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-matrix-inverse-determinant">Exercise 4: Matrix Inverse &amp; Determinant</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <center>
+<section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
+<h1>Python For Quantum Mechanics<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-1-tutorial">
+<h1>Week 1: Tutorial<a class="headerlink" href="#week-1-tutorial" title="Permalink to this heading">#</a></h1>
+</center><section id="exercise-1-matrix-multiplication">
+<h2>Exercise 1: Matrix Multiplication<a class="headerlink" href="#exercise-1-matrix-multiplication" title="Permalink to this heading">#</a></h2>
+<p>Operations on matrices are fundamental to this course. One of the operations is multiplication. You might first think that when multiplying matrices, we multiply element by element, this is NOT the case</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+3 &amp; 4 \\ 5&amp;6
+\end{bmatrix} \times \begin{bmatrix}
+2 &amp; 4 \\ 3&amp;3
+\end{bmatrix} \neq \begin{bmatrix}
+6 &amp; 16 \\ 15&amp;18
+\end{bmatrix}\end{split}\]</div>
+<p>Instead, the correct result is:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+\color{blue}{3} &amp; \color{blue}{4} \\ \color{green}{5}&amp;\color{green}{6}
+\end{bmatrix} \times \begin{bmatrix}
+\color{red}{2} &amp; \color{purple}{4} \\ \color{red}{3}&amp;\color{purple}{3}
+\end{bmatrix} = \begin{bmatrix}
+18 &amp; 24 \\ 28&amp;38
+\end{bmatrix}\end{split}\]</div>
+<p>How did we arrive at this result? The way in which we calculate the result in the first row and first column(18):
+Multiply, element-wise, the <span style="color: blue">first-row</span> in the first matrix by the <span style="color: red">first-column</span> in the second matrix, and sum.</p>
+<div class="math notranslate nohighlight">
+\[ [1,1] = \color{blue}{3}(\color{red}{2}) + \color{blue}{4}(\color{red}{3}) = 18 \]</div>
+<p>The other elements are similarly found by multiplying the corresponding row and column element-wise. For example, the result in the second row and first column, 28, is found by multiplying the elements in the <span style="color: green">second-row</span> of the first matrix by those in the <span style="color: red">first-column</span> of the second matrix, and then summing.</p>
+<div class="math notranslate nohighlight">
+\[ [2,1] = \color{green}{5}(\color{red}{2}) + \color{green}{6}(\color{red}{3}) = 28 \]</div>
+<div class="math notranslate nohighlight">
+\[ [1,2] = \color{blue}{3}(\color{purple}{4}) + \color{blue}{4}(\color{purple}{3}) = 24 \]</div>
+<div class="math notranslate nohighlight">
+\[ [2,2] = \color{green}{5}(\color{purple}{4}) + \color{green}{6}(\color{purple}{3}) = 38 \]</div>
+<p>We can use nested lists to store the elements of a matrix. Here we use pythons calculator functionality to find the resulting matrix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Initialise the matrix with zeros</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="o">*</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[18, 24], [28, 38]] 
+
+[18, 24]
+[28, 38]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Multiply the following matrices, give the result in a nested list:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+10 &amp; 1 \\ 20&amp;2
+\end{bmatrix} \times \begin{bmatrix}
+15 &amp; 3 \\ 60&amp;10
+\end{bmatrix} = \begin{bmatrix}
+? &amp; ? \\ ?&amp;?
+\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="mi">60</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">60</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">10</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[210, 40], [420, 80]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important thing to note about matrix multiplication is that the order in which you multiply the matrices matters. While in conventional multiplication of numbers, <span class="math notranslate nohighlight">\(3\times4 = 4 \times 3\)</span>, this is not necessarily true for matrices</p>
+<div class="math notranslate nohighlight">
+\[A \times B \neq B \times A\]</div>
+<p>Lets multiply the above matrices in reverse order</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+15 &amp; 3 \\ 60&amp;10
+\end{bmatrix} \times \begin{bmatrix}
+10 &amp; 1 \\ 20&amp;2
+\end{bmatrix}= \begin{bmatrix}
+? &amp; ? \\ ?&amp;?
+\end{bmatrix}\end{split}\]</div>
+<p>compare your answer to the previous result, printing a boolean value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">result2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">20</span>
+<span class="n">result2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="mi">20</span>
+<span class="n">result2</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span>
+<span class="n">result2</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">==</span><span class="n">result2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[210, 21], [800, 80]]
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Another important facet of matrix multiplication is the dimensions of each matrix. The number of columns in the first matrix must be the same as the number of rows in the second matrix. So we CAN multiply the following matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+3 &amp; 4 
+\end{bmatrix} \times \begin{bmatrix}
+2 &amp; 4 &amp; 7\\ 3&amp;3&amp; 4
+\end{bmatrix} = \begin{bmatrix}
+18 &amp; 24 &amp; 37
+\end{bmatrix}\end{split}\]</div>
+<p>The resulting matrix has the same number of rows as the first matrix and the same number of columns as the second matrix.</p>
+<p>We CANNOT multiply these matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+2 &amp; 4 &amp; 7\\ 3&amp;3&amp; 4
+\end{bmatrix} \times \begin{bmatrix}
+3 &amp; 4 
+\end{bmatrix} =\ \text{?}\end{split}\]</div>
+<p>This can all be summarised in the following expression:
+$<span class="math notranslate nohighlight">\((\text{row}_1,\text{column}_1) \times (\text{row}_2,\text{column}_2) = (\text{row}_1,\text{column}_2)\)</span><span class="math notranslate nohighlight">\(
+where
+\)</span><span class="math notranslate nohighlight">\(\text{column}_1 = \text{row}_2\)</span>$</p>
+<p>A common multiplication we will see is that of a <span class="math notranslate nohighlight">\(2\times 2\)</span> matrix by a <span class="math notranslate nohighlight">\(2\times 1\)</span> vector. Note that the number of columns in the first matrix is the same as the number of rows in the second matrix/vector.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+3 &amp; 4 \\ 5&amp;6
+\end{bmatrix} \times \begin{bmatrix}
+2 \\ 3
+\end{bmatrix} = \begin{bmatrix}
+18 \\ 28
+\end{bmatrix}\end{split}\]</div>
+<p>The result is a vector/matrix with the same number of rows as the first matrix and columns as the second matrix.</p>
+<p>Multiply the following matrix and vector. Print the answer in a list.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+0 &amp; 1 \\ 1&amp;0
+\end{bmatrix} \times \begin{bmatrix}
+1 \\ 0
+\end{bmatrix} = \begin{bmatrix}
+? \\ ?
+\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">*</span><span class="mi">0</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-matrix-addition-subtraction">
+<h2>Exercise 2: Matrix Addition/Subtraction<a class="headerlink" href="#exercise-2-matrix-addition-subtraction" title="Permalink to this heading">#</a></h2>
+<p>Matrix addition is much more straightforward. Elements are added element-wise. So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+1 &amp; 2 \\ 3&amp;4
+\end{bmatrix} + \begin{bmatrix}
+5 &amp; 6 \\ 7&amp;8
+\end{bmatrix} = \begin{bmatrix}
+6 &amp; 8 \\ 10&amp;12
+\end{bmatrix}\end{split}\]</div>
+<p>Add the following matrices, store the result in a nested list.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{bmatrix}
+10 &amp; 100,000 \\ -20&amp;7
+\end{bmatrix} + \begin{bmatrix} 8 &amp; 6 \\ 7&amp;8i
+\end{bmatrix} = \begin{bmatrix}
+? &amp; ? \\ ?&amp;?
+\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">8</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span> <span class="o">+</span> <span class="mi">7</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100000</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">+</span> <span class="mi">8</span><span class="n">j</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[18, 100006], [-13, (7+8j)]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3-scalar-multiplication-of-matrix">
+<h2>Exercise 3: Scalar Multiplication Of Matrix<a class="headerlink" href="#exercise-3-scalar-multiplication-of-matrix" title="Permalink to this heading">#</a></h2>
+<p>We can multiply a scalar(integer, real, complex) by a matrix. We simply multiply all the elements, of the matrix, by the scalar.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 4.5 \times
+ \begin{bmatrix}
+5 &amp; 6 \\ 7&amp;8
+\end{bmatrix} = \begin{bmatrix}
+22.5 &amp; 27 \\ 31.5&amp;36
+\end{bmatrix}\end{split}\]</div>
+<p>The order of multiplication doesn’t matter. So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+ \begin{bmatrix}
+5 &amp; 6 \\ 7&amp;8
+\end{bmatrix}\times 4.5 = \begin{bmatrix}
+22.5 &amp; 27 \\ 31.5&amp;36
+\end{bmatrix}\end{split}\]</div>
+<p>Multiply the following scalar and matrix, store and print the answer in a nested list</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 3.14 \times
+ \begin{bmatrix}
+4+10i &amp; -200 \\ 7.3 &amp; 10101
+\end{bmatrix} = \begin{bmatrix}
+? &amp; ? \\ ?&amp;?
+\end{bmatrix}\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">*</span><span class="p">(</span><span class="mi">4</span><span class="o">+</span><span class="mi">10</span><span class="n">j</span><span class="p">)</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">*</span><span class="p">(</span><span class="mf">7.3</span><span class="p">)</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span><span class="o">*</span><span class="p">(</span><span class="mi">10101</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[(12.56+31.400000000000002j), -628.0], [22.922, 31717.140000000003]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4-matrix-inverse-determinant">
+<h2>Exercise 4: Matrix Inverse &amp; Determinant<a class="headerlink" href="#exercise-4-matrix-inverse-determinant" title="Permalink to this heading">#</a></h2>
+<p>We have covered multiplication and addition/subtraction, but what about division? To understand matrix division, we must recall the concept of the multiplicative inverse. We can re-interpret division of numbers as multiplying by an inverse. For example:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{80}{8} = 80 \times \frac{1}{8} = 80 \times 8^{-1} = 10 \]</div>
+<p>So dividing by a number is the same as multiplying by it’s inverse. The same can be said for matrices. And we already know how to multiply matrices.</p>
+<div class="math notranslate nohighlight">
+\[\frac{A}{B} = A \times B^{-1}\]</div>
+<p>But how do we find the inverse of a matrix? Well with regular numbers, the inverse of a number when multiplyed by said number gives the value 1.</p>
+<div class="math notranslate nohighlight">
+\[8\times 8^{-1} = 1\]</div>
+<p>The same is true for matrices, but we get the identity matrix rather than 1. The identity matrix is an <span class="math notranslate nohighlight">\(n\times n\)</span> matrix with <span class="math notranslate nohighlight">\(1\)</span>s on the diagonal and <span class="math notranslate nohighlight">\(0\)</span>s everywhere else.  So for two-dimensional matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A\times A^{-1}=A^{-1}\times A =\mathbb{1} = \begin{bmatrix}
+1 &amp; 0 \\ 0&amp;1
+\end{bmatrix}\end{split}\]</div>
+<p>It is still not clear how we actually find the inverse, but we know what it should do. It turns out this is quite a complicated procedure, especially when we look at higher-dimensional matrices. For this reason we will only look at <span class="math notranslate nohighlight">\(2\times 2\)</span> matrices.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A =  \begin{bmatrix}
+a &amp; b \\ c&amp;d
+\end{bmatrix} \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} A^{-1} =\frac{1}{ad-bc}  \begin{bmatrix}
+d &amp; -b \\ -c&amp;a
+\end{bmatrix} \end{split}\]</div>
+<p>Lets do an example. Take the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix}
+1 &amp; 2 \\ 3&amp;4
+\end{bmatrix}\end{split}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A^{-1} =\frac{1}{1(4)-3(2)} \begin{bmatrix}
+4 &amp; -2 \\ -3&amp;1
+\end{bmatrix} = \begin{bmatrix}
+-2 &amp; 1 \\ \frac{3}{2}&amp;-\frac{1}{2}
+\end{bmatrix}\end{split}\]</div>
+<p>And multiplying</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} A\times A^{-1}=
+\begin{bmatrix}
+1 &amp; 2 \\ 3&amp;4
+\end{bmatrix} \times \begin{bmatrix}
+-2 &amp; 1 \\ \frac{3}{2}&amp;-\frac{1}{2}
+\end{bmatrix} =  \begin{bmatrix}
+-2+3 &amp; 1-1 \\ -6+6&amp;3-2
+\end{bmatrix} = \begin{bmatrix}
+1 &amp; 0 \\ 0&amp;1
+\end{bmatrix} = \mathbb{1}\end{split}\]</div>
+<p>Similarly,</p>
+<div class="math notranslate nohighlight">
+\[A^{-1}\times A=\mathbb{1}\]</div>
+<p>The factor <span class="math notranslate nohighlight">\(ad-bc\)</span> is called the determinant.</p>
+<div class="math notranslate nohighlight">
+\[det(A) = ad - bc \]</div>
+<p>Notice that if this value is <span class="math notranslate nohighlight">\(0\)</span> then we cannot find the inverse, so some matrices are not invertible! For example</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C = \begin{bmatrix}
+1 &amp; 1 \\ 1&amp;1
+\end{bmatrix}\end{split}\]</div>
+<p>has determinant</p>
+<div class="math notranslate nohighlight">
+\[det(C) = 1\times 1 - 1\times 1 = 0\]</div>
+<div class="math notranslate nohighlight">
+\[C^{-1}= ?\]</div>
+<p>Take the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}A = \begin{bmatrix}
+3.14 &amp; 42 \\ 2.71&amp;11
+\end{bmatrix}\end{split}\]</div>
+<p>Find and print it’s determinant, then find and print it’s inverse, storing it in a nested list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">3.14</span><span class="p">,</span><span class="mf">2.71</span><span class="p">],[</span><span class="mf">1.61</span><span class="p">,</span><span class="mi">42</span><span class="p">]]</span>
+
+<span class="n">detA</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;det(A) = &#39;</span><span class="p">,</span><span class="n">detA</span><span class="p">)</span>
+
+<span class="n">Ainv</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">detA</span>
+<span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">detA</span>
+<span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">detA</span>
+<span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">detA</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ainv = &#39;</span><span class="p">,</span> <span class="n">Ainv</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>det(A) =  127.51689999999999
+Ainv =  [[0.3293681072861715, -0.02125208501775059], [-0.012625777445969908, 0.024624187068537584]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now multiply the matrices <span class="math notranslate nohighlight">\(A\times A^{-1}\)</span>, store the result in a nested list and print it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Initialise the matrix with zeros</span>
+
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">result</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">Ainv</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1.0000000000000002, 0.0], [0.0, 1.0]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./pyqm-week1/exercises_solutions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python For Quantum Mechanics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-tutorial">Week 1: Tutorial</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-matrix-multiplication">Exercise 1: Matrix Multiplication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-matrix-addition-subtraction">Exercise 2: Matrix Addition/Subtraction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-scalar-multiplication-of-matrix">Exercise 3: Scalar Multiplication Of Matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-matrix-inverse-determinant">Exercise 4: Matrix Inverse &amp; Determinant</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ICHEC Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  Copyright@2022
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

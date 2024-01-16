@@ -1,0 +1,58 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/asyncio/base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.12.1/x64/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+data1 = np.random.normal(0.0,1.0,500)
+data2 = np.random.normal(0.0,1.0,5000)
+
+bin_array = np.arange(-2.5,3,.5)
+
+fig = plt.figure(figsize = (10,6))
+
+ax1 = fig.add_axes([0,.5,.46,1])
+ax1.hist(data1, density=True, bins=bin_array, color='r', orientation='horizontal')
+ax1.set_xlabel('Data Set 1')
+
+ax2 = fig.add_axes([.5,.5,.46,1])
+ax2.hist(data2, density=True, bins=bin_array, color='b', orientation='horizontal')
+ax2.set_xlabel('Data Set 2')
+
+ax2.xaxis.tick_top()
+ax1.xaxis.tick_top()
+ax1.yaxis.tick_right()
+
+ax2.get_shared_y_axes().join(ax1, ax2)
+ax1.invert_xaxis()
+ax2.set_yticklabels([])
+
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mAttributeError[0m                            Traceback (most recent call last)
+Cell [0;32mIn[13], line 20[0m
+[1;32m     17[0m ax1[38;5;241m.[39mxaxis[38;5;241m.[39mtick_top()
+[1;32m     18[0m ax1[38;5;241m.[39myaxis[38;5;241m.[39mtick_right()
+[0;32m---> 20[0m [43max2[49m[38;5;241;43m.[39;49m[43mget_shared_y_axes[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mjoin[49m(ax1, ax2)
+[1;32m     21[0m ax1[38;5;241m.[39minvert_xaxis()
+[1;32m     22[0m ax2[38;5;241m.[39mset_yticklabels([])
+
+[0;31mAttributeError[0m: 'GrouperView' object has no attribute 'join'
+
