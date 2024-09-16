@@ -28,19 +28,17 @@ The course material will be hosted on GitHub and includes a folder for each sess
 
 |No.|Topic                 |Folder                |                 |
 |-- |--                    |--                    |--               |
-|1. |Fundamentals          | [Week 1](pyqm-week1/)|Divyajyoti Sarkar|
-|2. |Flow Control and I/O  | [Week 2](pyqm-week2/)|Divyajyoti Sarkar|
-|3. |Functions and Classes | [Week 3](pyqm-week3/)|Pablo Lauret     |
-|4. |Numpy                 | [Week 4](pyqm-week4/)|Rajarshi Tiwari  |
-|5. |Matplotlib            | [Week 5](pyqm-week5/)|Pablo Lauret     |
-|6. |Scipy                 | [Week 6](pyqm-week6/)|Rajarshi Tiwari  |
+|1. |Fundamentals          | [Week 1](pyqm-week1/)|Rajarshi Tiwari/Katie O'Connor|
+|2. |Flow Control and I/O  | [Week 2](pyqm-week2/)|Rajarshi Tiwari/Katie O'Connor|
+|3. |Functions and Classes | [Week 3](pyqm-week3/)|Rajarshi Tiwari/Katie O'Connor|
+|4. |Numpy                 | [Week 4](pyqm-week4/)|Rajarshi Tiwari/Katie O'Connor|
+|5. |Matplotlib            | [Week 5](pyqm-week5/)|Rajarshi Tiwari/Katie O'Connor|
+|6. |Scipy                 | [Week 6](pyqm-week6/)|Rajarshi Tiwari/Katie O'Connor|
 
 
 ## Contact
-- Divyajyoti Sarkar - <divyajyoti.sarkar@ichec.ie>
-- Pablo Lauret – <pablo.lauret@ichec.ie>
+- Katie O'Connor - <katie.oconnor@ichec.ie>
 - Rajarshi Tiwari - <rajarshi.tiwari@ichec.ie>
 - Karthik Krishnakumar - <karthik.krishnakumar@ichec.ie>
 - Emil Dimitrov – <emil.dimitrov@ichec.ie>
-- Conor Dunne – <conor.dunne@ichec.ie>
 - Venkatesh Kannan – <venkatesh.kannan@ichec.ie>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python for Quantum Mechanics: &#8212; Lecture Notes from ICHEC</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=b2431316" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week5/notebooks/pyqm-5.2-multiple-and-alternative-plots';</script>
@@ -77,28 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -150,6 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -167,7 +161,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -199,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -208,14 +213,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -293,10 +298,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -304,14 +309,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -358,10 +363,10 @@ document.write(`
                   
   <center>
 <section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
-<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multiple-and-alternative-plots">
-<h1>Multiple and Alternative Plots<a class="headerlink" href="#multiple-and-alternative-plots" title="Permalink to this heading">#</a></h1>
+<h1>Multiple and Alternative Plots<a class="headerlink" href="#multiple-and-alternative-plots" title="Link to this heading">#</a></h1>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -390,7 +395,7 @@ document.write(`
 </div>
 </div>
 <section id="making-sub-plots-using-plt-subplot">
-<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code><a class="headerlink" href="#making-sub-plots-using-plt-subplot" title="Permalink to this heading">#</a></h2>
+<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code><a class="headerlink" href="#making-sub-plots-using-plt-subplot" title="Link to this heading">#</a></h2>
 <p>Making multiple plots can often be very useful. There are a number of ways to do this, prehaps the quickest is using <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code>. The first two arguments are defining the grid shape (row then column) and the third will be the number within this grid, counting horizontally before vertical as shown. After we have specified the plot we can use the familiar functions we are used to like <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.titles</span></code>, etc. The function <code class="docutils literal notranslate"><span class="pre">plt.suptitle()</span></code> can be used to give a title to the entire figure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -423,11 +428,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:12: SyntaxWarning: invalid escape sequence &#39;\ &#39;
-/tmp/ipykernel_2437/1916865425.py:12: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/tmp/ipykernel_2415/1916865425.py:12: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   plt.title(&#39;$x\ sin(x)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/5eff3881a5e85d4173fda817bba77fa821a97ff936f9a24b2b7fbe881f900de6.png" src="../../_images/5eff3881a5e85d4173fda817bba77fa821a97ff936f9a24b2b7fbe881f900de6.png" />
+<img alt="../../_images/edb6c93e7fee408b773e2c8562d8dda09e9f7f3ad34e7fa69feb0f95b76967de.png" src="../../_images/edb6c93e7fee408b773e2c8562d8dda09e9f7f3ad34e7fa69feb0f95b76967de.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -449,11 +454,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:9: SyntaxWarning: invalid escape sequence &#39;\s&#39;
-/tmp/ipykernel_2437/550533285.py:9: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2415/550533285.py:9: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   plt.title(&#39;$x \sin(x)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/dd8f559a60851ff386eb2b23fce8b3e0aadda37e92ce89f4b717fa2eed3733d1.png" src="../../_images/dd8f559a60851ff386eb2b23fce8b3e0aadda37e92ce89f4b717fa2eed3733d1.png" />
+<img alt="../../_images/9a762f84b4972765233e23177b922fac7daef0bd4738747d31070d77f174dfcb.png" src="../../_images/9a762f84b4972765233e23177b922fac7daef0bd4738747d31070d77f174dfcb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -473,12 +478,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/07a93b245126b74c3889db741bcca9ecadc3f85885d28bd398794ba41b6012a3.png" src="../../_images/07a93b245126b74c3889db741bcca9ecadc3f85885d28bd398794ba41b6012a3.png" />
+<img alt="../../_images/a3a5a94f8ac63eec007a738a61dd372599e5cb46c651e4a01488186e7d996304.png" src="../../_images/a3a5a94f8ac63eec007a738a61dd372599e5cb46c651e4a01488186e7d996304.png" />
 </div>
 </div>
 </section>
 <section id="plots-in-plots-plotception">
-<h2>Plots in Plots (plotception)<a class="headerlink" href="#plots-in-plots-plotception" title="Permalink to this heading">#</a></h2>
+<h2>Plots in Plots (plotception)<a class="headerlink" href="#plots-in-plots-plotception" title="Link to this heading">#</a></h2>
 <p>The above method is indeed very quick and but it is better to create a figure. After this we can simply create two sets of axes. The function <code class="docutils literal notranslate"><span class="pre">fig.suptitle()</span></code> can be used to give a title to the entire figure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -507,7 +512,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0405afea04109eba2a992784d50641d7cb1a956c1e137565cdab8478541acc3d.png" src="../../_images/0405afea04109eba2a992784d50641d7cb1a956c1e137565cdab8478541acc3d.png" />
+<img alt="../../_images/2f444c80a57231120b879d92369eab321b58343083005cfb0286dd1f131a046f.png" src="../../_images/2f444c80a57231120b879d92369eab321b58343083005cfb0286dd1f131a046f.png" />
 </div>
 </div>
 <p>This method is particularly useful when we want to create a plot within another plot.</p>
@@ -533,12 +538,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c216ce5437552fb903ae658032e0fb476cf811e1fe6edb040225d71d1656d87c.png" src="../../_images/c216ce5437552fb903ae658032e0fb476cf811e1fe6edb040225d71d1656d87c.png" />
+<img alt="../../_images/03440fc521728c5c3140389d8f8a6929000a46a5b47197fb413e9607f1592635.png" src="../../_images/03440fc521728c5c3140389d8f8a6929000a46a5b47197fb413e9607f1592635.png" />
 </div>
 </div>
 </section>
 <section id="making-sub-plots-using-fig-add-subplot">
-<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code><a class="headerlink" href="#making-sub-plots-using-fig-add-subplot" title="Permalink to this heading">#</a></h2>
+<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code><a class="headerlink" href="#making-sub-plots-using-fig-add-subplot" title="Link to this heading">#</a></h2>
 <p>While repeatedly adding axes to the figure does give a lot of control, specifying placement for a lange number of plots could become laborious. The function <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code> can become very useful for this particulary for iterative creation of plots. <code class="docutils literal notranslate"><span class="pre">fig.subplots_adjust()</span></code> is often necessary to spread the plots out.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,12 +563,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/04e8b9bd748a0c3a4d7bac1d03e746763401f1977e195c94a9607a2900bcb6d6.png" src="../../_images/04e8b9bd748a0c3a4d7bac1d03e746763401f1977e195c94a9607a2900bcb6d6.png" />
+<img alt="../../_images/113c604d90ea79ac5365f9ad17c1e608d3a8c3b13941c66e5d203c725974822b.png" src="../../_images/113c604d90ea79ac5365f9ad17c1e608d3a8c3b13941c66e5d203c725974822b.png" />
 </div>
 </div>
 </section>
 <section id="making-sub-plots-using-plt-subplots">
-<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code><a class="headerlink" href="#making-sub-plots-using-plt-subplots" title="Permalink to this heading">#</a></h2>
+<h2>Making sub-plots using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code><a class="headerlink" href="#making-sub-plots-using-plt-subplots" title="Link to this heading">#</a></h2>
 <p>Another method of having the acheving a similar but prehaps more versitile result is to first make an empty figure object using <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> to create a figure object and a tupple of axes within that. As seen below <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> returns both a figure, <code class="docutils literal notranslate"><span class="pre">fig</span></code> and a numpy array of axes, <code class="docutils literal notranslate"><span class="pre">ax</span></code>. Within <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> one can specify the number and shape of axes with <code class="docutils literal notranslate"><span class="pre">ax</span></code>; e.g <code class="docutils literal notranslate"><span class="pre">plt.subplots(2,1)</span></code> creates a figure with two rows with one set axes each.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,7 +586,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ec17e0d99936b4d1e5fbb1a87e2c51ae769f84d94b3f67e4c8875e18391f63fd.png" src="../../_images/ec17e0d99936b4d1e5fbb1a87e2c51ae769f84d94b3f67e4c8875e18391f63fd.png" />
+<img alt="../../_images/e3ad8f560bb1bb6a6c662bbf0f1efc28f7b34f58792f553dfdb80e9cf3419927.png" src="../../_images/e3ad8f560bb1bb6a6c662bbf0f1efc28f7b34f58792f553dfdb80e9cf3419927.png" />
 </div>
 </div>
 <p>It would be nice if these plots lined up and shared a <span class="math notranslate nohighlight">\(x\)</span>-axis for ease of comparison. This is easily done by setting <code class="docutils literal notranslate"><span class="pre">sharex=True</span></code> when creating the figure. Setting the limit on one of the shared axes will obviously change the limit for the other.</p>
@@ -612,13 +617,13 @@ document.write(`
 &lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_2437/4207878845.py:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2415/4207878845.py:10: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   ax[0].set_title(&#39;$x\sin(x)$&#39;)
-/tmp/ipykernel_2437/4207878845.py:14: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_2415/4207878845.py:14: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   ax[1].set_title(&#39;$\cos(x^2)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/f4a64ecb19c878d7355fabe15651249e6c09ec4e12047440de24046a67ddb410.png" src="../../_images/f4a64ecb19c878d7355fabe15651249e6c09ec4e12047440de24046a67ddb410.png" />
+<img alt="../../_images/12501c9bbc2159bba25aa3442479ffa0e155c13fb2027c81af468b958b0a9943.png" src="../../_images/12501c9bbc2159bba25aa3442479ffa0e155c13fb2027c81af468b958b0a9943.png" />
 </div>
 </div>
 <p>We can easily share both axes too in a square grid.</p>
@@ -660,22 +665,22 @@ document.write(`
 &lt;&gt;:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:21: SyntaxWarning: invalid escape sequence &#39;\ &#39;
-/tmp/ipykernel_2437/1010210036.py:9: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/tmp/ipykernel_2415/1010210036.py:9: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   ax[0][0].set_title(&#39;$x\ \sin(x)$&#39;)
-/tmp/ipykernel_2437/1010210036.py:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/tmp/ipykernel_2415/1010210036.py:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   ax[1][0].set_title(&#39;$x\ \cos(x^2)$&#39;)
-/tmp/ipykernel_2437/1010210036.py:17: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/tmp/ipykernel_2415/1010210036.py:17: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   ax[0][1].set_title(&#39;$5\ \sin(x^2)$&#39;)
-/tmp/ipykernel_2437/1010210036.py:21: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/tmp/ipykernel_2415/1010210036.py:21: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   ax[1][1].set_title(&#39;$5\ \cos(x^2)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/a022b246b5d2b858a50af25a01d517be613779d5c04e0116bff6e45ef6c1d609.png" src="../../_images/a022b246b5d2b858a50af25a01d517be613779d5c04e0116bff6e45ef6c1d609.png" />
+<img alt="../../_images/3304eac108bcb583f38f630795004d576c28522afda867ab8ce5ca63dfa2cd0c.png" src="../../_images/3304eac108bcb583f38f630795004d576c28522afda867ab8ce5ca63dfa2cd0c.png" />
 </div>
 </div>
 </section>
 <section id="histogram">
-<h2>Histogram<a class="headerlink" href="#histogram" title="Permalink to this heading">#</a></h2>
+<h2>Histogram<a class="headerlink" href="#histogram" title="Link to this heading">#</a></h2>
 <p>Histograms can be very useful in exploring qubit output probabilities in quantum computing so they are worth taling note of. The function <code class="docutils literal notranslate"><span class="pre">plt.hist()</span></code> takes in an array of values. You can specify the number intervals over which the data is sampled with the <code class="docutils literal notranslate"><span class="pre">bins</span></code> keyword. What is plotted is either the counts or the percentage of counts (depedning on the <code class="docutils literal notranslate"><span class="pre">density</span></code> keyword) presenting the array in that interval.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -694,7 +699,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/adff7ba5dc7a30371458d908d130b9eaaa8bb7cd3e213d96e379a88266e28177.png" src="../../_images/adff7ba5dc7a30371458d908d130b9eaaa8bb7cd3e213d96e379a88266e28177.png" />
+<img alt="../../_images/6bd653495dd7ebc97d4d27720b9213d457877652deff04ca286dae8fb200dcfa.png" src="../../_images/6bd653495dd7ebc97d4d27720b9213d457877652deff04ca286dae8fb200dcfa.png" />
 </div>
 </div>
 <p>There are some other costomizability options for plots that are very useful in histograms.</p>
@@ -746,12 +751,12 @@ The <code class="docutils literal notranslate"><span class="pre">orientation</sp
 <span class="ne">AttributeError</span>: &#39;GrouperView&#39; object has no attribute &#39;join&#39;
 </pre></div>
 </div>
-<img alt="../../_images/b01b9945dbab43bde5cfd65471f27691ab7c5bdc42e498db7ff77bec0f160478.png" src="../../_images/b01b9945dbab43bde5cfd65471f27691ab7c5bdc42e498db7ff77bec0f160478.png" />
+<img alt="../../_images/dd953363f859cee9eb115679dd891f7ab1c08c7a4378a923fc89d9f280c51fe8.png" src="../../_images/dd953363f859cee9eb115679dd891f7ab1c08c7a4378a923fc89d9f280c51fe8.png" />
 </div>
 </div>
 </section>
 <section id="scatter">
-<h2>Scatter<a class="headerlink" href="#scatter" title="Permalink to this heading">#</a></h2>
+<h2>Scatter<a class="headerlink" href="#scatter" title="Link to this heading">#</a></h2>
 <p>We have seen <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> where you remove the lines between the points but prehaps a better way of diaplaying the same thing is using <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -775,7 +780,7 @@ The <code class="docutils literal notranslate"><span class="pre">orientation</sp
 </div>
 </section>
 <section id="bar-chart">
-<h2>Bar Chart<a class="headerlink" href="#bar-chart" title="Permalink to this heading">#</a></h2>
+<h2>Bar Chart<a class="headerlink" href="#bar-chart" title="Link to this heading">#</a></h2>
 <p><span class="math notranslate nohighlight">\(x\)</span>-axis bar charts can be created using <code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code>. This takes in an array of labels and an array of values for the labeled bars to take.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -831,7 +836,7 @@ The <code class="docutils literal notranslate"><span class="pre">orientation</sp
 </div>
 </section>
 <section id="pie-chart">
-<h2>Pie Chart<a class="headerlink" href="#pie-chart" title="Permalink to this heading">#</a></h2>
+<h2>Pie Chart<a class="headerlink" href="#pie-chart" title="Link to this heading">#</a></h2>
 <p>The function <code class="docutils literal notranslate"><span class="pre">plt.pie()</span></code> is used similarly to <code class="docutils literal notranslate"><span class="pre">plt.bar()</span></code> to create a pie chart. The proportions, <code class="docutils literal notranslate"><span class="pre">labels</span></code> and <code class="docutils literal notranslate"><span class="pre">colors</span></code> are specified.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -915,7 +920,7 @@ The <code class="docutils literal notranslate"><span class="pre">orientation</sp
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -991,8 +996,8 @@ By ICHEC Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python for Quantum Mechanics: &#8212; Lecture Notes from ICHEC</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=b2431316" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week5/notebooks/pyqm-5.3-3d-plots-and-animations';</script>
@@ -77,28 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -150,6 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -167,7 +161,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -199,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -208,14 +213,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -293,10 +298,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -304,14 +309,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -355,10 +360,10 @@ document.write(`
                   
   <center>
 <section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
-<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="d-plots-and-animations">
-<h1>3D Plots and Animations<a class="headerlink" href="#d-plots-and-animations" title="Permalink to this heading">#</a></h1>
+<h1>3D Plots and Animations<a class="headerlink" href="#d-plots-and-animations" title="Link to this heading">#</a></h1>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -387,7 +392,7 @@ document.write(`
 </div>
 </div>
 <section id="line-plot">
-<h2>Line Plot<a class="headerlink" href="#line-plot" title="Permalink to this heading">#</a></h2>
+<h2>Line Plot<a class="headerlink" href="#line-plot" title="Link to this heading">#</a></h2>
 <p>To make a 3D plot you must first create a set of axes with the keyword <code class="docutils literal notranslate"><span class="pre">projection</span></code> set to <code class="docutils literal notranslate"><span class="pre">'3d'</span></code>. Then we can populate it with a line using the <code class="docutils literal notranslate"><span class="pre">.plot3D()</span></code> attribute function of the axes object. This is similar to <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>, only now it will have three instead of two array argumanets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -405,12 +410,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/58d17f75dc203d5fe17c0be7454adf52ed279d3793072167c448076e542ae234.png" src="../../_images/58d17f75dc203d5fe17c0be7454adf52ed279d3793072167c448076e542ae234.png" />
+<img alt="../../_images/444c04865fcfe887f1317696da41131a4f2693c0e186c94e36eb79e26db71fd3.png" src="../../_images/444c04865fcfe887f1317696da41131a4f2693c0e186c94e36eb79e26db71fd3.png" />
 </div>
 </div>
 </section>
 <section id="heat-map">
-<h2>Heat Map<a class="headerlink" href="#heat-map" title="Permalink to this heading">#</a></h2>
+<h2>Heat Map<a class="headerlink" href="#heat-map" title="Link to this heading">#</a></h2>
 <p>For plotting a surface it is best to create a 2D mesh grid of points using <code class="docutils literal notranslate"><span class="pre">np.meshgrid()</span></code>; this takes in two numpy arrays that can be thought of as <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes to this grid. Lets say the arrays are of lengths <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(n\)</span>. The function creates two <span class="math notranslate nohighlight">\(n \times m\)</span> matrices; one with rows eqaul to the <span class="math notranslate nohighlight">\(x\)</span>-array and one with the columns equal to <span class="math notranslate nohighlight">\(y\)</span>-array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,18 +505,18 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_2465/3047540586.py:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2441/3047540586.py:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   ax[0].set_title(&#39;$\sin (x) \cos (x)$&#39;)
-/tmp/ipykernel_2465/3047540586.py:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_2441/3047540586.py:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   ax[1].set_title(&#39;$\cos ( \sqrt{x^2 +y^2} )$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/444ed652c3b4c57e8e2634a73e5a8cad9b168dfd483ca71fb66e5f48709464c3.png" src="../../_images/444ed652c3b4c57e8e2634a73e5a8cad9b168dfd483ca71fb66e5f48709464c3.png" />
+<img alt="../../_images/23e15fa23899238ec14a7650f8a9e5434697ad2cca6537df4c47871fe071e90e.png" src="../../_images/23e15fa23899238ec14a7650f8a9e5434697ad2cca6537df4c47871fe071e90e.png" />
 </div>
 </div>
 </section>
 <section id="plotting-a-surface">
-<h2>Plotting a Surface<a class="headerlink" href="#plotting-a-surface" title="Permalink to this heading">#</a></h2>
+<h2>Plotting a Surface<a class="headerlink" href="#plotting-a-surface" title="Link to this heading">#</a></h2>
 <p>A surface can be plotted in different ways using <code class="docutils literal notranslate"><span class="pre">.plot_surface()</span></code>, <code class="docutils literal notranslate"><span class="pre">.plot_wireframe()</span></code>, or <code class="docutils literal notranslate"><span class="pre">.contour3D()</span></code> attribute function. We can change the view angle on the plot using <code class="docutils literal notranslate"><span class="pre">.view_init()</span></code> by specifying the azimuthal angle <code class="docutils literal notranslate"><span class="pre">azim</span></code> and the angle of elevation <code class="docutils literal notranslate"><span class="pre">elev</span></code> in degrees.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -540,12 +545,12 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a5ed944b6082433cf178a70ea6f43ba476ef297cc9fe8059a1b0ded4ee3edfb7.png" src="../../_images/a5ed944b6082433cf178a70ea6f43ba476ef297cc9fe8059a1b0ded4ee3edfb7.png" />
+<img alt="../../_images/e66ce802cb17673d404d9ca2f4fe752a1c9aca9c7b30c97b26078d38c185fa28.png" src="../../_images/e66ce802cb17673d404d9ca2f4fe752a1c9aca9c7b30c97b26078d38c185fa28.png" />
 </div>
 </div>
 </section>
 <section id="interactive-backend">
-<h2>Interactive Backend<a class="headerlink" href="#interactive-backend" title="Permalink to this heading">#</a></h2>
+<h2>Interactive Backend<a class="headerlink" href="#interactive-backend" title="Link to this heading">#</a></h2>
 <p>In IPython there exists a magic function, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span></code>, that allows the us to specify the backend for matplotlib. So far we have only been using the default <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>. For some applictaions it can be useful to use <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> which allows interactivity and evolution in time. You always need to be mindful to ‘turn off’ the image when you are done interacting with it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -768,6 +773,15 @@ mpl.figure.prototype._init_canvas = function () {
     }
 
     this.resizeObserverInstance = new this.ResizeObserver(function (entries) {
+        // There's no need to resize if the WebSocket is not connected:
+        // - If it is still connecting, then we will get an initial resize from
+        //   Python once it connects.
+        // - If it has disconnected, then resizing will clear the canvas and
+        //   never get anything back to refill it, so better to not resize and
+        //   keep something visible.
+        if (fig.ws.readyState != 1) {
+            return;
+        }
         var nentries = entries.length;
         for (var i = 0; i < nentries; i++) {
             var entry = entries[i];
@@ -815,7 +829,7 @@ mpl.figure.prototype._init_canvas = function () {
             // And update the size in Python. We ignore the initial 0/0 size
             // that occurs as the element is placed into the DOM, which should
             // otherwise not happen due to the minimum size styling.
-            if (fig.ws.readyState == 1 && width != 0 && height != 0) {
+            if (width != 0 && height != 0) {
                 fig.request_resize(width, height);
             }
         }
@@ -1548,7 +1562,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='93574608-8a8d-4029-be78-d396c3b0ccfc'></div></div></div>
+</script><div class="output text_html"><div id='41dd782a-5b26-4ccb-a670-8ef8703235ae'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1563,7 +1577,7 @@ if (IPython.notebook.kernel !== null) {
 </div>
 </section>
 <section id="animations">
-<h2>Animations<a class="headerlink" href="#animations" title="Permalink to this heading">#</a></h2>
+<h2>Animations<a class="headerlink" href="#animations" title="Link to this heading">#</a></h2>
 <p>To do animations we need a function, <code class="docutils literal notranslate"><span class="pre">FuncAnimation()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1782,6 +1796,15 @@ mpl.figure.prototype._init_canvas = function () {
     }
 
     this.resizeObserverInstance = new this.ResizeObserver(function (entries) {
+        // There's no need to resize if the WebSocket is not connected:
+        // - If it is still connecting, then we will get an initial resize from
+        //   Python once it connects.
+        // - If it has disconnected, then resizing will clear the canvas and
+        //   never get anything back to refill it, so better to not resize and
+        //   keep something visible.
+        if (fig.ws.readyState != 1) {
+            return;
+        }
         var nentries = entries.length;
         for (var i = 0; i < nentries; i++) {
             var entry = entries[i];
@@ -1829,7 +1852,7 @@ mpl.figure.prototype._init_canvas = function () {
             // And update the size in Python. We ignore the initial 0/0 size
             // that occurs as the element is placed into the DOM, which should
             // otherwise not happen due to the minimum size styling.
-            if (fig.ws.readyState == 1 && width != 0 && height != 0) {
+            if (width != 0 && height != 0) {
                 fig.request_resize(width, height);
             }
         }
@@ -2562,7 +2585,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='255bb209-1b14-4bce-9abe-3649747d9856'></div></div></div>
+</script><div class="output text_html"><div id='9b2ee9ab-9741-4b79-beb2-56e7b981e396'></div></div></div>
 </div>
 <p>Now keeping this active we will add a plot to the picture. Notice that when we plot we have saved the return <code class="docutils literal notranslate"><span class="pre">line</span></code> item. The <code class="docutils literal notranslate"><span class="pre">,</span></code> is present because this is in <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> will in fact return a tupple with the needed item as the first item.</p>
 <div class="cell docutils container">
@@ -2665,7 +2688,7 @@ if (IPython.notebook.kernel !== null) {
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -2738,8 +2761,8 @@ By ICHEC Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

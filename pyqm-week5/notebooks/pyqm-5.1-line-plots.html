@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Python for Quantum Mechanics: &#8212; Lecture Notes from ICHEC</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=b2431316" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pyqm-week5/notebooks/pyqm-5.1-line-plots';</script>
@@ -77,28 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
 
-  <header>
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -150,6 +142,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -167,7 +161,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -199,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -208,14 +213,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -293,10 +298,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -304,14 +309,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -377,10 +382,10 @@ document.write(`
                   
   <center>
 <section class="tex2jax_ignore mathjax_ignore" id="python-for-quantum-mechanics">
-<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Permalink to this heading">#</a></h1>
+<h1>Python for Quantum Mechanics:<a class="headerlink" href="#python-for-quantum-mechanics" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="line-plots">
-<h1>Line Plots<a class="headerlink" href="#line-plots" title="Permalink to this heading">#</a></h1>
+<h1>Line Plots<a class="headerlink" href="#line-plots" title="Link to this heading">#</a></h1>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
@@ -421,7 +426,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a59c7b750b9593d8fa38a1a68f9c7c234f53deb4f775a4a20daf830532668986.png" src="../../_images/a59c7b750b9593d8fa38a1a68f9c7c234f53deb4f775a4a20daf830532668986.png" />
+<img alt="../../_images/3d21955d1949263b55ecf7a2f67e2a4c50700be1fbe2b90e4489ec41067e6075.png" src="../../_images/3d21955d1949263b55ecf7a2f67e2a4c50700be1fbe2b90e4489ec41067e6075.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> isn’t stricktly necessary for jupyter notebooks but is a good habit to be in going forward.</p>
@@ -437,7 +442,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0615e9628cf51d767717b83f622037e5472d8e3511e07f27f3ebe9c8e5a5cb67.png" src="../../_images/0615e9628cf51d767717b83f622037e5472d8e3511e07f27f3ebe9c8e5a5cb67.png" />
+<img alt="../../_images/3170ff51e65214f787c0dbc89d2f87b98d9f8369f5c0a21c7add4e8f3c889524.png" src="../../_images/3170ff51e65214f787c0dbc89d2f87b98d9f8369f5c0a21c7add4e8f3c889524.png" />
 </div>
 </div>
 <p>Now we can define a function that returns a polinomial and plot that using <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> to sample the <span class="math notranslate nohighlight">\(x\)</span>-axis and plug this sample into a function to get a graph of that function.</p>
@@ -456,7 +461,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b80f3383baa1d507d3a65148349d2d8748fb626f78338088c3e82bdf2ba1d4dc.png" src="../../_images/b80f3383baa1d507d3a65148349d2d8748fb626f78338088c3e82bdf2ba1d4dc.png" />
+<img alt="../../_images/97cac826a89c77fb3480949c62a8a5c3a370400de99eab6f73cdfee5dbc465ba.png" src="../../_images/97cac826a89c77fb3480949c62a8a5c3a370400de99eab6f73cdfee5dbc465ba.png" />
 </div>
 </div>
 <p>Here we have sampled the <span class="math notranslate nohighlight">\(x\)</span>-axis between <span class="math notranslate nohighlight">\(-2\)</span> and <span class="math notranslate nohighlight">\(1.5\)</span> (exluding <span class="math notranslate nohighlight">\(1.5\)</span>) in steps of <span class="math notranslate nohighlight">\(0.5\)</span>. This approximates the shape of a cubic, however if we sample more frequently (for example stelps of <span class="math notranslate nohighlight">\(0.1\)</span> as seen below), we can achive something approximating a smooth curve.</p>
@@ -471,7 +476,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b641da46cda9251d5915f1e41b1fdea129730a6d3a0336b61fca474b9265d67a.png" src="../../_images/b641da46cda9251d5915f1e41b1fdea129730a6d3a0336b61fca474b9265d67a.png" />
+<img alt="../../_images/6858da3cd3a9bee88d9b78f1b33c6d210c71fc63094cfec0877a18bc1fa2c23c.png" src="../../_images/6858da3cd3a9bee88d9b78f1b33c6d210c71fc63094cfec0877a18bc1fa2c23c.png" />
 </div>
 </div>
 <p>We can plot both lines on the same graph by calling <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> twice and have two plots on the graph which will automatically be set to differnt colours.</p>
@@ -484,7 +489,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" src="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" />
+<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
 </div>
 </div>
 <p>Or we can graph multiple plots in the same <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> call:</p>
@@ -496,7 +501,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" src="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" />
+<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
 </div>
 </div>
 <p>or prehaps more elegantly</p>
@@ -510,11 +515,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" src="../../_images/2475d51e91976ece59f299eb6c57b1bc6b616483a2b5ff1bd5070db19a2ffa7d.png" />
+<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
 </div>
 </div>
 <section id="lines">
-<h2>Lines<a class="headerlink" href="#lines" title="Permalink to this heading">#</a></h2>
+<h2>Lines<a class="headerlink" href="#lines" title="Link to this heading">#</a></h2>
 <p>In the following section we will look at ways of formatting lines in our plots. We will use the following during the demonstartion.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,7 +533,7 @@ document.write(`
 </div>
 </div>
 <section id="colour">
-<h3>Colour<a class="headerlink" href="#colour" title="Permalink to this heading">#</a></h3>
+<h3>Colour<a class="headerlink" href="#colour" title="Link to this heading">#</a></h3>
 <p>To specify the colour of a line we can use the <code class="docutils literal notranslate"><span class="pre">color</span></code> or <code class="docutils literal notranslate"><span class="pre">c</span></code>, keyword when calling <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>. We can use the following named colours (sourced <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html">here</a>) or specify a Hex Color Code.</p>
 <p><img alt="Base Colors" src="../../_images/sphx_glr_named_colors_001.webp" /></p>
 <p><img alt="Tableau Palette" src="../../_images/sphx_glr_named_colors_002.webp" /></p>
@@ -549,7 +554,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/afc4b1a508c5656fa6960c63ba2c00a8f6de3b58ab12346dcabadaf91617b1b0.png" src="../../_images/afc4b1a508c5656fa6960c63ba2c00a8f6de3b58ab12346dcabadaf91617b1b0.png" />
+<img alt="../../_images/be9a46e8248685fa5142de714c5420fd0d638ed7c53a2dc9ef28fa394513afa5.png" src="../../_images/be9a46e8248685fa5142de714c5420fd0d638ed7c53a2dc9ef28fa394513afa5.png" />
 </div>
 </div>
 <p>If no colour is specified the ‘Tableau Palette’ will be cycled through as seen below</p>
@@ -577,12 +582,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/79aed36ffab186da515041e7e5e01e20d6ecbff08620c9ce061d68e99ab6a573.png" src="../../_images/79aed36ffab186da515041e7e5e01e20d6ecbff08620c9ce061d68e99ab6a573.png" />
+<img alt="../../_images/038df6cda27440781f57fbc917790ade10f2e2e15d09f7dd66540f5edd394892.png" src="../../_images/038df6cda27440781f57fbc917790ade10f2e2e15d09f7dd66540f5edd394892.png" />
 </div>
 </div>
 </section>
 <section id="width">
-<h3>Width<a class="headerlink" href="#width" title="Permalink to this heading">#</a></h3>
+<h3>Width<a class="headerlink" href="#width" title="Link to this heading">#</a></h3>
 <p>The line width can be specified with the keyword <code class="docutils literal notranslate"><span class="pre">linewidth</span></code> or <code class="docutils literal notranslate"><span class="pre">lw</span></code> and has default value of 1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -594,15 +599,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6bee494b61a12461e299ef11f07963924809c4fb6f9fe828424889e673d56ee3.png" src="../../_images/6bee494b61a12461e299ef11f07963924809c4fb6f9fe828424889e673d56ee3.png" />
+<img alt="../../_images/dd159117de4f9a83a1510ef4c0bbaf2506b1b50775c978e9a00bc33fe919753b.png" src="../../_images/dd159117de4f9a83a1510ef4c0bbaf2506b1b50775c978e9a00bc33fe919753b.png" />
 </div>
 </div>
 </section>
 <section id="line-style">
-<h3>Line style<a class="headerlink" href="#line-style" title="Permalink to this heading">#</a></h3>
+<h3>Line style<a class="headerlink" href="#line-style" title="Link to this heading">#</a></h3>
 <p>The line’s style can be specified with the keyword <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> or <code class="docutils literal notranslate"><span class="pre">ls</span></code> and is defaulted to <code class="docutils literal notranslate"><span class="pre">'solid'</span></code>. The other options are</p>
 <center>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Line</p></th>
 <th class="head text-center"><p>Name</p></th>
@@ -632,6 +637,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ex</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
@@ -642,13 +648,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aebe5f70afb1a5729ae3da6104cdba5dcb095cdf13caae8b2eeec6150e857190.png" src="../../_images/aebe5f70afb1a5729ae3da6104cdba5dcb095cdf13caae8b2eeec6150e857190.png" />
+<img alt="../../_images/20e9198c4ebd97079fce7f7cf3415bdf889ffabc8a728f0a5851ed567051ddff.png" src="../../_images/20e9198c4ebd97079fce7f7cf3415bdf889ffabc8a728f0a5851ed567051ddff.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">'None'</span></code> line style might seem pointless but it can be used when only the point markers are needed which we will seen next. A more complete description of the line style formatting options can be found <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">here</a>.</p>
 </section>
 <section id="marker-types">
-<h3>Marker Types<a class="headerlink" href="#marker-types" title="Permalink to this heading">#</a></h3>
+<h3>Marker Types<a class="headerlink" href="#marker-types" title="Link to this heading">#</a></h3>
 <p>A marker type can be specified in a similar way to line styles with the keyword <code class="docutils literal notranslate"><span class="pre">'marker'</span></code>. A list of the marker types can be found <a class="reference external" href="https://matplotlib.org/stable/api/markers_api.html">here</a>. When the marker type specified without a keyword the the line style defaults to <code class="docutils literal notranslate"><span class="pre">'None'</span></code> showing only the data points without the connecting lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -662,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dfccbe85ad2c3bbf576c429e320509dc314825753e444f89fd7ae213c5feff25.png" src="../../_images/dfccbe85ad2c3bbf576c429e320509dc314825753e444f89fd7ae213c5feff25.png" />
+<img alt="../../_images/c24e1c43416bf14fa93cb5a7d6c1eb025c18a26548e1daffda1a515f2a780c1c.png" src="../../_images/c24e1c43416bf14fa93cb5a7d6c1eb025c18a26548e1daffda1a515f2a780c1c.png" />
 </div>
 </div>
 <p>I should note that the keyword <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> and <code class="docutils literal notranslate"><span class="pre">markersize</span></code> exist and they do as you might expect. I will further note that we can assign colour and marker in a single compact form as seen below. This is useful for quick assignment but might get confusing and/or limit customisability.</p>
@@ -674,15 +680,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/595401514d4c936e8f51e162559cf9a8718099b5db26b0410fabc3cdeb9d8e1f.png" src="../../_images/595401514d4c936e8f51e162559cf9a8718099b5db26b0410fabc3cdeb9d8e1f.png" />
+<img alt="../../_images/b8eaa35eb84fc1c4606b5d4aab53151cbcf3b966a4d4a70de108e14c65e71e28.png" src="../../_images/b8eaa35eb84fc1c4606b5d4aab53151cbcf3b966a4d4a70de108e14c65e71e28.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="axes">
-<h2>Axes<a class="headerlink" href="#axes" title="Permalink to this heading">#</a></h2>
+<h2>Axes<a class="headerlink" href="#axes" title="Link to this heading">#</a></h2>
 <section id="limits">
-<h3>Limits<a class="headerlink" href="#limits" title="Permalink to this heading">#</a></h3>
+<h3>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h3>
 <p>We have seen above that the size of our graph changes and rescales. You can set the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axis limit with <code class="docutils literal notranslate"><span class="pre">plt.xlim()</span></code>  and <code class="docutils literal notranslate"><span class="pre">plt.ylim()</span></code> as shown.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,12 +702,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dd4968d0a2fd69243d6233b5f19c9530ca493489558cb9aa703297f20a45bb2a.png" src="../../_images/dd4968d0a2fd69243d6233b5f19c9530ca493489558cb9aa703297f20a45bb2a.png" />
+<img alt="../../_images/c3787ae54a7c0615cb3c1d504254ccc9a21ca1d842ef8b6e8ef70e0b2a2951db.png" src="../../_images/c3787ae54a7c0615cb3c1d504254ccc9a21ca1d842ef8b6e8ef70e0b2a2951db.png" />
 </div>
 </div>
 </section>
 <section id="ticks">
-<h3>Ticks<a class="headerlink" href="#ticks" title="Permalink to this heading">#</a></h3>
+<h3>Ticks<a class="headerlink" href="#ticks" title="Link to this heading">#</a></h3>
 <p>We can reformat the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> ticks in the following way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -718,13 +724,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e9fa8d1590405a7399efce18f201093c59da320106b7d13487b99195aa240459.png" src="../../_images/e9fa8d1590405a7399efce18f201093c59da320106b7d13487b99195aa240459.png" />
+<img alt="../../_images/029474b1c7e11820f19cad3a3f750f0550ee0adf4bfd6fd6c8900e83a22d4671.png" src="../../_images/029474b1c7e11820f19cad3a3f750f0550ee0adf4bfd6fd6c8900e83a22d4671.png" />
 </div>
 </div>
 <p>This effect is however better achieved by a histagram or bar chart that we will look at later.</p>
 </section>
 <section id="grid">
-<h3>Grid<a class="headerlink" href="#grid" title="Permalink to this heading">#</a></h3>
+<h3>Grid<a class="headerlink" href="#grid" title="Link to this heading">#</a></h3>
 <p>Often the clarity of demonstrating  the values of the points can be assisted by adding a grid of horizontal and verticle lines stretching from the ticks. This can be toggled on/off using <code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,16 +741,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/316deb6c87ae03071cd7bccbd0eb29b538900963ae2cd716408b29a17ccd7a14.png" src="../../_images/316deb6c87ae03071cd7bccbd0eb29b538900963ae2cd716408b29a17ccd7a14.png" />
+<img alt="../../_images/a441068a9312a6902c7d245156b9569b5f148b37298b3345517a356798780181.png" src="../../_images/a441068a9312a6902c7d245156b9569b5f148b37298b3345517a356798780181.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="lables">
-<h2>Lables<a class="headerlink" href="#lables" title="Permalink to this heading">#</a></h2>
+<h2>Lables<a class="headerlink" href="#lables" title="Link to this heading">#</a></h2>
 <p>Lables are a great way to explain what it is your are plotting. In the strings used to label a lot of <span class="math notranslate nohighlight">\(\LaTeX\)</span> is supported which can be very useful.</p>
 <section id="title">
-<h3>Title<a class="headerlink" href="#title" title="Permalink to this heading">#</a></h3>
+<h3>Title<a class="headerlink" href="#title" title="Link to this heading">#</a></h3>
 <p>A title string can be added using <code class="docutils literal notranslate"><span class="pre">plt.title()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -764,12 +770,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f9cb00c986740c1a23d023224adc6786379ff1e4abc0db0f4b301e2fe4c7fef8.png" src="../../_images/f9cb00c986740c1a23d023224adc6786379ff1e4abc0db0f4b301e2fe4c7fef8.png" />
+<img alt="../../_images/dee18db35c5c12a195e5b73f37a6aec2de6e36a30d4e7dc56a737c4ba1bf1bf7.png" src="../../_images/dee18db35c5c12a195e5b73f37a6aec2de6e36a30d4e7dc56a737c4ba1bf1bf7.png" />
 </div>
 </div>
 </section>
 <section id="axis-lables">
-<h3>Axis Lables<a class="headerlink" href="#axis-lables" title="Permalink to this heading">#</a></h3>
+<h3>Axis Lables<a class="headerlink" href="#axis-lables" title="Link to this heading">#</a></h3>
 <p>Similarly, <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code> can be used to add labels to the <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axes respectively.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,12 +797,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c08710eaace43aec6e7e57150fe9df867a35d21c0c557b4c85b3f7c16d592827.png" src="../../_images/c08710eaace43aec6e7e57150fe9df867a35d21c0c557b4c85b3f7c16d592827.png" />
+<img alt="../../_images/55b37336d2df03ba7a3781864a54ab0a7796d1634e195e32d015b9ca68f2fde7.png" src="../../_images/55b37336d2df03ba7a3781864a54ab0a7796d1634e195e32d015b9ca68f2fde7.png" />
 </div>
 </div>
 </section>
 <section id="legend">
-<h3>Legend<a class="headerlink" href="#legend" title="Permalink to this heading">#</a></h3>
+<h3>Legend<a class="headerlink" href="#legend" title="Link to this heading">#</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> we can assign a name to what is being plotted using the <code class="docutils literal notranslate"><span class="pre">label</span></code> keyword. A legend displaying this can then be toggled on/off using <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> with keyword <code class="docutils literal notranslate"><span class="pre">loc</span></code> to set a location.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -819,13 +825,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/efcf65744421f64b972e79fef62a5562d4a6c77a3bd471a21dbfa4c98d9c28df.png" src="../../_images/efcf65744421f64b972e79fef62a5562d4a6c77a3bd471a21dbfa4c98d9c28df.png" />
+<img alt="../../_images/9db4e7161f5baa13767e1bbfb92a870977e792141ac1a99598b55259c85947d7.png" src="../../_images/9db4e7161f5baa13767e1bbfb92a870977e792141ac1a99598b55259c85947d7.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="error-bars">
-<h2>Error Bars<a class="headerlink" href="#error-bars" title="Permalink to this heading">#</a></h2>
+<h2>Error Bars<a class="headerlink" href="#error-bars" title="Link to this heading">#</a></h2>
 <p>If we call <code class="docutils literal notranslate"><span class="pre">plt.errorbar()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> we can add error bars in the <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions by specifying either a constant error or a list as the <code class="docutils literal notranslate"><span class="pre">xerr</span></code> and <code class="docutils literal notranslate"><span class="pre">yerr</span></code>. These error bars can be formatted in various ways as shown with <code class="docutils literal notranslate"><span class="pre">capsize</span></code> and <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -837,12 +843,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/31685714371a38f58d7804423db3fcce59e4b09047bb39e687c13d02f1a8f569.png" src="../../_images/31685714371a38f58d7804423db3fcce59e4b09047bb39e687c13d02f1a8f569.png" />
+<img alt="../../_images/b8ca5e21e1077f0597acd9676734eb6a928d74c1d571e63af43d937f8261fbfe.png" src="../../_images/b8ca5e21e1077f0597acd9676734eb6a928d74c1d571e63af43d937f8261fbfe.png" />
 </div>
 </div>
 </section>
 <section id="asymptotes-and-annotations">
-<h2>Asymptotes and Annotations<a class="headerlink" href="#asymptotes-and-annotations" title="Permalink to this heading">#</a></h2>
+<h2>Asymptotes and Annotations<a class="headerlink" href="#asymptotes-and-annotations" title="Link to this heading">#</a></h2>
 <p>Verticle and horizontal lines can be added using <code class="docutils literal notranslate"><span class="pre">plt.vlines()</span></code> and <code class="docutils literal notranslate"><span class="pre">plt.hlines</span></code> which takes in the value the line is at and the begining and end of the line as arugaments as shown. One can also have an array of vales for this which will give many lines.</p>
 <p>The function annotate <code class="docutils literal notranslate"><span class="pre">plt.annotate()</span></code> is ver useful when you want to draw attention to a particular point in your plot. It takes in a string that will be displayed and the point you are interested in. One can change the text colour as you might expect by calling the <code class="docutils literal notranslate"><span class="pre">c</span></code> keyword. The text can be put at different point to the point of intrest using <code class="docutils literal notranslate"><span class="pre">xytext</span></code> and an arrow can be generated between using <code class="docutils literal notranslate"><span class="pre">arrowprops</span></code> and giving a dictionary that will specify the features as shown.</p>
 <div class="cell docutils container">
@@ -868,15 +874,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eaf83c1d91fcdffe0f0300b81c5d9b240adfbf10e24d7353fa8ab2778ba24b0b.png" src="../../_images/eaf83c1d91fcdffe0f0300b81c5d9b240adfbf10e24d7353fa8ab2778ba24b0b.png" />
+<img alt="../../_images/f1955572d6103693c5ce8463dfaf154050a06edfc8e0eeed297fcd9d01a50eec.png" src="../../_images/f1955572d6103693c5ce8463dfaf154050a06edfc8e0eeed297fcd9d01a50eec.png" />
 </div>
 </div>
 </section>
 <section id="log-plot">
-<h2>Log Plot<a class="headerlink" href="#log-plot" title="Permalink to this heading">#</a></h2>
+<h2>Log Plot<a class="headerlink" href="#log-plot" title="Link to this heading">#</a></h2>
 <p>Very often data is better displayed using logarithmic scaling on the axes.</p>
 <section id="log-log-plot">
-<h3>Log-log plot<a class="headerlink" href="#log-log-plot" title="Permalink to this heading">#</a></h3>
+<h3>Log-log plot<a class="headerlink" href="#log-log-plot" title="Link to this heading">#</a></h3>
 <p>One can make a log-log plot using <code class="docutils literal notranslate"><span class="pre">plt.loglog()</span></code> in the place of <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -890,12 +896,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e7f6babf70cd3e131fbe406919597ffb9ef07611aa5920bfdcb57138f1a89ee2.png" src="../../_images/e7f6babf70cd3e131fbe406919597ffb9ef07611aa5920bfdcb57138f1a89ee2.png" />
+<img alt="../../_images/90d10280097add87485f89fb3238b565689cb783746e217e8c9eddb347f9bb7b.png" src="../../_images/90d10280097add87485f89fb3238b565689cb783746e217e8c9eddb347f9bb7b.png" />
 </div>
 </div>
 </section>
 <section id="semi-log-plot">
-<h3>Semi-log plot<a class="headerlink" href="#semi-log-plot" title="Permalink to this heading">#</a></h3>
+<h3>Semi-log plot<a class="headerlink" href="#semi-log-plot" title="Link to this heading">#</a></h3>
 <p>We can also scale just one axis with a log scaling.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -909,7 +915,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/0288953aeb4fb301c06e50069cf97849427dd6443c7757af1803d9450c9f737c.png" src="../../_images/0288953aeb4fb301c06e50069cf97849427dd6443c7757af1803d9450c9f737c.png" />
+<img alt="../../_images/fbe930974e514c6baa898510215c3d3f81e4f27fa8481fed390656df814f9a51.png" src="../../_images/fbe930974e514c6baa898510215c3d3f81e4f27fa8481fed390656df814f9a51.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -924,13 +930,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5bdb869276651e263a8e19492bedd088f46e450083567195d657b22c4331e804.png" src="../../_images/5bdb869276651e263a8e19492bedd088f46e450083567195d657b22c4331e804.png" />
+<img alt="../../_images/72a6e90e52485b3e4bfd51311834fb9bd2ec7b5747eb1e88b1c5f75e233e91f6.png" src="../../_images/72a6e90e52485b3e4bfd51311834fb9bd2ec7b5747eb1e88b1c5f75e233e91f6.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="figure-object">
-<h2>Figure Object<a class="headerlink" href="#figure-object" title="Permalink to this heading">#</a></h2>
+<h2>Figure Object<a class="headerlink" href="#figure-object" title="Link to this heading">#</a></h2>
 <p>So far we have been plotting rather recklessly without looking into what objects we have been creating in our plots. This is fine when we only want to get a quick look at our data but for puplication or the like we will require more costomisability and to put this on more solid footing.</p>
 <p>One creates a figure object using the <code class="docutils literal notranslate"><span class="pre">plt.figure()</span></code> function. We can specify the figure dimensions in inches as a tupple using the <code class="docutils literal notranslate"><span class="pre">figsize</span></code> keyword. We then can add a a set of axes to this figure using the <code class="docutils literal notranslate"><span class="pre">.add_axes()</span></code> attribute funtion of the figure. This function takes in the argument of a list that specifies things about our axes. The list elements are taken as the <code class="docutils literal notranslate"><span class="pre">[left,</span> <span class="pre">bottom,</span> <span class="pre">width,</span> <span class="pre">height]</span></code> as fractions of the size height an width.</p>
 <div class="cell docutils container">
@@ -941,7 +947,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/123e38e8eec9a076a9ff69641d55513b2ecb89aa260d89b03bbf02ad418ac9f0.png" src="../../_images/123e38e8eec9a076a9ff69641d55513b2ecb89aa260d89b03bbf02ad418ac9f0.png" />
+<img alt="../../_images/71b81fecfab83d31f71502454fbfb60e45f93790e083578708ea0275f5280850.png" src="../../_images/71b81fecfab83d31f71502454fbfb60e45f93790e083578708ea0275f5280850.png" />
 </div>
 </div>
 <p>We can then plot on this set of axes, now using the attribute of the axis we can plot in a similar way.</p>
@@ -968,13 +974,13 @@ document.write(`
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_2413/2392594966.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2390/2392594966.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   ax.plot(x, np.sin(x), c=&#39;green&#39;, lw=.5, ls=&#39;--&#39;, marker=&#39;*&#39;, label=&#39;$\sin(x)$&#39;)
-/tmp/ipykernel_2413/2392594966.py:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_2390/2392594966.py:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   ax.plot(x, np.cos(x), c=&#39;blue&#39;, lw=2, ls=&#39;-.&#39;, label=&#39;$\cos(x)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/4f3ca56108d53943e28f25540a17db27c43f6c91dfabf7bf628d808e6e38b7ac.png" src="../../_images/4f3ca56108d53943e28f25540a17db27c43f6c91dfabf7bf628d808e6e38b7ac.png" />
+<img alt="../../_images/e883ebfdbfc060de7e737f969cb76a7c84c54aff5745dbbef7f236fb1810e6e2.png" src="../../_images/e883ebfdbfc060de7e737f969cb76a7c84c54aff5745dbbef7f236fb1810e6e2.png" />
 </div>
 </div>
 <p>Many of the functions act the same as before but now they are attributes of the axis object and have <code class="docutils literal notranslate"><span class="pre">set_</span></code> before them.</p>
@@ -1016,7 +1022,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -1111,8 +1117,8 @@ By ICHEC Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
