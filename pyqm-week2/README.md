@@ -24,9 +24,9 @@
 - Opening, closing and creating file
 - Reading and writing files
 
-## 2.4 - Cheatsheet
+## 2.4 - Cheatsheet [[Notebook](./notebooks/pyqm-2.4-cheatsheet.ipynb)]
 
-## 2.5 Tutorial [Tutorial 2](Week2_Exercises/PyQM_Tut.2.ipynb) 
+## 2.5 Tutorial [Tutorial 2](exercises/PyQM_Tut.2.ipynb) 
 1. Convert Decimal To Ten Bit Binary String
 2. For Loops, Sequence Sum
 3. While Loops, Reverse A Number
@@ -35,7 +35,7 @@
 6. Collatz Conjecture
 7. Fizz Buzz
 
-## 2.6 Exercise [Exercises 2](Week2_Exercises/PyQM_Ex.2.ipynb) 
+## 2.6 Exercise [Exercises 2](exercises/PyQM_Ex.2.ipynb)
 1. Decimal To/From Binary
 2. Balmer Lines
 3. Quantum Quibit Gates
