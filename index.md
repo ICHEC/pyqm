@@ -42,3 +42,12 @@ The course material will be hosted on GitHub and includes a folder for each sess
 - Karthik Krishnakumar - <karthik.krishnakumar@ichec.ie>
 - Emil Dimitrov – <emil.dimitrov@ichec.ie>
 - Venkatesh Kannan – <venkatesh.kannan@ichec.ie>
+
+# ACKNOWLEDGEMENTS
+
+We extend our gratitude to the Irish Centre for High-End Computing (ICHEC) and University of Galway for providing computing and for all-encompassing invaluable support. This project was funded by the **EuroHPC JU** under **grant agreement No 951732** and Ireland.
+
+```{image} ./logos.png
+:align: center
+:width: 100%
+```
