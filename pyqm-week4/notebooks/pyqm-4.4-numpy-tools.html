@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -361,7 +361,7 @@ document.write(`
 <h1>Python for Quantum Mechanics: Numpy Tools<a class="headerlink" href="#python-for-quantum-mechanics-numpy-tools" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;0ezvWFQhdck&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -380,7 +380,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -389,7 +389,7 @@ document.write(`
 <h2>Random Sampling (np.random)<a class="headerlink" href="#random-sampling-np-random" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy.random</span> <span class="k">as</span> <span class="nn">rnd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy.random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span>
 </pre></div>
 </div>
 </div>
@@ -406,13 +406,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.91216062 0.12074881]
- [0.01691399 0.65971895]
- [0.03409919 0.71638617]] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.30928649 0.32898824]
+ [0.69632499 0.59220966]
+ [0.3062973  0.27710655]] 
 
-[[91.21606185 12.07488068]
- [ 1.69139936 65.97189453]
- [ 3.40991851 71.63861657]] 
+[[30.9286486  32.89882403]
+ [69.63249884 59.22096565]
+ [30.62972963 27.71065508]] 
 </pre></div>
 </div>
 </div>
@@ -430,8 +430,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[109.85258764 110.03299906 110.3406091  108.86650419  98.66439488
-  87.88079625 118.4172657  110.05681778  96.58434912  90.13171615] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[114.25370723 109.77224905  99.63797278 100.61604811  88.96131716
+ 101.51811239  89.47384259  93.09429215 103.97483761  95.17300973] 
 </pre></div>
 </div>
 </div>
@@ -453,9 +453,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0 1 2 3 4 5 6 7 8 9] 
 
-[1 4 8 7 2 8 3 2 3 3 6 5 3 9 8 0 0 6 7 9 4 2 8 8 0 1 8 9 4 4 3 8 5 6 0 5 0
- 6 5 1 0 2 6 1 1 8 4 1 4 4 6 7 7 2 9 2 3 0 2 3 2 5 7 2 9 8 4 4 6 3 5 9 1 8
- 8 9 2 4 5 3 7 5 7 5 2 9 7 4 9 4 8 6 4 0 8 7 0 9 4 0]
+[7 8 6 8 3 7 9 5 9 9 0 3 1 4 3 0 6 9 6 9 5 5 7 8 3 2 7 8 5 7 4 5 5 3 3 2 8
+ 4 7 1 6 8 2 7 4 8 9 4 2 8 5 0 3 2 0 1 5 6 2 7 0 4 8 8 5 1 4 5 7 8 3 6 8 5
+ 0 8 7 5 5 3 3 4 3 9 0 5 6 0 3 3 4 8 0 4 4 3 6 3 4 5]
 </pre></div>
 </div>
 </div>
@@ -640,11 +640,11 @@ $<span class="math notranslate nohighlight">\( x^2+4x-2\)</span>$</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [ 0.15318928 -1.46361298  8.3404622 ] 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>poly =  [-2.25901938e-02 -4.46632785e-03  5.49986853e+00] 
 
-c[0] =  0.15318927626765813
-c[1] =  -1.4636129814764012
-c[2] =  8.340462203834697
+c[0] =  -0.022590193823405644
+c[1] =  -0.004466327852596221
+c[2] =  5.4998685335336255
 </pre></div>
 </div>
 </div>
@@ -661,13 +661,13 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[44.77808706 30.68621983]
- [83.53466436 65.38420451]
- [67.27158589 65.89424838]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[30.49636051  3.29232635]
+ [ 5.40517187 71.206984  ]
+ [99.99268527  6.96008259]
  ...
- [75.91462553  8.60942722]
- [81.89209388 88.06786131]
- [43.81097408 89.03144589]]
+ [20.64278275  0.4891114 ]
+ [ 8.28252653 63.72162147]
+ [22.7924933  44.91821739]]
 </pre></div>
 </div>
 </div>
@@ -681,7 +681,7 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50.611578720352085
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.786737095600536
 </pre></div>
 </div>
 </div>
@@ -695,7 +695,7 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.522436534235837
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.711654139899085
 </pre></div>
 </div>
 </div>
@@ -709,7 +709,7 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>813.5293858495113
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>824.3590834491844
 </pre></div>
 </div>
 </div>
@@ -723,7 +723,7 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0024326101346616724
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.012047158999284324
 </pre></div>
 </div>
 </div>
@@ -737,7 +737,7 @@ c[2] =  8.340462203834697
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.91655216422271
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>99.9926852658622
 </pre></div>
 </div>
 </div>

@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -366,7 +366,7 @@ document.write(`
 <h1>3D Plots and Animations<a class="headerlink" href="#d-plots-and-animations" title="Link to this heading">#</a></h1>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;2GGQqxRI3fs&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -385,8 +385,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -410,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/444c04865fcfe887f1317696da41131a4f2693c0e186c94e36eb79e26db71fd3.png" src="../../_images/444c04865fcfe887f1317696da41131a4f2693c0e186c94e36eb79e26db71fd3.png" />
+<img alt="../../_images/7fa4ff549a154ebba8845225299a09869c9f366f87ba9b179450199f197a4717.png" src="../../_images/7fa4ff549a154ebba8845225299a09869c9f366f87ba9b179450199f197a4717.png" />
 </div>
 </div>
 </section>
@@ -465,10 +465,10 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 <p>This can can then be used to sample a a grid of <span class="math notranslate nohighlight">\(x\)</span>- and <span class="math notranslate nohighlight">\(y\)</span>-axes. We can use these to give each of the grid points a value and plot this. The <code class="docutils literal notranslate"><span class="pre">plt.pcolormesh()</span></code> can be easily used to create a colour projection of a 3d plot. A colour map (<code class="docutils literal notranslate"><span class="pre">cmap</span></code> keyword) is used to specify what colours are mapped to by each value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -505,13 +505,13 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_2405/3047540586.py:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2612/3047540586.py:15: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   ax[0].set_title(&#39;$\sin (x) \cos (x)$&#39;)
-/tmp/ipykernel_2405/3047540586.py:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_2612/3047540586.py:16: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   ax[1].set_title(&#39;$\cos ( \sqrt{x^2 +y^2} )$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/23e15fa23899238ec14a7650f8a9e5434697ad2cca6537df4c47871fe071e90e.png" src="../../_images/23e15fa23899238ec14a7650f8a9e5434697ad2cca6537df4c47871fe071e90e.png" />
+<img alt="../../_images/2e3a7319e5d130ff37b8ca61f06d708276a52c30ffd4f3a6a408231307f60e51.png" src="../../_images/2e3a7319e5d130ff37b8ca61f06d708276a52c30ffd4f3a6a408231307f60e51.png" />
 </div>
 </div>
 </section>
@@ -545,7 +545,7 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e66ce802cb17673d404d9ca2f4fe752a1c9aca9c7b30c97b26078d38c185fa28.png" src="../../_images/e66ce802cb17673d404d9ca2f4fe752a1c9aca9c7b30c97b26078d38c185fa28.png" />
+<img alt="../../_images/d2a0051059386260a67adc13b049c5997a7c203a02989333b0869e6f8f65b180.png" src="../../_images/d2a0051059386260a67adc13b049c5997a7c203a02989333b0869e6f8f65b180.png" />
 </div>
 </div>
 </section>
@@ -556,8 +556,8 @@ Ymesh = [[-5. -5. -5. -5. -5.]
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> notebook
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -1225,6 +1225,7 @@ mpl.figure.prototype.mouse_event = function (event, name) {
         y: y,
         button: event.button,
         step: event.step,
+        buttons: event.buttons,
         modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
@@ -1562,7 +1563,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='41b92ed4-27b0-4a80-a563-49e3a1d64206'></div></div></div>
+</script><div class="output text_html"><div id='547bab1a-a8bf-482e-a89b-e09515b11c4d'></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1581,7 +1582,7 @@ if (IPython.notebook.kernel !== null) {
 <p>To do animations we need a function, <code class="docutils literal notranslate"><span class="pre">FuncAnimation()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">FuncAnimation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">FuncAnimation</span>
 </pre></div>
 </div>
 </div>
@@ -2248,6 +2249,7 @@ mpl.figure.prototype.mouse_event = function (event, name) {
         y: y,
         button: event.button,
         step: event.step,
+        buttons: event.buttons,
         modifiers: getModifiers(event),
         guiEvent: simpleKeys(event),
     });
@@ -2585,7 +2587,7 @@ if (IPython.notebook.kernel !== null) {
         mpl.mpl_figure_comm
     );
 }
-</script><div class="output text_html"><div id='27fd048c-df28-49ca-9325-8ef2ca7f8600'></div></div></div>
+</script><div class="output text_html"><div id='e07f7a55-95d0-4ca5-916b-f542d07588cf'></div></div></div>
 </div>
 <p>Now keeping this active we will add a plot to the picture. Notice that when we plot we have saved the return <code class="docutils literal notranslate"><span class="pre">line</span></code> item. The <code class="docutils literal notranslate"><span class="pre">,</span></code> is present because this is in <code class="docutils literal notranslate"><span class="pre">ax.plot()</span></code> will in fact return a tupple with the needed item as the first item.</p>
 <div class="cell docutils container">
@@ -2603,7 +2605,7 @@ if (IPython.notebook.kernel !== null) {
 <p>The <code class="docutils literal notranslate"><span class="pre">FuncAnimation()</span></code> function requires an initialise function (the <code class="docutils literal notranslate"><span class="pre">init_func</span></code> keyword will be used) that will be called at the start of the animation. We will use the <code class="docutils literal notranslate"><span class="pre">.set_data()</span></code> which gives the data for the curve in the form of two arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">init</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -2615,7 +2617,7 @@ if (IPython.notebook.kernel !== null) {
 <p>We will also need to define an other function that will be called repeatedly. This will change the data in our plot in each successive calling of the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">animate</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_data</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -2643,7 +2645,7 @@ if (IPython.notebook.kernel !== null) {
 <p>To save an animation we need a writer. We will import <code class="docutils literal notranslate"><span class="pre">matplotlib.animation.PillowWriter()</span></code> to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.animation</span> <span class="kn">import</span> <span class="n">PillowWriter</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="kn">import</span> <span class="n">PillowWriter</span>
 
 <span class="n">mywriter</span> <span class="o">=</span> <span class="n">PillowWriter</span><span class="p">(</span><span class="n">fps</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
 </pre></div>

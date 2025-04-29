@@ -28,8 +28,8 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
@@ -388,7 +388,7 @@ document.write(`
 <h1>Line Plots<a class="headerlink" href="#line-plots" title="Link to this heading">#</a></h1>
 </center><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">YouTubeVideo</span>
 <span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;D50f3tPYUiM&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -408,8 +408,8 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> is a collection of functions like those in MATLAB for plotting in Python. Used in conjuction with <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, useful visualisations of data can easily be created. We will import both libraries in the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -426,7 +426,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3d21955d1949263b55ecf7a2f67e2a4c50700be1fbe2b90e4489ec41067e6075.png" src="../../_images/3d21955d1949263b55ecf7a2f67e2a4c50700be1fbe2b90e4489ec41067e6075.png" />
+<img alt="../../_images/f18736b3b56aa38220d99a25bcc601118655c93fddb014554fbfd0d213201402.png" src="../../_images/f18736b3b56aa38220d99a25bcc601118655c93fddb014554fbfd0d213201402.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> isn’t stricktly necessary for jupyter notebooks but is a good habit to be in going forward.</p>
@@ -442,13 +442,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3170ff51e65214f787c0dbc89d2f87b98d9f8369f5c0a21c7add4e8f3c889524.png" src="../../_images/3170ff51e65214f787c0dbc89d2f87b98d9f8369f5c0a21c7add4e8f3c889524.png" />
+<img alt="../../_images/8db8c13936d5afd958deba5bb7a940302720883fda458a1b75e337225790ad20.png" src="../../_images/8db8c13936d5afd958deba5bb7a940302720883fda458a1b75e337225790ad20.png" />
 </div>
 </div>
 <p>Now we can define a function that returns a polinomial and plot that using <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> to sample the <span class="math notranslate nohighlight">\(x\)</span>-axis and plug this sample into a function to get a graph of that function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&#39;&#39;&#39;Docstring: This returns 5x^3+6x^2-6x-2&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">6</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span><span class="mi">2</span>
 
@@ -461,7 +461,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/97cac826a89c77fb3480949c62a8a5c3a370400de99eab6f73cdfee5dbc465ba.png" src="../../_images/97cac826a89c77fb3480949c62a8a5c3a370400de99eab6f73cdfee5dbc465ba.png" />
+<img alt="../../_images/2cf6c167edf6bd6a461987f64074c06915623efc1d24ef9aa06e6017218933f1.png" src="../../_images/2cf6c167edf6bd6a461987f64074c06915623efc1d24ef9aa06e6017218933f1.png" />
 </div>
 </div>
 <p>Here we have sampled the <span class="math notranslate nohighlight">\(x\)</span>-axis between <span class="math notranslate nohighlight">\(-2\)</span> and <span class="math notranslate nohighlight">\(1.5\)</span> (exluding <span class="math notranslate nohighlight">\(1.5\)</span>) in steps of <span class="math notranslate nohighlight">\(0.5\)</span>. This approximates the shape of a cubic, however if we sample more frequently (for example stelps of <span class="math notranslate nohighlight">\(0.1\)</span> as seen below), we can achive something approximating a smooth curve.</p>
@@ -476,7 +476,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6858da3cd3a9bee88d9b78f1b33c6d210c71fc63094cfec0877a18bc1fa2c23c.png" src="../../_images/6858da3cd3a9bee88d9b78f1b33c6d210c71fc63094cfec0877a18bc1fa2c23c.png" />
+<img alt="../../_images/16a2eba665ad333f1bdc7c5277ab7b40a9e5152e66d34b1c2b740aa94fc27239.png" src="../../_images/16a2eba665ad333f1bdc7c5277ab7b40a9e5152e66d34b1c2b740aa94fc27239.png" />
 </div>
 </div>
 <p>We can plot both lines on the same graph by calling <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> twice and have two plots on the graph which will automatically be set to differnt colours.</p>
@@ -489,7 +489,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
+<img alt="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" src="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" />
 </div>
 </div>
 <p>Or we can graph multiple plots in the same <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> call:</p>
@@ -501,7 +501,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
+<img alt="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" src="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" />
 </div>
 </div>
 <p>or prehaps more elegantly</p>
@@ -515,7 +515,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" src="../../_images/fd94fe8a41c72febda82158243a64264a40893d38e41fa04c6247c21ae97402b.png" />
+<img alt="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" src="../../_images/95435c91362848c7e9e6ab8899494847c8cd3139f7e31900ff9c73ede02832a5.png" />
 </div>
 </div>
 <section id="lines">
@@ -554,7 +554,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/be9a46e8248685fa5142de714c5420fd0d638ed7c53a2dc9ef28fa394513afa5.png" src="../../_images/be9a46e8248685fa5142de714c5420fd0d638ed7c53a2dc9ef28fa394513afa5.png" />
+<img alt="../../_images/1fab60d74c96f2539773008fea054159c0473317d8ed2dd98266f09844fc784f.png" src="../../_images/1fab60d74c96f2539773008fea054159c0473317d8ed2dd98266f09844fc784f.png" />
 </div>
 </div>
 <p>If no colour is specified the ‘Tableau Palette’ will be cycled through as seen below</p>
@@ -582,7 +582,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/038df6cda27440781f57fbc917790ade10f2e2e15d09f7dd66540f5edd394892.png" src="../../_images/038df6cda27440781f57fbc917790ade10f2e2e15d09f7dd66540f5edd394892.png" />
+<img alt="../../_images/ad28ac62c32674e87787abc4ef3a18add47509520cc38ad27e04fd8c589747c8.png" src="../../_images/ad28ac62c32674e87787abc4ef3a18add47509520cc38ad27e04fd8c589747c8.png" />
 </div>
 </div>
 </section>
@@ -599,7 +599,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dd159117de4f9a83a1510ef4c0bbaf2506b1b50775c978e9a00bc33fe919753b.png" src="../../_images/dd159117de4f9a83a1510ef4c0bbaf2506b1b50775c978e9a00bc33fe919753b.png" />
+<img alt="../../_images/7281b71f3c74a40574b7d3cc628dcdb5584606ce844c962a392d78552d863a50.png" src="../../_images/7281b71f3c74a40574b7d3cc628dcdb5584606ce844c962a392d78552d863a50.png" />
 </div>
 </div>
 </section>
@@ -648,7 +648,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/20e9198c4ebd97079fce7f7cf3415bdf889ffabc8a728f0a5851ed567051ddff.png" src="../../_images/20e9198c4ebd97079fce7f7cf3415bdf889ffabc8a728f0a5851ed567051ddff.png" />
+<img alt="../../_images/52bf42e20fbd5759c4f7bff264a50b1e68911af558894e3564a15d57985dda69.png" src="../../_images/52bf42e20fbd5759c4f7bff264a50b1e68911af558894e3564a15d57985dda69.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">'None'</span></code> line style might seem pointless but it can be used when only the point markers are needed which we will seen next. A more complete description of the line style formatting options can be found <a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/linestyles.html">here</a>.</p>
@@ -668,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c24e1c43416bf14fa93cb5a7d6c1eb025c18a26548e1daffda1a515f2a780c1c.png" src="../../_images/c24e1c43416bf14fa93cb5a7d6c1eb025c18a26548e1daffda1a515f2a780c1c.png" />
+<img alt="../../_images/ef1220432c7e3cf2a6cf197af86d43ee32c378cac4e2a1e90fd446ba53a8fde0.png" src="../../_images/ef1220432c7e3cf2a6cf197af86d43ee32c378cac4e2a1e90fd446ba53a8fde0.png" />
 </div>
 </div>
 <p>I should note that the keyword <code class="docutils literal notranslate"><span class="pre">markerfacecolor</span></code> and <code class="docutils literal notranslate"><span class="pre">markersize</span></code> exist and they do as you might expect. I will further note that we can assign colour and marker in a single compact form as seen below. This is useful for quick assignment but might get confusing and/or limit customisability.</p>
@@ -680,7 +680,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b8eaa35eb84fc1c4606b5d4aab53151cbcf3b966a4d4a70de108e14c65e71e28.png" src="../../_images/b8eaa35eb84fc1c4606b5d4aab53151cbcf3b966a4d4a70de108e14c65e71e28.png" />
+<img alt="../../_images/2919b5f3a8f5265a6ff4448bd4838b1767cf1d3e81f87e637bfc39ce89e2277f.png" src="../../_images/2919b5f3a8f5265a6ff4448bd4838b1767cf1d3e81f87e637bfc39ce89e2277f.png" />
 </div>
 </div>
 </section>
@@ -702,7 +702,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c3787ae54a7c0615cb3c1d504254ccc9a21ca1d842ef8b6e8ef70e0b2a2951db.png" src="../../_images/c3787ae54a7c0615cb3c1d504254ccc9a21ca1d842ef8b6e8ef70e0b2a2951db.png" />
+<img alt="../../_images/dbb409f61d64c45324ebb83e2f4a0f61b8064855da639ee31aa5e75ea9f5342d.png" src="../../_images/dbb409f61d64c45324ebb83e2f4a0f61b8064855da639ee31aa5e75ea9f5342d.png" />
 </div>
 </div>
 </section>
@@ -724,7 +724,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/029474b1c7e11820f19cad3a3f750f0550ee0adf4bfd6fd6c8900e83a22d4671.png" src="../../_images/029474b1c7e11820f19cad3a3f750f0550ee0adf4bfd6fd6c8900e83a22d4671.png" />
+<img alt="../../_images/b3c985f353af51e816664eaac7749c0ec81f334094091bfa9cf63f3d2b7af0e9.png" src="../../_images/b3c985f353af51e816664eaac7749c0ec81f334094091bfa9cf63f3d2b7af0e9.png" />
 </div>
 </div>
 <p>This effect is however better achieved by a histagram or bar chart that we will look at later.</p>
@@ -741,7 +741,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a441068a9312a6902c7d245156b9569b5f148b37298b3345517a356798780181.png" src="../../_images/a441068a9312a6902c7d245156b9569b5f148b37298b3345517a356798780181.png" />
+<img alt="../../_images/fc345742dbb2b70694e0036eeca1bcbb82e7954e0cbea71a02f39952555baee4.png" src="../../_images/fc345742dbb2b70694e0036eeca1bcbb82e7954e0cbea71a02f39952555baee4.png" />
 </div>
 </div>
 </section>
@@ -770,7 +770,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dee18db35c5c12a195e5b73f37a6aec2de6e36a30d4e7dc56a737c4ba1bf1bf7.png" src="../../_images/dee18db35c5c12a195e5b73f37a6aec2de6e36a30d4e7dc56a737c4ba1bf1bf7.png" />
+<img alt="../../_images/1c3ca01b4657a953eeaa45c166b15c5e8e7b957cadbcbe491940b9cfbe9c734f.png" src="../../_images/1c3ca01b4657a953eeaa45c166b15c5e8e7b957cadbcbe491940b9cfbe9c734f.png" />
 </div>
 </div>
 </section>
@@ -797,7 +797,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/55b37336d2df03ba7a3781864a54ab0a7796d1634e195e32d015b9ca68f2fde7.png" src="../../_images/55b37336d2df03ba7a3781864a54ab0a7796d1634e195e32d015b9ca68f2fde7.png" />
+<img alt="../../_images/9afcc9df545cf906fdca40d3a19548c67b5f6d321e38ed26ada804a8ffbd6cc8.png" src="../../_images/9afcc9df545cf906fdca40d3a19548c67b5f6d321e38ed26ada804a8ffbd6cc8.png" />
 </div>
 </div>
 </section>
@@ -825,7 +825,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9db4e7161f5baa13767e1bbfb92a870977e792141ac1a99598b55259c85947d7.png" src="../../_images/9db4e7161f5baa13767e1bbfb92a870977e792141ac1a99598b55259c85947d7.png" />
+<img alt="../../_images/8ccd973d89928a7736c352a9150d6ab170dd4b1e6115023eab6878f4b3091a71.png" src="../../_images/8ccd973d89928a7736c352a9150d6ab170dd4b1e6115023eab6878f4b3091a71.png" />
 </div>
 </div>
 </section>
@@ -843,7 +843,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b8ca5e21e1077f0597acd9676734eb6a928d74c1d571e63af43d937f8261fbfe.png" src="../../_images/b8ca5e21e1077f0597acd9676734eb6a928d74c1d571e63af43d937f8261fbfe.png" />
+<img alt="../../_images/c351531be8c9d73dd9b2385a29e6f99786b54f5fc5456a957f887fb99593c3ed.png" src="../../_images/c351531be8c9d73dd9b2385a29e6f99786b54f5fc5456a957f887fb99593c3ed.png" />
 </div>
 </div>
 </section>
@@ -874,7 +874,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f1955572d6103693c5ce8463dfaf154050a06edfc8e0eeed297fcd9d01a50eec.png" src="../../_images/f1955572d6103693c5ce8463dfaf154050a06edfc8e0eeed297fcd9d01a50eec.png" />
+<img alt="../../_images/897515ec25b241a6f43b59d3f920ea53aa002a7c5e736dc57c76552e7f5b3f33.png" src="../../_images/897515ec25b241a6f43b59d3f920ea53aa002a7c5e736dc57c76552e7f5b3f33.png" />
 </div>
 </div>
 </section>
@@ -896,7 +896,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/90d10280097add87485f89fb3238b565689cb783746e217e8c9eddb347f9bb7b.png" src="../../_images/90d10280097add87485f89fb3238b565689cb783746e217e8c9eddb347f9bb7b.png" />
+<img alt="../../_images/6dc0f4bce5f483059d79520dcbe548f1ca62b30e5d7398e8867c1ca9e9e47a5e.png" src="../../_images/6dc0f4bce5f483059d79520dcbe548f1ca62b30e5d7398e8867c1ca9e9e47a5e.png" />
 </div>
 </div>
 </section>
@@ -915,7 +915,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fbe930974e514c6baa898510215c3d3f81e4f27fa8481fed390656df814f9a51.png" src="../../_images/fbe930974e514c6baa898510215c3d3f81e4f27fa8481fed390656df814f9a51.png" />
+<img alt="../../_images/3898a7cf513906595feb782f9266abc492e5f6bfacd0913de5cb2971c1ba7406.png" src="../../_images/3898a7cf513906595feb782f9266abc492e5f6bfacd0913de5cb2971c1ba7406.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -930,7 +930,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/72a6e90e52485b3e4bfd51311834fb9bd2ec7b5747eb1e88b1c5f75e233e91f6.png" src="../../_images/72a6e90e52485b3e4bfd51311834fb9bd2ec7b5747eb1e88b1c5f75e233e91f6.png" />
+<img alt="../../_images/6bc65c5289ef1363c041386328abad49ad71d8ad7831dc6dde545ef7d6396fb2.png" src="../../_images/6bc65c5289ef1363c041386328abad49ad71d8ad7831dc6dde545ef7d6396fb2.png" />
 </div>
 </div>
 </section>
@@ -947,7 +947,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/71b81fecfab83d31f71502454fbfb60e45f93790e083578708ea0275f5280850.png" src="../../_images/71b81fecfab83d31f71502454fbfb60e45f93790e083578708ea0275f5280850.png" />
+<img alt="../../_images/0857ec5a68efada6be10b2fd5b2c374f736fada7c60571093b4823bf98e6048d.png" src="../../_images/0857ec5a68efada6be10b2fd5b2c374f736fada7c60571093b4823bf98e6048d.png" />
 </div>
 </div>
 <p>We can then plot on this set of axes, now using the attribute of the axis we can plot in a similar way.</p>
@@ -974,13 +974,13 @@ document.write(`
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
 &lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
 &lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
-/tmp/ipykernel_2357/2392594966.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
+/tmp/ipykernel_2565/2392594966.py:5: SyntaxWarning: invalid escape sequence &#39;\s&#39;
   ax.plot(x, np.sin(x), c=&#39;green&#39;, lw=.5, ls=&#39;--&#39;, marker=&#39;*&#39;, label=&#39;$\sin(x)$&#39;)
-/tmp/ipykernel_2357/2392594966.py:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
+/tmp/ipykernel_2565/2392594966.py:6: SyntaxWarning: invalid escape sequence &#39;\c&#39;
   ax.plot(x, np.cos(x), c=&#39;blue&#39;, lw=2, ls=&#39;-.&#39;, label=&#39;$\cos(x)$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/e883ebfdbfc060de7e737f969cb76a7c84c54aff5745dbbef7f236fb1810e6e2.png" src="../../_images/e883ebfdbfc060de7e737f969cb76a7c84c54aff5745dbbef7f236fb1810e6e2.png" />
+<img alt="../../_images/8f799f44e03fad191c30edfc4f74d9b7e470347ae9fd84d22d6abf9f42c69f84.png" src="../../_images/8f799f44e03fad191c30edfc4f74d9b7e470347ae9fd84d22d6abf9f42c69f84.png" />
 </div>
 </div>
 <p>Many of the functions act the same as before but now they are attributes of the axis object and have <code class="docutils literal notranslate"><span class="pre">set_</span></code> before them.</p>
